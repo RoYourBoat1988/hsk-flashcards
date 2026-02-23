@@ -1421,6 +1421,13 @@
   <div class="deck-select-section">
     <div class="deck-select-label">Choose your deck</div>
     <div class="deck-cards">
+      <div class="deck-card" id="deck-card-hsk" onclick="introDeckSelect('hsk')" style="grid-column: span 3;">
+        <span class="deck-card-icon">🀄</span>
+        <div class="deck-card-name">HSK All Levels</div>
+        <div class="deck-card-sub">Complete Vocabulary · HSK 1–6</div>
+        <div class="deck-card-desc">All 2,667 words across every HSK level — ideal for mixed practice and comprehensive review</div>
+        <div class="deck-card-count">2,667 words</div>
+      </div>
       <div class="deck-card selected" id="deck-card-hsk1" onclick="introDeckSelect('hsk1')">
         <span class="deck-card-icon">🀄</span>
         <div class="deck-card-name">HSK 1</div>
@@ -1482,6 +1489,12 @@
     <div class="deck-modal-title">Switch Deck</div>
     <div class="deck-modal-sub">Select a deck to study. Your progress in each deck is saved separately.</div>
     <div class="deck-cards" style="margin-bottom:0">
+      <div class="deck-card" id="modal-deck-hsk" onclick="switchDeck('hsk')" style="grid-column: span 3;">
+        <span class="deck-card-icon">🀄</span>
+        <div class="deck-card-name">HSK All Levels</div>
+        <div class="deck-card-sub">Complete Vocabulary · HSK 1–6</div>
+        <div class="deck-card-count">2,667 words</div>
+      </div>
       <div class="deck-card" id="modal-deck-hsk1" onclick="switchDeck('hsk1')">
         <span class="deck-card-icon">🀄</span>
         <div class="deck-card-name">HSK 1</div>
@@ -1900,6 +1913,16 @@ function buildQueue() {
       if (!srs.nextReview) newCards.push(item);
       else if (isDue(srs)) reviewCards.push(item);
     });
+  } else if (currentDeck === 'hsk') {
+    for (const level of [1,2,3,4,5,6]) {
+      const words = DECK_CACHE.hsk[level] || [];
+      words.forEach((word, idx) => {
+        const srs = getCardSRS(level, idx);
+        const item = { level, idx, word, srs };
+        if (!srs.nextReview) newCards.push(item);
+        else if (isDue(srs)) reviewCards.push(item);
+      });
+    }
   } else {
     const level = parseInt(currentDeck.replace('hsk', ''));
     const words = DECK_CACHE.hsk[level] || [];
@@ -1934,6 +1957,16 @@ function updateStats() {
       else if (isDue(srs)) dueCount++;
       else doneCount++;
     });
+  } else if (currentDeck === 'hsk') {
+    for (const level of [1,2,3,4,5,6]) {
+      const words = DECK_CACHE.hsk[level] || [];
+      words.forEach((word, idx) => {
+        const srs = getCardSRS(level, idx);
+        if (!srs.nextReview) totalNew++;
+        else if (isDue(srs)) dueCount++;
+        else doneCount++;
+      });
+    }
   } else {
     const level = parseInt(currentDeck.replace('hsk', ''));
     const words = DECK_CACHE.hsk[level] || [];
@@ -2862,7 +2895,7 @@ function switchDeck(deck) {
   buildQueue();
   showCard();
 
-  const deckNames = { hsk1:'HSK 1', hsk2:'HSK 2', hsk3:'HSK 3', hsk4:'HSK 4', hsk5:'HSK 5', hsk6:'HSK 6', sentences:'Sentence Starters' };
+  const deckNames = { hsk:'HSK All Levels', hsk1:'HSK 1', hsk2:'HSK 2', hsk3:'HSK 3', hsk4:'HSK 4', hsk5:'HSK 5', hsk6:'HSK 6', sentences:'Sentence Starters' };
   showToast('Switched to ' + (deckNames[deck] || deck));
 }
 
