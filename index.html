@@ -1,0 +1,2904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>漢字 · HSK Flashcards</title>
+
+<!-- ── PWA / iOS Home Screen ─────────────────────────────── -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a1208">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HSK 漢字">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<!-- ─────────────────────────────────────────────────────── -->
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --paper2: #ede7d8;
+    --red: #c0392b;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --green: #2d6a4f;
+    --blue: #1a4a6b;
+    --muted: #7a6a55;
+    --border: #c8b89a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(184,134,11,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.04) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(1.2rem + env(safe-area-inset-top)) calc(2.5rem + env(safe-area-inset-right)) 1.2rem calc(2.5rem + env(safe-area-inset-left));
+    border-bottom: 1px solid var(--border);
+    background: rgba(245,240,232,0.9);
+    backdrop-filter: blur(8px);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .logo:hover .logo-text { color: var(--ink); }
+
+  .logo-char {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2rem;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    position: relative;
+    top: -1px;
+    transition: color 0.15s;
+  }
+
+  .header-stats {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .stat-item { text-align: center; }
+  .stat-num {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* LEVEL SELECTOR */
+  .level-bar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--paper2);
+    overflow-x: auto;
+  }
+
+  .level-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-right: 0.5rem;
+  }
+
+  .level-btn {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .level-btn:hover { background: var(--paper); color: var(--ink); }
+
+  .level-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .level-btn.all-btn {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .level-btn.all-btn.active {
+    background: var(--gold);
+    color: var(--paper);
+  }
+
+  /* MAIN CONTENT */
+  main {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem 4rem;
+    min-height: calc(100vh - 120px);
+  }
+
+  /* QUEUE INFO */
+  .queue-info {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .queue-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--paper2);
+  }
+
+  .queue-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+  }
+
+  /* PROGRESS BAR */
+  .progress-wrap {
+    width: 100%;
+    max-width: 600px;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+
+  /* FLASHCARD */
+  .card-scene {
+    width: 100%;
+    max-width: 600px;
+    perspective: 1200px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* The card wrapper must be as tall as whichever face is taller.
+     We achieve this by having both faces in normal flow when measuring,
+     but only one visible at a time via the 3D flip.
+     Trick: give the front a fixed min-height and let the back be auto;
+     the scene gets its height from the front while flipped=false,
+     then we set an explicit height once flipped via JS. */
+  .card {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #faf6ee;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.06),
+      0 8px 24px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+    overflow: hidden;
+  }
+
+  /* The back face is positioned absolute so it sits exactly over the front.
+     We also add a JS-driven min-height on .card so the scene is tall enough. */
+  .card-face.card-back {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    transform: rotateY(180deg);
+  }
+
+  /* CARD FRONT */
+  .card-front-inner {
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 260px;
+    justify-content: center;
+  }
+
+  .hsk-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .card-number {
+    position: absolute;
+    top: 1rem; left: 1rem;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .char-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .simplified {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+
+  .traditional {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.2rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .trad-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--border);
+  }
+
+  .tap-hint {
+    font-size: 0.75rem;
+    color: var(--border);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  /* CARD BACK */
+  .card-back-inner {
+    padding: 2rem 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .back-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .back-chars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .back-simplified {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+
+  .back-traditional {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .pinyin-display {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--red);
+    letter-spacing: 0.05em;
+    font-style: italic;
+  }
+
+  .meaning-display {
+    font-size: 1.1rem;
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  /* AUDIO BUTTONS */
+  .audio-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .audio-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    background: var(--paper2);
+    border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .audio-btn:hover { background: var(--paper); color: var(--ink); border-color: var(--ink); }
+
+  .audio-btn.playing {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(192,57,43,0.05);
+  }
+
+  .speaker-icon { font-size: 1rem; }
+
+  /* SECTION DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0.2rem 0;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    opacity: 0.5;
+  }
+
+  .section-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* EXAMPLE SENTENCE */
+  .example-block {
+    background: var(--paper2);
+    border-left: 2px solid var(--gold);
+    padding: 0.8rem 1rem;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .example-zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
+  }
+
+  .example-zh .highlight-word {
+    color: var(--red);
+    border-bottom: 1px solid var(--red);
+  }
+
+  .example-pinyin {
+    font-size: 0.85rem;
+    color: var(--red);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+  }
+
+  .example-en {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* CHAR BREAKDOWN */
+  .char-breakdown {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .char-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--paper);
+    min-width: 70px;
+  }
+
+  .char-card-zh {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.6rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .char-card-tc {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  .char-card-meaning {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.3;
+    max-width: 80px;
+  }
+
+  /* RATING BUTTONS — rendered inside the card back face */
+  .rating-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    padding: 1rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--paper2);
+    /* Never hidden — shown as part of card back content */
+  }
+
+  .rating-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .rating-btns {
+    display: flex;
+    gap: 0.7rem;
+    width: 100%;
+  }
+
+  .rating-btn {
+    flex: 1;
+    padding: 0.85rem 0.5rem;
+    border: 2px solid;
+    border-radius: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    background: #faf6ee;
+    letter-spacing: 0.02em;
+  }
+
+  .rating-btn .sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    opacity: 0.75;
+  }
+
+  .rating-btn.forgot {
+    border-color: #c0392b;
+    color: #c0392b;
+  }
+  .rating-btn.forgot:hover, .rating-btn.forgot:active {
+    background: #c0392b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(192,57,43,0.3);
+  }
+
+  .rating-btn.remembered {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+  .rating-btn.remembered:hover, .rating-btn.remembered:active {
+    background: var(--blue);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(26,74,107,0.3);
+  }
+
+  .rating-btn.hard {
+    border-color: #d35400;
+    color: #d35400;
+  }
+  .rating-btn.hard:hover, .rating-btn.hard:active {
+    background: #d35400;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(211,84,0,0.3);
+  }
+
+  .rating-btn.easy {
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .rating-btn.easy:hover, .rating-btn.easy:active {
+    background: var(--green);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(45,106,79,0.3);
+  }
+
+  /* SETTINGS PANEL */
+  .settings-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,18,8,0.45);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .settings-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .settings-panel {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(380px, 92vw);
+    background: #faf6ee;
+    border-left: 1px solid var(--border);
+    z-index: 201;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+    overflow-y: auto;
+  }
+  .settings-panel.open {
+    transform: translateX(0);
+  }
+
+  .settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .settings-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
+  .settings-close {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--muted);
+    transition: all 0.15s;
+  }
+  .settings-close:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .settings-body {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+  }
+
+  .settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .settings-group-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
+  .setting-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .setting-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .setting-label {
+    font-size: 0.9rem;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .setting-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  .setting-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--red);
+    min-width: 36px;
+    text-align: right;
+  }
+
+  .setting-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border);
+    outline: none;
+    cursor: pointer;
+  }
+  .setting-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--ink);
+    cursor: pointer;
+    border: 2px solid var(--paper);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    transition: background 0.15s;
+  }
+  .setting-slider::-webkit-slider-thumb:hover { background: var(--red); }
+  .setting-slider::-moz-range-thumb {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--ink);
+    cursor: pointer;
+    border: 2px solid var(--paper);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  }
+
+  .settings-save-btn {
+    margin: 0 1.6rem 1.6rem;
+    padding: 0.9rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.18s;
+    flex-shrink: 0;
+  }
+  .settings-save-btn:hover { background: var(--red); }
+
+  /* SETTINGS TRIGGER BUTTON in header */
+  .settings-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: transparent;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .settings-trigger:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 500px;
+  }
+
+  .empty-char {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 5rem;
+    color: var(--border);
+    margin-bottom: 1rem;
+  }
+
+  .empty-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .empty-sub {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* INTRO SCREEN */
+  #intro-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .intro-logo {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 6rem;
+    color: var(--red);
+    line-height: 1;
+    animation: fadeInUp 0.8s ease both;
+  }
+
+  .intro-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    animation: fadeInUp 0.8s 0.1s ease both;
+  }
+
+  .intro-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 420px;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s 0.2s ease both;
+  }
+
+  .intro-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 480px;
+    animation: fadeInUp 0.8s 0.3s ease both;
+  }
+
+  .intro-feature {
+    text-align: left;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--paper2);
+  }
+
+  .feature-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
+  .feature-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
+  }
+  .feature-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+  .start-btn {
+    padding: 1rem 3rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: fadeInUp 0.8s 0.4s ease both;
+  }
+
+  .start-btn:hover {
+    background: var(--red);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* AUDIO WAVE ANIMATION */
+  .wave-anim {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    height: 14px;
+  }
+
+  .wave-bar {
+    width: 3px;
+    border-radius: 2px;
+    background: currentColor;
+    animation: wave 0.8s ease-in-out infinite;
+  }
+
+  .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+  .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+  .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+
+  @keyframes wave {
+    0%, 100% { height: 4px; }
+    50% { height: 12px; }
+  }
+
+  /* CARD SLIDE ANIMATION */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .card-scene { animation: slideIn 0.4s ease both; }
+
+  /* COMPLETION ANIMATION */
+  @keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .celebrate { animation: celebrate 0.4s ease; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: var(--paper2); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* NOTIFICATION */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.7rem 1.5rem;
+    border-radius: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 999;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ========================
+     ANALYTICS PANEL
+  ======================== */
+  .analytics-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,18,8,0.5);
+    z-index: 500; opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    backdrop-filter: blur(2px);
+  }
+  .analytics-overlay.open { opacity: 1; pointer-events: all; }
+  .analytics-panel {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -46%) scale(0.97);
+    width: min(580px, 95vw);
+    max-height: 85vh;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    box-shadow: 0 16px 64px rgba(26,18,8,0.22);
+    z-index: 600;
+    display: flex; flex-direction: column;
+    opacity: 0; pointer-events: none;
+    transition: all 0.28s cubic-bezier(0.34,1.2,0.64,1);
+  }
+  .analytics-panel.open {
+    opacity: 1; pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .analytics-header {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .analytics-title {
+    font-size: 0.9rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .analytics-close {
+    background: none; border: none;
+    font-size: 1.1rem; color: var(--muted);
+    cursor: pointer; padding: 0.2rem 0.5rem; line-height: 1;
+  }
+  .analytics-close:hover { color: var(--ink); }
+  .analytics-body {
+    overflow-y: auto; padding: 1.4rem 1.5rem; flex: 1;
+  }
+  .an-summary {
+    display: flex; gap: 0;
+    border: 1px solid var(--border); border-radius: 2px;
+    margin-bottom: 1.6rem; overflow: hidden;
+  }
+  .an-summary-item {
+    flex: 1; text-align: center;
+    padding: 0.75rem 0.5rem;
+    border-right: 1px solid var(--border);
+  }
+  .an-summary-item:last-child { border-right: none; }
+  .an-summary-num {
+    display: block; font-size: 1.5rem; font-weight: 600;
+    color: var(--ink); line-height: 1.1;
+  }
+  .an-summary-label {
+    font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    display: block; margin-top: 0.2rem;
+  }
+  .an-section { margin-bottom: 1.8rem; }
+  .an-section:last-child { margin-bottom: 0; }
+  .an-section-title {
+    font-size: 0.63rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1rem; padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .an-sub-label {
+    font-size: 0.76rem; font-style: italic;
+    color: var(--muted); margin-bottom: 0.55rem;
+  }
+  .snap-bar {
+    display: flex; height: 22px;
+    border-radius: 2px; overflow: hidden;
+    background: var(--paper2); border: 1px solid var(--border);
+    margin-bottom: 0.55rem;
+  }
+  .snap-seg { transition: width 0.4s ease; min-width: 0; }
+  .snap-seg.s0 { background: var(--red); }
+  .snap-seg.s2 { background: #d35400; }
+  .snap-seg.s3 { background: var(--blue); }
+  .snap-seg.s5 { background: var(--green); }
+  .an-legend {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+  .an-legend-item {
+    display: flex; align-items: center;
+    gap: 0.3rem; font-size: 0.76rem; color: var(--ink);
+  }
+  .an-legend-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%; flex-shrink: 0;
+  }
+  .an-legend-dot.s0 { background: var(--red); }
+  .an-legend-dot.s2 { background: #d35400; }
+  .an-legend-dot.s3 { background: var(--blue); }
+  .an-legend-dot.s5 { background: var(--green); }
+  .rbar-row { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.55rem; }
+  .rbar-label { font-size: 0.76rem; width: 62px; flex-shrink: 0; }
+  .rbar-track { flex: 1; height: 13px; background: var(--paper2); border-radius: 2px; overflow: hidden; }
+  .rbar-fill { height: 100%; border-radius: 2px; transition: width 0.5s ease; }
+  .rbar-fill.s0 { background: var(--red); }
+  .rbar-fill.s2 { background: #d35400; }
+  .rbar-fill.s3 { background: var(--blue); }
+  .rbar-fill.s5 { background: var(--green); }
+  .rbar-count { font-size: 0.76rem; width: 34px; text-align: right; color: var(--muted); flex-shrink: 0; }
+  .act-tabs {
+    display: flex; border: 1px solid var(--border);
+    border-radius: 2px; overflow: hidden;
+    margin-bottom: 1rem; width: fit-content;
+  }
+  .act-tab {
+    background: none; border: none;
+    padding: 0.38rem 0.85rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.76rem; letter-spacing: 0.05em;
+    color: var(--muted); cursor: pointer;
+    border-right: 1px solid var(--border);
+    transition: all 0.15s;
+  }
+  .act-tab:last-child { border-right: none; }
+  .act-tab.active { background: var(--ink); color: var(--paper); }
+  .act-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+  .act-row-label { font-size: 0.72rem; width: 52px; flex-shrink: 0; color: var(--muted); text-align: right; }
+  .act-row-track { flex: 1; height: 16px; background: var(--paper2); border-radius: 2px; overflow: hidden; display: flex; }
+  .act-bar-rev { height: 100%; background: var(--blue); opacity: 0.75; }
+  .act-bar-new { height: 100%; background: var(--red); opacity: 0.85; }
+  .act-row-count { font-size: 0.72rem; min-width: 90px; color: var(--muted); }
+  .act-empty { font-size: 0.85rem; color: var(--muted); font-style: italic; padding: 0.8rem 0; }
+  .act-legend { display: flex; gap: 1rem; margin-top: 0.8rem; }
+  .analytics-btn {
+    background: none; border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.82rem; letter-spacing: 0.08em;
+    padding: 0.35rem 0.9rem; cursor: pointer;
+    border-radius: 2px; transition: all 0.2s; white-space: nowrap;
+  }
+  .analytics-btn:hover { background: var(--gold); color: var(--paper); }
+
+  /* ========================
+     DECK SELECTOR
+  ======================== */
+  .deck-select-section {
+    animation: fadeInUp 0.8s 0.3s ease both;
+    width: 100%;
+    max-width: 500px;
+  }
+  .deck-select-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+  .deck-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .deck-card {
+    border: 2px solid var(--border);
+    border-radius: 2px;
+    padding: 1.2rem 1rem;
+    background: var(--paper2);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+  }
+  .deck-card:hover { border-color: var(--ink); background: var(--paper); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .deck-card.selected { border-color: var(--red); background: var(--paper); }
+  .deck-card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+  .deck-card-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .deck-card-desc { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+  .deck-card-count { font-size: 0.68rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+  .deck-card.selected .deck-card-name { color: var(--red); }
+
+  .change-deck-btn {
+    background: none; border: 1px solid var(--muted);
+    color: var(--muted);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.82rem; letter-spacing: 0.08em;
+    padding: 0.35rem 0.9rem; cursor: pointer;
+    border-radius: 2px; transition: all 0.2s; white-space: nowrap;
+  }
+  .change-deck-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+  /* Sentence card specific styles */
+  .sentence-front-phrase {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2.4rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  .sentence-front-trad {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    color: var(--ink-light);
+    margin-top: 0.3rem;
+  }
+  .sentence-front-pinyin {
+    font-size: 1rem;
+    color: var(--red);
+    letter-spacing: 0.05em;
+  }
+  .sentence-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.15rem 0.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .sentence-meaning {
+    font-size: 1.1rem;
+    color: var(--blue);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Deck selector overlay (for change-deck mid-session) */
+  .deck-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,18,8,0.6);
+    z-index: 200;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .deck-overlay.open { opacity: 1; pointer-events: all; }
+  .deck-modal {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+  }
+  .deck-modal-title { font-size: 1.3rem; font-weight: 300; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .deck-modal-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .deck-modal-close {
+    margin-top: 1rem;
+    background: none; border: 1px solid var(--border);
+    color: var(--muted); font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; padding: 0.4rem 1.2rem;
+    cursor: pointer; border-radius: 2px; transition: all 0.2s;
+  }
+  .deck-modal-close:hover { border-color: var(--ink); color: var(--ink); }
+
+  @media (max-width: 420px) {
+    .deck-cards { grid-template-columns: 1fr; }
+  }
+
+  /* ========================
+     TEXT SIZE PICKER
+  ======================== */
+  .size-picker {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .size-btn {
+    background: none;
+    border: none;
+    border-right: 1px solid var(--border);
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.3rem 0.5rem;
+    transition: background 0.15s, color 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .size-btn:last-child { border-right: none; }
+  .size-btn:hover { background: var(--paper2); color: var(--ink); }
+  .size-btn.active { background: var(--ink); color: var(--paper); }
+
+  /* ========================
+     VOICE PICKER MODAL
+  ======================== */
+  .voice-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,18,8,0.5);
+    z-index: 300;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .voice-overlay.open { opacity: 1; pointer-events: all; }
+  .voice-modal {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    width: min(560px, 94vw);
+    max-height: 82vh;
+    display: flex; flex-direction: column;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  }
+  .voice-modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .voice-modal-title { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+  .voice-modal-close {
+    background: none; border: none; font-size: 1.1rem;
+    cursor: pointer; color: var(--muted); padding: 0.2rem 0.4rem;
+    transition: color 0.15s; line-height: 1;
+  }
+  .voice-modal-close:hover { color: var(--ink); }
+  .voice-modal-intro {
+    padding: 0.9rem 1.5rem 0.7rem;
+    font-size: 0.8rem; color: var(--muted); line-height: 1.55;
+    border-bottom: 1px solid var(--border); flex-shrink: 0;
+  }
+  .voice-no-voices {
+    padding: 2rem 1.5rem; text-align: center;
+    font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+  }
+  .voice-list {
+    overflow-y: auto; flex: 1;
+    padding: 0.6rem 0;
+  }
+  .voice-item {
+    display: flex; align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: background 0.12s, border-color 0.12s;
+  }
+  .voice-item:hover { background: var(--paper2); }
+  .voice-item.selected {
+    border-left-color: var(--red);
+    background: var(--paper2);
+  }
+  .voice-item-radio {
+    width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0;
+    border: 2px solid var(--border); border-radius: 50%;
+    transition: all 0.15s;
+  }
+  .voice-item.selected .voice-item-radio {
+    border-color: var(--red);
+    background: radial-gradient(circle, var(--red) 40%, transparent 41%);
+  }
+  .voice-item-info { flex: 1; min-width: 0; }
+  .voice-item-name {
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 0.15rem;
+    display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .voice-badge {
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.1rem 0.4rem; border-radius: 2px; font-weight: 600;
+    border: 1px solid;
+  }
+  .voice-badge-recommended { color: var(--green); border-color: var(--green); background: rgba(45,106,79,0.07); }
+  .voice-badge-neural      { color: var(--blue);  border-color: var(--blue);  background: rgba(26,74,107,0.07); }
+  .voice-badge-system      { color: var(--muted); border-color: var(--border); }
+  .voice-item-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.45; }
+  .voice-item-actions {
+    display: flex; align-items: center; flex-shrink: 0;
+  }
+  .voice-preview-btn {
+    background: none; border: 1px solid var(--border);
+    border-radius: 2px; padding: 0.25rem 0.55rem;
+    font-size: 0.72rem; color: var(--muted);
+    cursor: pointer; font-family: 'Cormorant Garamond', serif;
+    transition: all 0.15s; white-space: nowrap;
+  }
+  .voice-preview-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .voice-preview-btn.playing { border-color: var(--red); color: var(--red); }
+  .voice-modal-footer {
+    padding: 0.9rem 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0; gap: 1rem;
+  }
+  .voice-modal-footer-note { font-size: 0.72rem; color: var(--muted); line-height: 1.4; flex: 1; }
+  .voice-modal-done {
+    background: var(--ink); color: var(--paper);
+    border: none; border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; letter-spacing: 0.1em;
+    padding: 0.5rem 1.5rem; cursor: pointer; transition: opacity 0.2s;
+  }
+  .voice-modal-done:hover { opacity: 0.85; }
+  .voice-btn {
+    background: none; border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.82rem; letter-spacing: 0.04em;
+    padding: 0.35rem 0.75rem; cursor: pointer;
+    border-radius: 2px; transition: all 0.2s; white-space: nowrap;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .voice-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .voice-btn-name { font-size: 0.75rem; max-width: 80px; overflow: hidden; text-overflow: ellipsis; }
+</style>
+</head>
+<body>
+
+<!-- INTRO SCREEN -->
+<div id="intro-screen">
+  <div class="intro-logo">漢</div>
+  <div class="intro-title">HSK Flashcards</div>
+  <div class="intro-sub">Master Mandarin Chinese with spaced repetition — with authentic pronunciation and example sentences.</div>
+
+  <div class="deck-select-section">
+    <div class="deck-select-label">Choose your deck</div>
+    <div class="deck-cards">
+      <div class="deck-card selected" id="deck-card-hsk" onclick="introDeckSelect('hsk')">
+        <span class="deck-card-icon">🀄</span>
+        <div class="deck-card-name">HSK Vocabulary</div>
+        <div class="deck-card-desc">Official Mandarin curriculum from beginner to advanced</div>
+        <div class="deck-card-count">~500 words · HSK 1–6</div>
+      </div>
+      <div class="deck-card" id="deck-card-sentences" onclick="introDeckSelect('sentences')">
+        <span class="deck-card-icon">💬</span>
+        <div class="deck-card-name">Sentence Starters</div>
+        <div class="deck-card-desc">50 essential Chinese sentence chunks for fluent conversation</div>
+        <div class="deck-card-count">49 phrases</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="start-btn" onclick="startApp()">开始学习 · Begin</button>
+</div>
+
+<!-- DECK CHANGE MODAL (mid-session) -->
+<div class="deck-overlay" id="deck-overlay" onclick="closeDeckOverlay(event)">
+  <div class="deck-modal" onclick="event.stopPropagation()">
+    <div class="deck-modal-title">Switch Deck</div>
+    <div class="deck-modal-sub">Select a deck to study. Your progress in each deck is saved separately.</div>
+    <div class="deck-cards" style="margin-bottom:0">
+      <div class="deck-card" id="modal-deck-hsk" onclick="switchDeck('hsk')">
+        <span class="deck-card-icon">🀄</span>
+        <div class="deck-card-name">HSK Vocabulary</div>
+        <div class="deck-card-desc">Official Mandarin curriculum from beginner to advanced</div>
+        <div class="deck-card-count">~500 words · HSK 1–6</div>
+      </div>
+      <div class="deck-card" id="modal-deck-sentences" onclick="switchDeck('sentences')">
+        <span class="deck-card-icon">💬</span>
+        <div class="deck-card-name">Sentence Starters</div>
+        <div class="deck-card-desc">50 essential Chinese sentence chunks for fluent conversation</div>
+        <div class="deck-card-count">49 phrases</div>
+      </div>
+    </div>
+    <button class="deck-modal-close" onclick="closeDeckOverlay()">Cancel</button>
+  </div>
+</div>
+
+<!-- VOICE PICKER MODAL -->
+<div class="voice-overlay" id="voice-overlay" onclick="closeVoicePicker(event)">
+  <div class="voice-modal" onclick="event.stopPropagation()">
+    <div class="voice-modal-header">
+      <span class="voice-modal-title">🔊 Choose Voice</span>
+      <button class="voice-modal-close" onclick="closeVoicePicker()">✕</button>
+    </div>
+    <div class="voice-modal-intro">
+      Select the Mandarin Chinese voice used for flashcard audio. Click <strong>Preview</strong> to hear a sample.
+      Available voices depend on your device and browser — install additional voices in your OS settings for more options.
+    </div>
+    <div class="voice-list" id="voice-list">
+      <!-- populated by renderVoicePicker() -->
+    </div>
+    <div class="voice-modal-footer">
+      <div class="voice-modal-footer-note">
+        For best quality, use <strong>Google 普通话</strong> in Chrome (online), or install an Enhanced voice in your OS settings.
+      </div>
+      <button class="voice-modal-done" onclick="closeVoicePicker()">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo" onclick="goHome()" title="Back to home">
+    <span class="logo-char">漢</span>
+    <span class="logo-text">HSK Flashcards</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="change-deck-btn" onclick="openDeckOverlay()">⇄ Deck</button>
+    <button class="analytics-btn" onclick="openAnalytics()">📈 Analytics</button>
+    <div class="size-picker" title="Text size">
+      <button class="size-btn" data-size="s" onclick="setTextSize('s')" style="font-size:0.7rem;">A</button>
+      <button class="size-btn" data-size="m" onclick="setTextSize('m')" style="font-size:0.85rem;">A</button>
+      <button class="size-btn" data-size="l" onclick="setTextSize('l')" style="font-size:1rem;">A</button>
+      <button class="size-btn" data-size="xl" onclick="setTextSize('xl')" style="font-size:1.15rem;">A</button>
+    </div>
+    <button class="settings-trigger" onclick="openSettings()">⚙ Settings</button>
+    <div class="header-stats">
+    <div class="stat-item">
+      <span class="stat-num" id="stat-due">0</span>
+      <span class="stat-label">Due Today</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" id="stat-learned">0</span>
+      <span class="stat-label">Reviewed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" id="stat-streak">0</span>
+      <span class="stat-label">Streak</span>
+    </div>
+    <button class="voice-btn" onclick="openVoicePicker()" title="Choose voice">
+      <span>🔊</span>
+      <span class="voice-btn-name" id="stat-voice-name">Voice</span>
+    </button>
+  </div>
+  </div>
+</header>
+
+<!-- LEVEL BAR -->
+<div class="level-bar" id="level-bar">
+  <span class="level-label">Level:</span>
+  <button class="level-btn all-btn active" onclick="setLevel('all')">All HSK</button>
+  <button class="level-btn" onclick="setLevel(1)">HSK 1</button>
+  <button class="level-btn" onclick="setLevel(2)">HSK 2</button>
+  <button class="level-btn" onclick="setLevel(3)">HSK 3</button>
+  <button class="level-btn" onclick="setLevel(4)">HSK 4</button>
+  <button class="level-btn" onclick="setLevel(5)">HSK 5</button>
+  <button class="level-btn" onclick="setLevel(6)">HSK 6</button>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="queue-info" id="queue-info">
+    <div class="queue-pill">
+      <div class="queue-dot" style="background:#c0392b"></div>
+      <span id="q-new">0 New</span>
+    </div>
+    <div class="queue-pill">
+      <div class="queue-dot" style="background:#1a4a6b"></div>
+      <span id="q-review">0 Review</span>
+    </div>
+    <div class="queue-pill">
+      <div class="queue-dot" style="background:#2d6a4f"></div>
+      <span id="q-done">0 Done</span>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+  </div>
+
+  <!-- CARD CONTAINER -->
+  <div id="card-container" style="width:100%;max-width:600px;">
+    <!-- Dynamically inserted -->
+  </div>
+
+  <!-- Rating buttons are now rendered inside the card back face dynamically -->
+</main>
+
+<div class="toast" id="toast"></div>
+
+<!-- ANALYTICS OVERLAY -->
+<div class="analytics-overlay" id="analytics-overlay" onclick="closeAnalytics()"></div>
+
+<!-- ANALYTICS PANEL -->
+<div class="analytics-panel" id="analytics-panel">
+  <div class="analytics-header">
+    <span class="analytics-title">📈 Analytics</span>
+    <button class="analytics-close" onclick="closeAnalytics()">✕</button>
+  </div>
+  <div class="analytics-body" id="analytics-body">
+    <!-- Dynamically rendered by renderAnalyticsPanel() -->
+  </div>
+</div>
+
+<!-- SETTINGS OVERLAY -->
+<div class="settings-overlay" id="settings-overlay" onclick="closeSettings()"></div>
+
+<!-- SETTINGS PANEL -->
+<div class="settings-panel" id="settings-panel">
+  <div class="settings-header">
+    <span class="settings-title">⚙ Study Settings</span>
+    <button class="settings-close" onclick="closeSettings()">✕</button>
+  </div>
+  <div class="settings-body">
+
+    <div class="settings-group">
+      <div class="settings-group-title">Daily Limits</div>
+
+      <div class="setting-row">
+        <div class="setting-label-row">
+          <span class="setting-label">New cards per day</span>
+          <span class="setting-value" id="new-cards-val">20</span>
+        </div>
+        <input type="range" class="setting-slider" id="new-cards-slider"
+               min="5" max="100" step="5" value="20"
+               oninput="updateSliderDisplay('new-cards-slider','new-cards-val')">
+        <span class="setting-desc">How many brand-new words to introduce each day. Lower this if you feel overwhelmed; raise it to progress faster.</span>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-label-row">
+          <span class="setting-label">Reviews per day</span>
+          <span class="setting-value" id="review-cards-val">∞</span>
+        </div>
+        <input type="range" class="setting-slider" id="review-cards-slider"
+               min="0" max="500" step="10" value="0"
+               oninput="updateSliderDisplay('review-cards-slider','review-cards-val')">
+        <span class="setting-desc">Max reviews per session. Set to 0 for unlimited — all due cards will appear. Cap this on busy days.</span>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <div class="settings-group-title">About the ratings</div>
+      <div class="setting-desc" style="line-height:1.65;font-style:normal;">
+        <strong style="color:#c0392b;">✗ Forgot</strong> — Reset to 1 day. Card reappears at end of session.<br><br>
+        <strong style="color:#d35400;">◑ Hard</strong> — Interval stays short (1–2 days). Easiness penalised slightly.<br><br>
+        <strong style="color:var(--blue);">✓ Remembered</strong> — Standard SM-2 progression.<br><br>
+        <strong style="color:var(--green);">★ Easy</strong> — Longer interval boost. Easiness improved.
+      </div>
+    </div>
+
+  </div>
+  <button class="settings-save-btn" onclick="saveSettings()">Apply &amp; Rebuild Queue</button>
+</div>
+
+<script>
+// ============================================================
+// HSK VOCABULARY DATABASE
+// ============================================================
+// ============================================================
+// DECK DATA CACHE  (loaded from JSON files at startup)
+// ============================================================
+const DECK_CACHE = { hsk: {}, sentences: [] };
+
+async function loadAllDecks() {
+  const [h1, h2, h3, h4, h5, h6, sent] = await Promise.all([
+    fetch('data/hsk1.json').then(r => r.json()),
+    fetch('data/hsk2.json').then(r => r.json()),
+    fetch('data/hsk3.json').then(r => r.json()),
+    fetch('data/hsk4.json').then(r => r.json()),
+    fetch('data/hsk5.json').then(r => r.json()),
+    fetch('data/hsk6.json').then(r => r.json()),
+    fetch('data/sentences.json').then(r => r.json()),
+  ]);
+  DECK_CACHE.hsk = { 1: h1, 2: h2, 3: h3, 4: h4, 5: h5, 6: h6 };
+  DECK_CACHE.sentences = sent;
+}
+
+
+// ============================================================
+// SM-2 ALGORITHM
+// ============================================================
+function sm2(card, quality) {
+  // quality: 0=forgot, 2=hard, 3=good, 5=easy
+  let { interval, repetitions, easiness } = card.srs;
+  
+  if (quality === 0) {
+    // Forgot: full reset
+    repetitions = 0;
+    interval = 1;
+  } else if (quality === 2) {
+    // Hard: keep repetitions but give a short interval (1 or 2 days)
+    // Don't advance the repetition count fully — clamp interval growth
+    interval = Math.max(1, Math.min(2, Math.round(interval * 0.5)));
+    // Don't increment repetitions so the card doesn't escalate too fast
+  } else {
+    // Good (3) or Easy (5): standard SM-2 progression
+    if (repetitions === 0) interval = 1;
+    else if (repetitions === 1) interval = 6;
+    else interval = Math.round(interval * easiness);
+    repetitions += 1;
+  }
+  
+  // Update easiness factor (applies to all ratings)
+  easiness = Math.max(1.3, easiness + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
+  
+  const now = new Date();
+  const nextDate = new Date(now);
+  nextDate.setDate(now.getDate() + interval);
+  
+  return {
+    interval,
+    repetitions,
+    easiness,
+    nextReview: nextDate.toISOString(),
+    lastReview: now.toISOString()
+  };
+}
+
+// ============================================================
+// APP STATE
+// ============================================================
+const STATE_KEY = 'hsk_srs_v1';
+let state = {
+  cards: {}, // { "hsk1_0": { srs: {...}, lastRating: 3 } }
+  session: {
+    reviewed: 0,
+    streak: 0,
+    longestStreak: 0,
+    lastStudyDate: null,
+  },
+  settings: {
+    newCardsPerDay: 20,
+    reviewCardsPerDay: 0, // 0 = unlimited
+  },
+  history: {
+    ratingCounts: { forgot: 0, hard: 0, good: 0, easy: 0 },
+    dailyLog: {} // { "YYYY-MM-DD": { reviews: N, newCards: N } }
+  }
+};
+
+function saveState() {
+  try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STATE_KEY);
+    if (raw) {
+      const loaded = JSON.parse(raw);
+      // Deep merge to preserve default structure
+      state.cards   = loaded.cards   ?? {};
+      state.session = { ...state.session, ...(loaded.session ?? {}) };
+      state.settings = { ...state.settings, ...(loaded.settings ?? {}) };
+      if (loaded.history) {
+        state.history.ratingCounts = { ...state.history.ratingCounts, ...(loaded.history.ratingCounts ?? {}) };
+        state.history.dailyLog     = { ...(loaded.history.dailyLog ?? {}) };
+      }
+    }
+  } catch(e) {}
+}
+
+// ============================================================
+// SETTINGS PANEL
+// ============================================================
+function openSettings() {
+  // Sync sliders to current values before opening
+  const newSlider = document.getElementById('new-cards-slider');
+  const revSlider = document.getElementById('review-cards-slider');
+  if (newSlider) {
+    newSlider.value = state.settings.newCardsPerDay ?? 20;
+    updateSliderDisplay('new-cards-slider', 'new-cards-val');
+  }
+  if (revSlider) {
+    revSlider.value = state.settings.reviewCardsPerDay ?? 0;
+    updateSliderDisplay('review-cards-slider', 'review-cards-val');
+  }
+  document.getElementById('settings-panel').classList.add('open');
+  document.getElementById('settings-overlay').classList.add('open');
+}
+
+function closeSettings() {
+  document.getElementById('settings-panel').classList.remove('open');
+  document.getElementById('settings-overlay').classList.remove('open');
+}
+
+function updateSliderDisplay(sliderId, valId) {
+  const slider = document.getElementById(sliderId);
+  const valEl  = document.getElementById(valId);
+  if (!slider || !valEl) return;
+  const v = parseInt(slider.value);
+  if (sliderId === 'review-cards-slider') {
+    valEl.textContent = v === 0 ? '∞' : v;
+  } else {
+    valEl.textContent = v;
+  }
+}
+
+function saveSettings() {
+  const newVal = parseInt(document.getElementById('new-cards-slider').value);
+  const revVal = parseInt(document.getElementById('review-cards-slider').value);
+  state.settings.newCardsPerDay    = newVal;
+  state.settings.reviewCardsPerDay = revVal;
+  saveState();
+  closeSettings();
+  // Rebuild queue with new limits and restart
+  currentCardIdx = 0;
+  sessionReviewed = 0;
+  buildQueue();
+  showCard();
+  synth.cancel();
+  showToast(`Settings saved — ${newVal} new · ${revVal === 0 ? '∞' : revVal} reviews`);
+}
+
+function getCardKey(level, idx) {
+  if (level === 'sentences') return `sent_${idx}`;
+  return `hsk${level}_${idx}`;
+}
+
+function getCardSRS(level, idx) {
+  const key = getCardKey(level, idx);
+  if (!state.cards[key]) {
+    state.cards[key] = {
+      srs: { interval: 0, repetitions: 0, easiness: 2.5, nextReview: null, lastReview: null }
+    };
+  }
+  return state.cards[key].srs;
+}
+
+function isDue(srs) {
+  if (!srs.nextReview) return true; // new card
+  return new Date(srs.nextReview) <= new Date();
+}
+
+// ============================================================
+// CURRENT SESSION
+// ============================================================
+let currentDeck = 'hsk';       // 'hsk' | 'sentences'
+let currentLevel = 'all';
+let queue = [];
+let currentCardIdx = 0;
+let isFlipped = false;
+let sessionReviewed = 0;
+let audioQueue = [];
+let audioPlaying = false;
+
+function buildQueue() {
+  queue = [];
+  const newCards = [];
+  const reviewCards = [];
+
+  if (currentDeck === 'sentences') {
+    DECK_CACHE.sentences.forEach((word, idx) => {
+      const srs = getCardSRS('sentences', idx);
+      const item = { level: 'sentences', idx, word, srs };
+      if (!srs.nextReview) newCards.push(item);
+      else if (isDue(srs)) reviewCards.push(item);
+    });
+  } else {
+    const levels = currentLevel === 'all' ? [1,2,3,4,5,6] : [parseInt(currentLevel)];
+    for (const level of levels) {
+      const words = DECK_CACHE.hsk[level] || [];
+      words.forEach((word, idx) => {
+        const srs = getCardSRS(level, idx);
+        const item = { level, idx, word, srs };
+        if (!srs.nextReview) newCards.push(item);
+        else if (isDue(srs)) reviewCards.push(item);
+      });
+    }
+  }
+
+  const maxNew    = state.settings.newCardsPerDay ?? 20;
+  const maxReview = state.settings.reviewCardsPerDay ?? 0; // 0 = unlimited
+
+  const limitedNew    = newCards.slice(0, maxNew);
+  const limitedReview = maxReview === 0 ? reviewCards : reviewCards.slice(0, maxReview);
+
+  // Reviews first, then new cards
+  queue = [...limitedReview, ...limitedNew];
+
+  updateStats();
+  return queue;
+}
+
+function updateStats() {
+  let totalNew = 0, dueCount = 0, doneCount = 0;
+
+  if (currentDeck === 'sentences') {
+    DECK_CACHE.sentences.forEach((_, idx) => {
+      const srs = getCardSRS('sentences', idx);
+      if (!srs.nextReview) totalNew++;
+      else if (isDue(srs)) dueCount++;
+      else doneCount++;
+    });
+  } else {
+    const levels = currentLevel === 'all' ? [1,2,3,4,5,6] : [parseInt(currentLevel)];
+    for (const level of levels) {
+      const words = DECK_CACHE.hsk[level] || [];
+      words.forEach((word, idx) => {
+        const srs = getCardSRS(level, idx);
+        if (!srs.nextReview) totalNew++;
+        else if (isDue(srs)) dueCount++;
+        else doneCount++;
+      });
+    }
+  }
+
+  const maxNew    = state.settings.newCardsPerDay ?? 20;
+  const maxReview = state.settings.reviewCardsPerDay ?? 0;
+  const cappedNew    = Math.min(totalNew, maxNew);
+  const cappedReview = maxReview === 0 ? dueCount : Math.min(dueCount, maxReview);
+  
+  document.getElementById('stat-due').textContent = queue.length;
+  document.getElementById('stat-learned').textContent = sessionReviewed;
+  document.getElementById('q-new').textContent = `${cappedNew} New`;
+  document.getElementById('q-review').textContent = `${cappedReview}${maxReview > 0 ? '/'+maxReview : ''} Review`;
+  document.getElementById('q-done').textContent = `${doneCount} Done`;
+  document.getElementById('stat-streak').textContent = state.session.streak || 0;
+}
+
+function showCard() {
+  isFlipped = false;
+
+  if (currentCardIdx >= queue.length || queue.length === 0) {
+    showEmptyState();
+    return;
+  }
+
+  const item = queue[currentCardIdx];
+  const { word, level } = item;
+  const progress = queue.length > 0 ? (currentCardIdx / queue.length) * 100 : 0;
+  document.getElementById('progress-fill').style.width = progress + '%';
+
+  // Branch to sentence card renderer for sentence deck
+  if (currentDeck === 'sentences') {
+    buildSentenceCardHTML(item);
+    return;
+  }
+
+  const container = document.getElementById('card-container');
+  container.innerHTML = `
+    <div class="card-scene" id="card-scene">
+      <div class="card" id="main-card" onclick="flipCard()">
+        <!-- FRONT -->
+        <div class="card-face card-front" id="card-front-face">
+          <div class="card-front-inner">
+            <span class="hsk-badge">HSK ${level}</span>
+            <span class="card-number">${currentCardIdx + 1} / ${queue.length}</span>
+            <div class="char-display">
+              <div class="simplified">${word.simp}</div>
+              <div class="trad-label">Traditional</div>
+              <div class="traditional">${word.trad}</div>
+            </div>
+            <div class="tap-hint">tap to reveal</div>
+          </div>
+        </div>
+        
+        <!-- BACK -->
+        <div class="card-face card-back" id="card-back-face">
+          <div class="card-back-inner">
+            <div class="back-header">
+              <div class="back-chars">
+                <div class="back-simplified">${word.simp}</div>
+                <div class="back-traditional">Traditional: ${word.trad}</div>
+              </div>
+              <div style="text-align:right;">
+                <div class="pinyin-display">${word.pinyin}</div>
+                <div class="meaning-display">${word.meaning}</div>
+              </div>
+            </div>
+            
+            <!-- AUDIO ROW -->
+            <div class="audio-row">
+              <button class="audio-btn" id="word-audio-btn" onclick="event.stopPropagation(); speakWord()">
+                <span class="speaker-icon">🔊</span> Speak word
+              </button>
+              <button class="audio-btn" id="sent-audio-btn" onclick="event.stopPropagation(); speakSentence()">
+                <span class="speaker-icon">🔊</span> Speak sentence
+              </button>
+            </div>
+            
+            <!-- EXAMPLE -->
+            <div class="section-divider"><span class="section-label">Example sentence</span></div>
+            <div class="example-block">
+              <div class="example-zh">${highlightWord(word.example_zh, word.simp)}</div>
+              <div class="example-pinyin">${word.example_py}</div>
+              <div class="example-en">${word.example_en}</div>
+            </div>
+            
+            <!-- CHARACTER BREAKDOWN -->
+            ${word.chars && word.chars.length > 1 ? `
+            <div class="section-divider"><span class="section-label">Character breakdown</span></div>
+            <div class="char-breakdown">
+              ${word.chars.map(c => `
+                <div class="char-card">
+                  <div class="char-card-zh">${c.s}</div>
+                  <div class="char-card-tc">${c.t !== c.s ? c.t : ''}</div>
+                  <div class="char-card-meaning">${c.m}</div>
+                </div>
+              `).join('')}
+            </div>
+            ` : ''}
+            
+            <!-- RATING BUTTONS — embedded in card back -->
+            <div class="rating-section" id="rating-section">
+              <div class="rating-label">How well did you recall?</div>
+              <div class="rating-btns">
+                <button class="rating-btn forgot" onclick="event.stopPropagation(); rateCard(0)">
+                  ✗ Forgot
+                  <span class="sub">Again soon</span>
+                </button>
+                <button class="rating-btn hard" onclick="event.stopPropagation(); rateCard(2)">
+                  ◑ Hard
+                  <span class="sub">Short interval</span>
+                </button>
+                <button class="rating-btn remembered" onclick="event.stopPropagation(); rateCard(3)">
+                  ✓ Good
+                  <span class="sub">Standard</span>
+                </button>
+                <button class="rating-btn easy" onclick="event.stopPropagation(); rateCard(5)">
+                  ★ Easy
+                  <span class="sub">Boost</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Set card height to front face height initially.
+  // After a small delay (DOM paint), measure both faces and set the card
+  // wrapper height to whichever is taller — this prevents the back face
+  // from being clipped or the scene from collapsing to zero.
+  requestAnimationFrame(() => {
+    const frontFace = document.getElementById('card-front-face');
+    const backFace  = document.getElementById('card-back-face');
+    const card      = document.getElementById('main-card');
+    if (frontFace && backFace && card) {
+      const h = Math.max(frontFace.scrollHeight, backFace.scrollHeight);
+      card.style.height = h + 'px';
+    }
+  });
+}
+
+function buildSentenceCardHTML(item) {
+  const { word } = item;
+  const container = document.getElementById('card-container');
+  container.innerHTML = `
+    <div class="card-scene" id="card-scene">
+      <div class="card" id="main-card" onclick="flipCard()">
+        <!-- FRONT -->
+        <div class="card-face card-front" id="card-front-face">
+          <div class="card-front-inner">
+            <span class="sentence-badge">Sentence Starter</span>
+            <span class="card-number">${currentCardIdx + 1} / ${queue.length}</span>
+            <div class="char-display">
+              <div class="sentence-front-phrase">${word.simp}</div>
+              <div class="sentence-front-trad">${word.trad}</div>
+            </div>
+            <div class="tap-hint">tap to reveal</div>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face card-back" id="card-back-face">
+          <div class="card-back-inner">
+            <div class="back-header">
+              <div class="back-chars">
+                <div class="back-simplified" style="font-size:1.6rem;">${word.simp}</div>
+                <div class="back-traditional" style="font-size:1rem; color: var(--ink-light);">${word.trad}</div>
+                <div style="font-size:0.8rem; color: var(--ink-faint); margin-top:0.2rem;">${word.pinyin}</div>
+              </div>
+              <div style="text-align:right;">
+                <div class="sentence-meaning">${word.meaning}</div>
+              </div>
+            </div>
+
+            <!-- AUDIO ROW -->
+            <div class="audio-row">
+              <button class="audio-btn" id="word-audio-btn" onclick="event.stopPropagation(); speakWord()">
+                <span class="speaker-icon">🔊</span> Speak phrase
+              </button>
+              <button class="audio-btn" id="sent-audio-btn" onclick="event.stopPropagation(); speakSentence()">
+                <span class="speaker-icon">🔊</span> Speak example
+              </button>
+            </div>
+
+            <!-- EXAMPLE -->
+            <div class="section-divider"><span class="section-label">Example sentence</span></div>
+            <div class="example-block">
+              <div class="example-zh">${word.example_zh}</div>
+              <div class="example-pinyin">${word.example_py}</div>
+              <div class="example-en">${word.example_en}</div>
+            </div>
+
+            <!-- RATING BUTTONS -->
+            <div class="rating-section" id="rating-section">
+              <div class="rating-label">How well did you recall?</div>
+              <div class="rating-btns">
+                <button class="rating-btn forgot" onclick="event.stopPropagation(); rateCard(0)">
+                  ✗ Forgot
+                  <span class="sub">Again soon</span>
+                </button>
+                <button class="rating-btn hard" onclick="event.stopPropagation(); rateCard(2)">
+                  ◑ Hard
+                  <span class="sub">Short interval</span>
+                </button>
+                <button class="rating-btn remembered" onclick="event.stopPropagation(); rateCard(3)">
+                  ✓ Good
+                  <span class="sub">Standard</span>
+                </button>
+                <button class="rating-btn easy" onclick="event.stopPropagation(); rateCard(5)">
+                  ★ Easy
+                  <span class="sub">Boost</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  requestAnimationFrame(() => {
+    const frontFace = document.getElementById('card-front-face');
+    const backFace  = document.getElementById('card-back-face');
+    const card      = document.getElementById('main-card');
+    if (frontFace && backFace && card) {
+      const h = Math.max(frontFace.scrollHeight, backFace.scrollHeight);
+      card.style.height = h + 'px';
+    }
+  });
+}
+
+function highlightWord(sentence, word) {
+  return sentence.replace(word, `<span class="highlight-word">${word}</span>`);
+}
+
+function flipCard() {
+  if (isFlipped) return;
+  isFlipped = true;
+  const card = document.getElementById('main-card');
+  card.classList.add('flipped');
+  
+  // Auto-play audio sequence: word first, then sentence
+  setTimeout(() => {
+    autoPlaySequence();
+  }, 650);
+}
+
+// ============================================================
+// WEB SPEECH API — Best quality Chinese voice selection
+// ============================================================
+let synth = window.speechSynthesis;
+let voices = [];
+let preferredVoice = null;
+
+// Voice quality ranking — higher index = higher preference
+// We score voices by name patterns known to be high quality
+const VOICE_QUALITY_HINTS = [
+  // Google's neural zh-CN voices (best available in Chrome)
+  'google 普通话', 'google chinese', 'google zh',
+  // macOS high-quality voices
+  'tingting', 'ting-ting', 'meijia', 'mei-jia', 'lekiu',
+  'sin-ji', 'sinji',
+  // Windows neural voices
+  'xiaoxiao', 'yunxi', 'yunyang', 'xiaohan', 'xiaomeng',
+  'xiaomo', 'xiaorui', 'xiaoshuang', 'xiaoyan', 'xiaoyou',
+  'yunjian', 'yunfeng', 'yunhao', 'yunxia', 'xiaozhen',
+  // Older but decent voices
+  'huihui', 'kangkang', 'yaoyao',
+  // Generic zh-CN fallback
+  'zh-cn',
+];
+
+function scoreVoice(v) {
+  const name = v.name.toLowerCase();
+  const lang = v.lang.toLowerCase();
+  // Must be Chinese
+  if (!lang.startsWith('zh')) return -1;
+  // Google zh-CN is the clear winner — give it an overwhelming lead
+  if (name.includes('google') && lang === 'zh-cn') return 1000;
+  // Prefer zh-CN (Mandarin mainland) over zh-TW
+  let score = lang === 'zh-cn' ? 10 : lang.startsWith('zh') ? 5 : 0;
+  // Bonus for name matches
+  for (let i = 0; i < VOICE_QUALITY_HINTS.length; i++) {
+    if (name.includes(VOICE_QUALITY_HINTS[i])) {
+      score += i + 1; // higher-indexed hints score more
+    }
+  }
+  // Prefer non-compact / non-light variants
+  if (name.includes('compact') || name.includes('light')) score -= 3;
+  // Prefer premium/enhanced/neural
+  if (name.includes('premium') || name.includes('enhanced') || name.includes('neural')) score += 5;
+  return score;
+}
+
+let allChineseVoices = [];
+let voiceIndex = 0;
+
+function loadVoices() {
+  voices = synth.getVoices();
+  const chinese = voices.filter(v => v.lang.toLowerCase().startsWith('zh') || v.lang.toLowerCase().includes('zh'));
+  if (chinese.length === 0) {
+    preferredVoice = null;
+    updateVoiceDisplay();
+    return;
+  }
+  // Sort by score descending
+  allChineseVoices = [...chinese].sort((a, b) => scoreVoice(b) - scoreVoice(a));
+  preferredVoice = allChineseVoices[voiceIndex] || allChineseVoices[0];
+
+  console.log('Available Chinese voices:', allChineseVoices.map(v => `${v.name} [${v.lang}] score=${scoreVoice(v)}`));
+  console.log('Selected voice:', preferredVoice?.name, preferredVoice?.lang);
+  updateVoiceDisplay();
+}
+
+function shortVoiceName(v) {
+  return v.name
+    .replace(/^Microsoft\s+/i, '')
+    .replace(/^Google\s+/i, 'Google ')
+    .replace(/\s+(Online|Natural|Neural|Desktop|Mobile|Enhanced|Premium)\b.*/i, '')
+    .replace(/\s+-\s+.*$/, '');
+}
+
+function updateVoiceDisplay() {
+  const el = document.getElementById('stat-voice-name');
+  if (!el) return;
+  el.textContent = preferredVoice ? shortVoiceName(preferredVoice).substring(0, 14) : 'No voice';
+}
+
+// ── Voice picker description helpers ─────────────────────────
+function voiceDescription(v) {
+  const name = v.name.toLowerCase();
+  const lang = v.lang;
+
+  // Google cloud voices
+  if (name.includes('google')) {
+    if (lang === 'zh-CN') return { desc: 'Google\'s cloud-based Mandarin voice. Clear, natural, and highly recommended. Requires an internet connection in Chrome.', badges: ['recommended', 'neural'] };
+    if (lang === 'zh-TW') return { desc: 'Google\'s cloud-based Traditional Chinese (Taiwan) voice. Requires an internet connection in Chrome.', badges: ['neural'] };
+    return { desc: 'Google cloud voice. Requires internet in Chrome.', badges: ['neural'] };
+  }
+  // macOS enhanced/premium
+  if (name.includes('ting-ting') || name.includes('tingting')) return { desc: 'Apple\'s Ting-Ting — a high-quality Mandarin voice for macOS. Install the Enhanced version in System Settings for best clarity.', badges: ['system'] };
+  if (name.includes('mei-jia') || name.includes('meijia')) return { desc: 'Apple\'s Mei-Jia — a warm Mandarin female voice for macOS. Available as Enhanced in System Settings.', badges: ['system'] };
+  if (name.includes('sin-ji') || name.includes('sinji')) return { desc: 'Apple\'s Sin-Ji — a Cantonese voice for macOS.', badges: ['system'] };
+  if (name.includes('lekiu')) return { desc: 'Apple\'s Lekiu — a Malay/Chinese voice for macOS.', badges: ['system'] };
+  // Windows neural
+  if (name.includes('xiaoxiao')) return { desc: 'Microsoft Xiaoxiao — a bright, expressive Mandarin neural voice. One of the best Windows options.', badges: ['neural'] };
+  if (name.includes('yunxi'))    return { desc: 'Microsoft Yunxi — a warm male Mandarin neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('yunyang'))  return { desc: 'Microsoft Yunyang — a professional Mandarin male neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaohan'))  return { desc: 'Microsoft Xiaohan — a gentle Mandarin female neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaomeng')) return { desc: 'Microsoft Xiaomeng — a Mandarin female neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaomo'))   return { desc: 'Microsoft Xiaomo — a calm Mandarin female neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaorui'))  return { desc: 'Microsoft Xiaorui — a Mandarin female neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaoshuang')) return { desc: 'Microsoft Xiaoshuang — a child-like Mandarin neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaoyan'))  return { desc: 'Microsoft Xiaoyan — an older standard Mandarin voice for Windows.', badges: ['system'] };
+  if (name.includes('xiaoyou'))  return { desc: 'Microsoft Xiaoyou — a youthful Mandarin neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('yunjian'))  return { desc: 'Microsoft Yunjian — a Mandarin male neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('yunfeng'))  return { desc: 'Microsoft Yunfeng — a Mandarin male neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('yunhao'))   return { desc: 'Microsoft Yunhao — a Mandarin male neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('yunxia'))   return { desc: 'Microsoft Yunxia — a Mandarin female neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('xiaozhen')) return { desc: 'Microsoft Xiaozhen — a Mandarin female neural voice for Windows.', badges: ['neural'] };
+  if (name.includes('huihui'))   return { desc: 'Microsoft Huihui — an older standard Mandarin voice for Windows.', badges: ['system'] };
+  if (name.includes('kangkang')) return { desc: 'Microsoft Kangkang — an older male Mandarin voice for Windows.', badges: ['system'] };
+  if (name.includes('yaoyao'))   return { desc: 'Microsoft Yaoyao — an older child Mandarin voice for Windows.', badges: ['system'] };
+  // Fallback
+  const platform = v.localService ? 'On-device' : 'Cloud-based';
+  const locale = lang === 'zh-CN' ? 'Mandarin (Simplified)' : lang === 'zh-TW' ? 'Mandarin (Traditional)' : lang;
+  return { desc: `${platform} voice · ${locale}.`, badges: ['system'] };
+}
+
+// ── Voice picker open / close / render ───────────────────────
+function openVoicePicker() {
+  renderVoicePicker();
+  document.getElementById('voice-overlay').classList.add('open');
+}
+
+function closeVoicePicker(event) {
+  if (event && event.target !== document.getElementById('voice-overlay')) return;
+  synth.cancel();
+  document.getElementById('voice-overlay').classList.remove('open');
+}
+
+function selectVoice(idx) {
+  voiceIndex = idx;
+  preferredVoice = allChineseVoices[idx];
+  updateVoiceDisplay();
+  renderVoicePicker();
+}
+
+function previewVoice(idx, btnEl) {
+  synth.cancel();
+  const v = allChineseVoices[idx];
+  if (!v) return;
+  // Toggle playing state on button
+  document.querySelectorAll('.voice-preview-btn').forEach(b => b.classList.remove('playing'));
+  btnEl.classList.add('playing');
+  btnEl.textContent = '▶ Playing…';
+  const utter = new SpeechSynthesisUtterance('你好，我是你的中文助手。');
+  utter.lang = 'zh-CN';
+  utter.voice = v;
+  utter.rate = 0.82;
+  utter.pitch = 1.0;
+  utter.onend = () => {
+    btnEl.classList.remove('playing');
+    btnEl.textContent = '▶ Preview';
+  };
+  utter.onerror = () => {
+    btnEl.classList.remove('playing');
+    btnEl.textContent = '▶ Preview';
+  };
+  synth.speak(utter);
+}
+
+function renderVoicePicker() {
+  const list = document.getElementById('voice-list');
+  if (!list) return;
+
+  if (allChineseVoices.length === 0) {
+    list.innerHTML = `<div class="voice-no-voices">
+      No Chinese voices found on this device.<br><br>
+      <strong>To add voices:</strong><br>
+      <strong>macOS:</strong> System Settings → Accessibility → Spoken Content → Manage Voices → Chinese<br>
+      <strong>Windows:</strong> Settings → Time &amp; Language → Language → Add Chinese (Simplified)<br>
+      <strong>Chrome:</strong> Google 普通话 appears automatically when online.
+    </div>`;
+    return;
+  }
+
+  list.innerHTML = allChineseVoices.map((v, idx) => {
+    const isSelected = preferredVoice && v.name === preferredVoice.name && v.lang === preferredVoice.lang;
+    const { desc, badges } = voiceDescription(v);
+    const badgeHTML = badges.map(b => {
+      if (b === 'recommended') return `<span class="voice-badge voice-badge-recommended">★ Recommended</span>`;
+      if (b === 'neural')      return `<span class="voice-badge voice-badge-neural">Neural</span>`;
+      return `<span class="voice-badge voice-badge-system">System</span>`;
+    }).join(' ');
+    const displayName = shortVoiceName(v);
+    const langLabel = v.lang === 'zh-CN' ? 'Mandarin CN' : v.lang === 'zh-TW' ? 'Mandarin TW' : v.lang;
+    return `<div class="voice-item${isSelected ? ' selected' : ''}" onclick="selectVoice(${idx})">
+      <div class="voice-item-radio"></div>
+      <div class="voice-item-info">
+        <div class="voice-item-name">${displayName} <span style="font-weight:400;color:var(--muted);font-size:0.75rem;">${langLabel}</span> ${badgeHTML}</div>
+        <div class="voice-item-desc">${desc}</div>
+      </div>
+      <div class="voice-item-actions">
+        <button class="voice-preview-btn" onclick="event.stopPropagation(); previewVoice(${idx}, this)">▶ Preview</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+if (synth.onvoiceschanged !== undefined) {
+  synth.onvoiceschanged = loadVoices;
+}
+setTimeout(loadVoices, 100); // Immediate + delayed for async voice loading
+loadVoices();
+
+function speak(text, rate = 0.82, onEnd = null) {
+  synth.cancel();
+  // Small delay after cancel to avoid Chrome TTS bug
+  setTimeout(() => {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'zh-CN';
+    if (preferredVoice) utter.voice = preferredVoice;
+    // Slightly slower rate for clarity — Beijing newsreader style
+    utter.rate = rate;
+    // Natural pitch — 1.0 is default, avoid artificial lowering which causes roboticness
+    utter.pitch = 1.0;
+    utter.volume = 1.0;
+    if (onEnd) utter.onend = onEnd;
+    utter.onerror = () => { if (onEnd) onEnd(); };
+    synth.speak(utter);
+  }, 50);
+}
+
+function stripEllipsis(text) {
+  return text.replace(/\.{2,}|…+|……/g, '').trim();
+}
+
+function autoPlaySequence() {
+  if (currentCardIdx >= queue.length) return;
+  const item = queue[currentCardIdx];
+  const { word } = item;
+  // Strip trailing ellipsis from sentence starters before TTS
+  const spokenWord = currentDeck === 'sentences' ? stripEllipsis(word.simp) : word.simp;
+
+  setAudioBtnState('word-audio-btn', true);
+  speak(spokenWord, 0.8, () => {
+    setAudioBtnState('word-audio-btn', false);
+    // Brief pause then sentence
+    setTimeout(() => {
+      setAudioBtnState('sent-audio-btn', true);
+      speak(word.example_zh, 0.85, () => {
+        setAudioBtnState('sent-audio-btn', false);
+      });
+    }, 800);
+  });
+}
+
+function speakWord() {
+  if (currentCardIdx >= queue.length) return;
+  const item = queue[currentCardIdx];
+  const spokenWord = currentDeck === 'sentences' ? stripEllipsis(item.word.simp) : item.word.simp;
+  synth.cancel();
+  setAudioBtnState('word-audio-btn', true);
+  speak(spokenWord, 0.8, () => {
+    setAudioBtnState('word-audio-btn', false);
+  });
+}
+
+function speakSentence() {
+  if (currentCardIdx >= queue.length) return;
+  const item = queue[currentCardIdx];
+  synth.cancel();
+  setAudioBtnState('sent-audio-btn', true);
+  speak(item.word.example_zh, 0.85, () => {
+    setAudioBtnState('sent-audio-btn', false);
+  });
+}
+
+function setAudioBtnState(id, playing) {
+  const btn = document.getElementById(id);
+  if (!btn) return;
+  if (playing) {
+    btn.classList.add('playing');
+    btn.innerHTML = `<span class="wave-anim"><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span></span> Playing...`;
+  } else {
+    btn.classList.remove('playing');
+    const label = id === 'word-audio-btn' ? 'Speak word' : 'Speak sentence';
+    btn.innerHTML = `<span class="speaker-icon">🔊</span> ${label}`;
+  }
+}
+
+// ============================================================
+// RATING
+// ============================================================
+function rateCard(quality) {
+  if (currentCardIdx >= queue.length) return;
+  synth.cancel();
+  
+  const item = queue[currentCardIdx];
+  const key = getCardKey(item.level, item.idx);
+  
+  const isNewCard = !item.srs.nextReview; // true if this is the card's very first review
+  const newSRS = sm2({ srs: item.srs }, quality);
+  state.cards[key] = { ...(state.cards[key] || {}), srs: newSRS, lastRating: quality };
+
+  sessionReviewed++;
+
+  // Record analytics history
+  const todayKey = toDateKey(new Date());
+  if (!state.history.dailyLog[todayKey]) state.history.dailyLog[todayKey] = { reviews: 0, newCards: 0 };
+  state.history.dailyLog[todayKey].reviews++;
+  if (isNewCard) state.history.dailyLog[todayKey].newCards++;
+  const rKey = quality === 0 ? 'forgot' : quality === 2 ? 'hard' : quality === 3 ? 'good' : 'easy';
+  state.history.ratingCounts[rKey] = (state.history.ratingCounts[rKey] || 0) + 1;
+  
+  // Update streak
+  const today = new Date().toDateString();
+  if (state.session.lastStudyDate !== today) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    if (state.session.lastStudyDate === yesterday.toDateString()) {
+      state.session.streak = (state.session.streak || 0) + 1;
+    } else if (state.session.lastStudyDate !== today) {
+      state.session.streak = 1;
+    }
+    state.session.lastStudyDate = today;
+    if ((state.session.streak || 0) > (state.session.longestStreak || 0)) {
+      state.session.longestStreak = state.session.streak;
+    }
+  }
+
+  saveState();
+  
+  if (quality === 0) {
+    // Forgot: reinsert at end of queue for retry this session
+    queue.push({ ...item, srs: newSRS });
+  } else if (quality === 2) {
+    // Hard: reinsert a few cards ahead so it comes back soon but not immediately
+    const insertAt = Math.min(currentCardIdx + 4, queue.length);
+    queue.splice(insertAt, 0, { ...item, srs: newSRS });
+  }
+  
+  currentCardIdx++;
+  updateStats();
+  
+  // Animate transition
+  const container = document.getElementById('card-container');
+  container.style.opacity = '0';
+  container.style.transform = 'translateX(-20px)';
+  container.style.transition = 'all 0.2s ease';
+  
+  setTimeout(() => {
+    container.style.opacity = '1';
+    container.style.transform = 'translateX(0)';
+    container.style.transition = 'all 0.3s ease';
+    showCard();
+  }, 200);
+}
+
+// ============================================================
+// LEVEL SELECTION
+// ============================================================
+function setLevel(level) {
+  currentLevel = level;
+  document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  currentCardIdx = 0;
+  sessionReviewed = 0;
+  buildQueue();
+  showCard();
+  synth.cancel();
+}
+
+// ============================================================
+// EMPTY STATE
+// ============================================================
+function showEmptyState() {
+  const container = document.getElementById('card-container');
+  container.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-char">好</div>
+      <div class="empty-title">All done for today!</div>
+      <div class="empty-sub">
+        You've reviewed all ${sessionReviewed} cards. Come back tomorrow for your next review session. 
+        Your spaced repetition schedule has been updated.
+      </div>
+      <br>
+      <button class="start-btn" onclick="resetSession()" style="font-size:0.9rem;padding:0.8rem 2rem;">
+        Review Again
+      </button>
+    </div>
+  `;
+  document.getElementById('progress-fill').style.width = '100%';
+}
+
+function resetSession() {
+  currentCardIdx = 0;
+  sessionReviewed = 0;
+  buildQueue();
+  showCard();
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// ============================================================
+// ANALYTICS PANEL
+// ============================================================
+
+function toDateKey(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+let analyticsTab = 'daily';
+
+function openAnalytics() {
+  renderAnalyticsPanel();
+  document.getElementById('analytics-overlay').classList.add('open');
+  document.getElementById('analytics-panel').classList.add('open');
+}
+
+function closeAnalytics() {
+  document.getElementById('analytics-overlay').classList.remove('open');
+  document.getElementById('analytics-panel').classList.remove('open');
+}
+
+function setAnalyticsTab(tab) {
+  analyticsTab = tab;
+  document.querySelectorAll('.act-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tab);
+  });
+  document.getElementById('act-chart-area').innerHTML = buildActivityRows();
+}
+
+function renderAnalyticsPanel() {
+  document.getElementById('analytics-body').innerHTML =
+    buildSummaryHTML() + buildRatingHTML() + buildActivitySectionHTML();
+}
+
+function buildSummaryHTML() {
+  let learnedCount = 0;
+  for (const key in state.cards) {
+    if (state.cards[key].srs && state.cards[key].srs.nextReview) learnedCount++;
+  }
+  const rc = state.history.ratingCounts;
+  const totalRatings = (rc.forgot||0) + (rc.hard||0) + (rc.good||0) + (rc.easy||0);
+  const longestStreak = Math.max(state.session.longestStreak || 0, state.session.streak || 0);
+  // Calculate total new cards learned (sum of all dailyLog newCards)
+  let totalNew = 0;
+  for (const day in state.history.dailyLog) totalNew += (state.history.dailyLog[day].newCards || 0);
+  return `
+    <div class="an-summary">
+      <div class="an-summary-item">
+        <span class="an-summary-num">${learnedCount}</span>
+        <span class="an-summary-label">Cards Learned</span>
+      </div>
+      <div class="an-summary-item">
+        <span class="an-summary-num">${totalRatings.toLocaleString()}</span>
+        <span class="an-summary-label">Total Reviews</span>
+      </div>
+      <div class="an-summary-item">
+        <span class="an-summary-num">${state.session.streak || 0}</span>
+        <span class="an-summary-label">Current Streak</span>
+      </div>
+      <div class="an-summary-item">
+        <span class="an-summary-num">${longestStreak}</span>
+        <span class="an-summary-label">Best Streak</span>
+      </div>
+    </div>`;
+}
+
+function buildRatingHTML() {
+  // --- Snapshot: last rating per learned card ---
+  const snap = {0:0, 2:0, 3:0, 5:0};
+  let learnedTotal = 0;
+  for (const key in state.cards) {
+    const card = state.cards[key];
+    if (card.srs && card.srs.nextReview) {
+      learnedTotal++;
+      const lr = card.lastRating !== undefined ? card.lastRating : 3;
+      snap[lr] = (snap[lr] || 0) + 1;
+    }
+  }
+  const snapW   = (n) => learnedTotal > 0 ? ((n / learnedTotal * 100).toFixed(1) + '%') : '0%';
+  const snapPct = (n) => learnedTotal > 0 ? (n / learnedTotal * 100).toFixed(1) : '0.0';
+
+  const snapshotHTML = learnedTotal > 0 ? `
+    <div class="snap-bar">
+      <div class="snap-seg s0" style="width:${snapW(snap[0])}"></div>
+      <div class="snap-seg s2" style="width:${snapW(snap[2])}"></div>
+      <div class="snap-seg s3" style="width:${snapW(snap[3])}"></div>
+      <div class="snap-seg s5" style="width:${snapW(snap[5])}"></div>
+    </div>
+    <div class="an-legend">
+      <span class="an-legend-item"><span class="an-legend-dot s0"></span>✗ Forgot &nbsp;${snapPct(snap[0])}%&nbsp;(${snap[0]})</span>
+      <span class="an-legend-item"><span class="an-legend-dot s2"></span>◑ Hard &nbsp;${snapPct(snap[2])}%&nbsp;(${snap[2]})</span>
+      <span class="an-legend-item"><span class="an-legend-dot s3"></span>✓ Good &nbsp;${snapPct(snap[3])}%&nbsp;(${snap[3]})</span>
+      <span class="an-legend-item"><span class="an-legend-dot s5"></span>★ Easy &nbsp;${snapPct(snap[5])}%&nbsp;(${snap[5]})</span>
+    </div>` : `<div class="act-empty">No cards learned yet — start reviewing to see this data.</div>`;
+
+  // --- All-time rating counts ---
+  const rc = state.history.ratingCounts;
+  const totalRatings = (rc.forgot||0) + (rc.hard||0) + (rc.good||0) + (rc.easy||0);
+  const maxCount = Math.max(rc.forgot||0, rc.hard||0, rc.good||0, rc.easy||0, 1);
+  const bw = (n) => ((n / maxCount) * 100).toFixed(1) + '%';
+
+  const allTimeHTML = totalRatings > 0 ? `
+    <div class="rbar-row">
+      <span class="rbar-label" style="color:var(--red)">✗ Forgot</span>
+      <div class="rbar-track"><div class="rbar-fill s0" style="width:${bw(rc.forgot||0)}"></div></div>
+      <span class="rbar-count">${(rc.forgot||0).toLocaleString()}</span>
+    </div>
+    <div class="rbar-row">
+      <span class="rbar-label" style="color:#d35400">◑ Hard</span>
+      <div class="rbar-track"><div class="rbar-fill s2" style="width:${bw(rc.hard||0)}"></div></div>
+      <span class="rbar-count">${(rc.hard||0).toLocaleString()}</span>
+    </div>
+    <div class="rbar-row">
+      <span class="rbar-label" style="color:var(--blue)">✓ Good</span>
+      <div class="rbar-track"><div class="rbar-fill s3" style="width:${bw(rc.good||0)}"></div></div>
+      <span class="rbar-count">${(rc.good||0).toLocaleString()}</span>
+    </div>
+    <div class="rbar-row">
+      <span class="rbar-label" style="color:var(--green)">★ Easy</span>
+      <div class="rbar-track"><div class="rbar-fill s5" style="width:${bw(rc.easy||0)}"></div></div>
+      <span class="rbar-count">${(rc.easy||0).toLocaleString()}</span>
+    </div>
+    <div style="font-size:0.72rem;color:var(--muted);margin-top:0.3rem;">${totalRatings.toLocaleString()} ratings recorded in total</div>
+  ` : `<div class="act-empty">No ratings recorded yet — they will appear here as you study.</div>`;
+
+  return `
+    <div class="an-section">
+      <div class="an-section-title">Rating Distribution</div>
+      <div class="an-sub-label">Knowledge snapshot · last rating per learned card (${learnedTotal} cards)</div>
+      ${snapshotHTML}
+      <div class="an-sub-label" style="margin-top:1.1rem;">All-time rating totals</div>
+      ${allTimeHTML}
+    </div>`;
+}
+
+function buildActivitySectionHTML() {
+  return `
+    <div class="an-section">
+      <div class="an-section-title">Activity Over Time</div>
+      <div class="act-tabs">
+        <button class="act-tab ${analyticsTab==='daily'?'active':''}" data-tab="daily" onclick="setAnalyticsTab('daily')">Daily · 7 days</button>
+        <button class="act-tab ${analyticsTab==='weekly'?'active':''}" data-tab="weekly" onclick="setAnalyticsTab('weekly')">Weekly · 8 wks</button>
+        <button class="act-tab ${analyticsTab==='monthly'?'active':''}" data-tab="monthly" onclick="setAnalyticsTab('monthly')">Monthly · 6 mo</button>
+      </div>
+      <div id="act-chart-area">${buildActivityRows()}</div>
+      <div class="act-legend">
+        <span class="an-legend-item"><span class="an-legend-dot" style="background:var(--blue);border-radius:2px;width:12px;height:9px;"></span>Reviews</span>
+        <span class="an-legend-item"><span class="an-legend-dot" style="background:var(--red);border-radius:2px;width:12px;height:9px;"></span>New cards</span>
+      </div>
+    </div>`;
+}
+
+function getActivityPeriods() {
+  const log = state.history.dailyLog;
+  const now = new Date();
+  const periods = [];
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const DAYS   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  if (analyticsTab === 'daily') {
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+      const key = toDateKey(d);
+      const data = log[key] || { reviews: 0, newCards: 0 };
+      periods.push({ label: i === 0 ? 'Today' : DAYS[d.getDay()], reviews: data.reviews, newCards: data.newCards });
+    }
+  } else if (analyticsTab === 'weekly') {
+    const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const daysSinceSunday = startOfToday.getDay();
+    for (let i = 7; i >= 0; i--) {
+      const weekStart = new Date(startOfToday);
+      weekStart.setDate(startOfToday.getDate() - daysSinceSunday - i * 7);
+      let reviews = 0, newCards = 0;
+      for (let d = 0; d < 7; d++) {
+        const day = new Date(weekStart);
+        day.setDate(weekStart.getDate() + d);
+        const data = log[toDateKey(day)] || { reviews: 0, newCards: 0 };
+        reviews += data.reviews; newCards += data.newCards;
+      }
+      const label = i === 0 ? 'This wk' : `${MONTHS[weekStart.getMonth()]} ${weekStart.getDate()}`;
+      periods.push({ label, reviews, newCards });
+    }
+  } else { // monthly
+    for (let i = 5; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const year = d.getFullYear(), month = d.getMonth();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      let reviews = 0, newCards = 0;
+      for (let day = 1; day <= daysInMonth; day++) {
+        const key = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+        const data = log[key] || { reviews: 0, newCards: 0 };
+        reviews += data.reviews; newCards += data.newCards;
+      }
+      periods.push({ label: i === 0 ? 'This mo' : MONTHS[month], reviews, newCards });
+    }
+  }
+  return periods;
+}
+
+function buildActivityRows() {
+  const periods = getActivityPeriods();
+  const hasData = periods.some(p => p.reviews > 0);
+  if (!hasData) return `<div class="act-empty">No activity recorded in this period yet.</div>`;
+
+  const maxReviews = Math.max(...periods.map(p => p.reviews), 1);
+  return periods.map(p => {
+    const revOnlyPct = ((Math.max(0, p.reviews - p.newCards) / maxReviews) * 100).toFixed(1);
+    const newPct     = ((p.newCards / maxReviews) * 100).toFixed(1);
+    const countStr   = p.reviews > 0
+      ? `${p.reviews}${p.newCards > 0 ? ` · <span style="color:var(--red)">${p.newCards} new</span>` : ''}`
+      : '<span style="opacity:0.4">—</span>';
+    return `
+      <div class="act-row">
+        <span class="act-row-label">${p.label}</span>
+        <div class="act-row-track">
+          <div class="act-bar-rev" style="width:${revOnlyPct}%"></div>
+          <div class="act-bar-new" style="width:${newPct}%"></div>
+        </div>
+        <span class="act-row-count">${countStr}</span>
+      </div>`;
+  }).join('');
+}
+
+// ============================================================
+// DECK SELECTION
+// ============================================================
+function introDeckSelect(deck) {
+  currentDeck = deck;
+  // Update intro deck card selection visuals
+  document.getElementById('deck-card-hsk').classList.toggle('selected', deck === 'hsk');
+  document.getElementById('deck-card-sentences').classList.toggle('selected', deck === 'sentences');
+}
+
+function openDeckOverlay() {
+  // Update modal selection state
+  document.getElementById('modal-deck-hsk').classList.toggle('selected', currentDeck === 'hsk');
+  document.getElementById('modal-deck-sentences').classList.toggle('selected', currentDeck === 'sentences');
+  document.getElementById('deck-overlay').classList.add('open');
+}
+
+function closeDeckOverlay(event) {
+  if (event && event.target !== document.getElementById('deck-overlay')) return;
+  document.getElementById('deck-overlay').classList.remove('open');
+}
+
+function switchDeck(deck) {
+  if (deck === currentDeck) {
+    document.getElementById('deck-overlay').classList.remove('open');
+    return;
+  }
+  currentDeck = deck;
+  document.getElementById('deck-overlay').classList.remove('open');
+
+  // Show/hide level bar — only relevant for HSK deck
+  const levelBar = document.getElementById('level-bar');
+  if (levelBar) levelBar.style.display = (deck === 'hsk') ? '' : 'none';
+
+  // Reset session for new deck
+  activeDeck = deck;
+  currentCardIdx = 0;
+  sessionReviewed = 0;
+  synth.cancel();
+  buildQueue();
+  showCard();
+
+  showToast(deck === 'sentences' ? 'Switched to Sentence Starters' : 'Switched to HSK Vocabulary');
+}
+
+// ============================================================
+// TEXT SIZE
+// ============================================================
+const TEXT_SIZES = {
+  s:  '13px',
+  m:  '16px',
+  l:  '19px',
+  xl: '22px',
+};
+const TEXT_SIZE_KEY = 'hsk_textsize';
+
+function setTextSize(size) {
+  if (!TEXT_SIZES[size]) return;
+  document.documentElement.style.fontSize = TEXT_SIZES[size];
+  localStorage.setItem(TEXT_SIZE_KEY, size);
+  // Update active button
+  document.querySelectorAll('.size-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.size === size);
+  });
+}
+
+function loadTextSize() {
+  const saved = localStorage.getItem(TEXT_SIZE_KEY) || 'm';
+  setTextSize(saved);
+}
+
+// ============================================================
+// HOME NAVIGATION
+// ============================================================
+let activeDeck = null; // the deck that was last built into the queue
+
+function goHome() {
+  synth.cancel();
+  const intro = document.getElementById('intro-screen');
+  intro.style.display = 'flex';
+  intro.style.opacity = '0';
+  // Tiny delay so display:flex takes effect before the transition fires
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      intro.style.transition = 'opacity 0.4s ease';
+      intro.style.opacity = '1';
+    });
+  });
+  // Reflect current deck selection in the intro screen cards
+  document.getElementById('deck-card-hsk').classList.toggle('selected', currentDeck === 'hsk');
+  document.getElementById('deck-card-sentences').classList.toggle('selected', currentDeck === 'sentences');
+}
+
+// ============================================================
+// START
+// ============================================================
+function startApp() {
+  const intro = document.getElementById('intro-screen');
+  intro.style.transition = 'opacity 0.5s ease';
+  intro.style.opacity = '0';
+  setTimeout(() => { intro.style.display = 'none'; }, 500);
+
+  // Show/hide level bar based on selected deck
+  const levelBar = document.getElementById('level-bar');
+  if (levelBar) levelBar.style.display = (currentDeck === 'hsk') ? '' : 'none';
+
+  // Try voice loading again (browsers sometimes delay voice list availability)
+  setTimeout(() => { loadVoices(); }, 300);
+  setTimeout(() => { loadVoices(); }, 1000);
+
+  // If the deck hasn't changed and a session is already in progress, resume it
+  if (activeDeck === currentDeck && queue.length > 0) {
+    showCard();
+    return;
+  }
+
+  // Otherwise start fresh for the chosen deck
+  activeDeck = currentDeck;
+  currentCardIdx = 0;
+  sessionReviewed = 0;
+  buildQueue();
+  showCard();
+}
+
+// Init — load deck JSON files then start
+loadTextSize();
+loadState();
+loadAllDecks().then(() => {
+  buildQueue();
+}).catch(err => {
+  console.error('Failed to load deck data:', err);
+  document.body.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif"><h2>Failed to load deck data</h2><p>Please refresh the page.</p></div>';
+});
+</script>
+
+<!-- ── Service Worker Registration (PWA / offline) ────────── -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('SW registered:', reg.scope))
+        .catch(err => console.warn('SW registration failed:', err));
+    });
+  }
+</script>
+</body>
+</html>
