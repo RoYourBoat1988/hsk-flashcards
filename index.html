@@ -1421,13 +1421,6 @@
   <div class="deck-select-section">
     <div class="deck-select-label">Choose your deck</div>
     <div class="deck-cards">
-      <div class="deck-card" id="deck-card-hsk" onclick="introDeckSelect('hsk')" style="grid-column: span 3;">
-        <span class="deck-card-icon">🀄</span>
-        <div class="deck-card-name">HSK All Levels</div>
-        <div class="deck-card-sub">Complete Vocabulary · HSK 1–6</div>
-        <div class="deck-card-desc">All 2,667 words across every HSK level — ideal for mixed practice and comprehensive review</div>
-        <div class="deck-card-count">2,667 words</div>
-      </div>
       <div class="deck-card selected" id="deck-card-hsk1" onclick="introDeckSelect('hsk1')">
         <span class="deck-card-icon">🀄</span>
         <div class="deck-card-name">HSK 1</div>
@@ -1470,6 +1463,13 @@
         <div class="deck-card-desc">Academic, literary and formal professional contexts</div>
         <div class="deck-card-count">104 words</div>
       </div>
+      <div class="deck-card" id="deck-card-hsk" onclick="introDeckSelect('hsk')" style="grid-column: span 3;">
+        <span class="deck-card-icon">🀄</span>
+        <div class="deck-card-name">HSK All Levels</div>
+        <div class="deck-card-sub">Complete Vocabulary · HSK 1–6</div>
+        <div class="deck-card-desc">All 2,667 words across every HSK level — ideal for mixed practice and comprehensive review</div>
+        <div class="deck-card-count">2,667 words</div>
+      </div>
       <div class="deck-card" id="deck-card-sentences" onclick="introDeckSelect('sentences')" style="grid-column: span 3;">
         <span class="deck-card-icon">💬</span>
         <div class="deck-card-name">Sentence Starters</div>
@@ -1489,12 +1489,6 @@
     <div class="deck-modal-title">Switch Deck</div>
     <div class="deck-modal-sub">Select a deck to study. Your progress in each deck is saved separately.</div>
     <div class="deck-cards" style="margin-bottom:0">
-      <div class="deck-card" id="modal-deck-hsk" onclick="switchDeck('hsk')" style="grid-column: span 3;">
-        <span class="deck-card-icon">🀄</span>
-        <div class="deck-card-name">HSK All Levels</div>
-        <div class="deck-card-sub">Complete Vocabulary · HSK 1–6</div>
-        <div class="deck-card-count">2,667 words</div>
-      </div>
       <div class="deck-card" id="modal-deck-hsk1" onclick="switchDeck('hsk1')">
         <span class="deck-card-icon">🀄</span>
         <div class="deck-card-name">HSK 1</div>
@@ -1530,6 +1524,12 @@
         <div class="deck-card-name">HSK 6</div>
         <div class="deck-card-sub">Advanced</div>
         <div class="deck-card-count">104 words</div>
+      </div>
+      <div class="deck-card" id="modal-deck-hsk" onclick="switchDeck('hsk')" style="grid-column: span 3;">
+        <span class="deck-card-icon">🀄</span>
+        <div class="deck-card-name">HSK All Levels</div>
+        <div class="deck-card-sub">Complete Vocabulary · HSK 1–6</div>
+        <div class="deck-card-count">2,667 words</div>
       </div>
       <div class="deck-card" id="modal-deck-sentences" onclick="switchDeck('sentences')" style="grid-column: span 3;">
         <span class="deck-card-icon">💬</span>
