@@ -1,0 +1,79 @@
+[
+  {
+    "id": "hsk1",
+    "file": "data/hsk1.json",
+    "title": "HSK 1",
+    "subtitle": "Beginner",
+    "description": "Essential vocabulary for absolute beginners. Covers greetings, numbers, family, and basic everyday words.",
+    "cardCount": 154,
+    "level": 1,
+    "free": true,
+    "color": "#4CAF50"
+  },
+  {
+    "id": "hsk2",
+    "file": "data/hsk2.json",
+    "title": "HSK 2",
+    "subtitle": "Elementary",
+    "description": "Expands on HSK 1 with vocabulary for simple conversations about daily life, time, and activities.",
+    "cardCount": 151,
+    "level": 2,
+    "free": true,
+    "color": "#8BC34A"
+  },
+  {
+    "id": "hsk3",
+    "file": "data/hsk3.json",
+    "title": "HSK 3",
+    "subtitle": "Pre-Intermediate",
+    "description": "Covers topics like work, travel, and health. Enables communication in a broad range of everyday situations.",
+    "cardCount": 327,
+    "level": 3,
+    "free": false,
+    "color": "#FFC107"
+  },
+  {
+    "id": "hsk4",
+    "file": "data/hsk4.json",
+    "title": "HSK 4",
+    "subtitle": "Intermediate",
+    "description": "Advanced everyday vocabulary covering abstract concepts, opinions, and a wide range of topics.",
+    "cardCount": 615,
+    "level": 4,
+    "free": false,
+    "color": "#FF9800"
+  },
+  {
+    "id": "hsk5",
+    "file": "data/hsk5.json",
+    "title": "HSK 5",
+    "subtitle": "Upper-Intermediate",
+    "description": "Sophisticated vocabulary for reading newspapers, watching films, and professional communication.",
+    "cardCount": 1316,
+    "level": 5,
+    "free": false,
+    "color": "#F44336"
+  },
+  {
+    "id": "hsk6",
+    "file": "data/hsk6.json",
+    "title": "HSK 6",
+    "subtitle": "Advanced",
+    "description": "Near-native vocabulary for academic, literary, and formal professional contexts.",
+    "cardCount": 104,
+    "level": 6,
+    "free": false,
+    "color": "#9C27B0"
+  },
+  {
+    "id": "sentences",
+    "file": "data/sentences.json",
+    "title": "Sentence Starters",
+    "subtitle": "Speaking Patterns",
+    "description": "49 essential sentence patterns and structures for natural, fluent Chinese conversation.",
+    "cardCount": 49,
+    "level": null,
+    "free": true,
+    "color": "#2196F3"
+  }
+]

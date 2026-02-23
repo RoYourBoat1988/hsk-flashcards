@@ -1,0 +1,443 @@
+[
+  {
+    "simp": "对我来说...",
+    "trad": "對我來說...",
+    "pinyin": "Duì wǒ lái shuō...",
+    "meaning": "For me... / As far as I'm concerned...",
+    "example_zh": "对我来说，家人是最重要的。",
+    "example_py": "Duì wǒ lái shuō, jiārén shì zuì zhòng yào de.",
+    "example_en": "For me, family is the most important thing."
+  },
+  {
+    "simp": "我觉得...",
+    "trad": "我覺得...",
+    "pinyin": "Wǒ juéde...",
+    "meaning": "I feel... / I think...",
+    "example_zh": "我觉得这个主意很好。",
+    "example_py": "Wǒ juéde zhège zhǔyì hěn hǎo.",
+    "example_en": "I think this idea is very good."
+  },
+  {
+    "simp": "虽然...但是...",
+    "trad": "雖然...但是...",
+    "pinyin": "Suīrán... dànshì...",
+    "meaning": "Although... but...",
+    "example_zh": "虽然很累，但是我还是坚持下去。",
+    "example_py": "Suīrán hěn lèi, dànshì wǒ háishi jiānchí xiàqù.",
+    "example_en": "Although I'm tired, I still persevere."
+  },
+  {
+    "simp": "不仅...而且...",
+    "trad": "不僅...而且...",
+    "pinyin": "Bù jǐn... érqiě...",
+    "meaning": "Not only... but also...",
+    "example_zh": "她不仅聪明，而且很勤奋。",
+    "example_py": "Tā bù jǐn cōngmíng, érqiě hěn qínfèn.",
+    "example_en": "She is not only smart but also very hardworking."
+  },
+  {
+    "simp": "如果...就...",
+    "trad": "如果...就...",
+    "pinyin": "Rúguǒ... jiù...",
+    "meaning": "If... then...",
+    "example_zh": "如果你努力学习，就会成功。",
+    "example_py": "Rúguǒ nǐ nǔlì xuéxí, jiù huì chénggōng.",
+    "example_en": "If you study hard, you will succeed."
+  },
+  {
+    "simp": "我认为...",
+    "trad": "我認為...",
+    "pinyin": "Wǒ rènwéi...",
+    "meaning": "I believe... / I consider...",
+    "example_zh": "我认为保护环境很重要。",
+    "example_py": "Wǒ rènwéi bǎohù huánjìng hěn zhòngyào.",
+    "example_en": "I believe protecting the environment is very important."
+  },
+  {
+    "simp": "由于...所以...",
+    "trad": "由於...所以...",
+    "pinyin": "Yóuyú... suǒyǐ...",
+    "meaning": "Due to... therefore...",
+    "example_zh": "由于下雨，所以比赛取消了。",
+    "example_py": "Yóuyú xià yǔ, suǒyǐ bǐsài qǔxiāo le.",
+    "example_en": "Due to the rain, the game was cancelled."
+  },
+  {
+    "simp": "随着...的发展...",
+    "trad": "隨著...的發展...",
+    "pinyin": "Suízhe... de fāzhǎn...",
+    "meaning": "With the development of...",
+    "example_zh": "随着科技的发展，生活越来越方便。",
+    "example_py": "Suízhe kējì de fāzhǎn, shēnghuó yuè lái yuè fāngbiàn.",
+    "example_en": "With the development of technology, life is becoming more and more convenient."
+  },
+  {
+    "simp": "总的来说...",
+    "trad": "總的來說...",
+    "pinyin": "Zǒng de lái shuō...",
+    "meaning": "Generally speaking... / Overall...",
+    "example_zh": "总的来说，这次旅行很成功。",
+    "example_py": "Zǒng de lái shuō, zhè cì lǚxíng hěn chénggōng.",
+    "example_en": "Generally speaking, this trip was very successful."
+  },
+  {
+    "simp": "一方面...另一方面...",
+    "trad": "一方面...另一方面...",
+    "pinyin": "Yī fāngmiàn... lìng yī fāngmiàn...",
+    "meaning": "On one hand... on the other hand...",
+    "example_zh": "一方面要工作，另一方面要照顾家庭。",
+    "example_py": "Yī fāngmiàn yào gōngzuò, lìng yī fāngmiàn yào zhàogu jiātíng.",
+    "example_en": "On one hand, one must work; on the other hand, care for the family."
+  },
+  {
+    "simp": "不管...都...",
+    "trad": "不管...都...",
+    "pinyin": "Bùguǎn... dōu...",
+    "meaning": "No matter... still...",
+    "example_zh": "不管多困难，我都不会放弃。",
+    "example_py": "Bùguǎn duō kùnnán, wǒ dōu bù huì fàngqì.",
+    "example_en": "No matter how difficult, I will not give up."
+  },
+  {
+    "simp": "为了...我...",
+    "trad": "為了...我...",
+    "pinyin": "Wèile... wǒ...",
+    "meaning": "In order to... I...",
+    "example_zh": "为了健康，我每天坚持运动。",
+    "example_py": "Wèile jiànkāng, wǒ měitiān jiānchí yùndòng.",
+    "example_en": "In order to stay healthy, I exercise every day."
+  },
+  {
+    "simp": "除了...还...",
+    "trad": "除了...還...",
+    "pinyin": "Chúle... hái...",
+    "meaning": "Besides... also...",
+    "example_zh": "除了英语，她还会说法语。",
+    "example_py": "Chúle Yīngyǔ, tā hái huì shuō Fǎyǔ.",
+    "example_en": "Besides English, she can also speak French."
+  },
+  {
+    "simp": "事实上...",
+    "trad": "事實上...",
+    "pinyin": "Shìshí shàng...",
+    "meaning": "In fact... / Actually...",
+    "example_zh": "事实上，情况比我们想象的复杂。",
+    "example_py": "Shìshí shàng, qíngkuàng bǐ wǒmen xiǎngxiàng de fùzá.",
+    "example_en": "In fact, the situation is more complex than we imagined."
+  },
+  {
+    "simp": "值得注意的是...",
+    "trad": "值得注意的是...",
+    "pinyin": "Zhídé zhùyì de shì...",
+    "meaning": "It is worth noting that...",
+    "example_zh": "值得注意的是，这个问题越来越严重。",
+    "example_py": "Zhídé zhùyì de shì, zhège wèntí yuè lái yuè yánzhòng.",
+    "example_en": "It is worth noting that this problem is becoming increasingly serious."
+  },
+  {
+    "simp": "与此同时...",
+    "trad": "與此同時...",
+    "pinyin": "Yǔ cǐ tóngshí...",
+    "meaning": "At the same time... / Meanwhile...",
+    "example_zh": "经济在发展，与此同时环境问题也在加剧。",
+    "example_py": "Jīngjì zài fāzhǎn, yǔ cǐ tóngshí huánjìng wèntí yě zài jiājù.",
+    "example_en": "The economy is developing; meanwhile, environmental problems are also worsening."
+  },
+  {
+    "simp": "换句话说...",
+    "trad": "換句話說...",
+    "pinyin": "Huàn jù huà shuō...",
+    "meaning": "In other words...",
+    "example_zh": "换句话说，我们需要改变策略。",
+    "example_py": "Huàn jù huà shuō, wǒmen xūyào gǎibiàn cèlüè.",
+    "example_en": "In other words, we need to change our strategy."
+  },
+  {
+    "simp": "总而言之...",
+    "trad": "總而言之...",
+    "pinyin": "Zǒng ér yán zhī...",
+    "meaning": "To sum up... / In conclusion...",
+    "example_zh": "总而言之，这次合作非常成功。",
+    "example_py": "Zǒng ér yán zhī, zhè cì hézuò fēicháng chénggōng.",
+    "example_en": "In conclusion, this collaboration was very successful."
+  },
+  {
+    "simp": "从某种意义上说...",
+    "trad": "從某種意義上說...",
+    "pinyin": "Cóng mǒu zhǒng yìyì shàng shuō...",
+    "meaning": "In a sense... / In some ways...",
+    "example_zh": "从某种意义上说，失败是成功的开始。",
+    "example_py": "Cóng mǒu zhǒng yìyì shàng shuō, shībài shì chénggōng de kāishǐ.",
+    "example_en": "In a sense, failure is the beginning of success."
+  },
+  {
+    "simp": "有人认为...",
+    "trad": "有人認為...",
+    "pinyin": "Yǒu rén rènwéi...",
+    "meaning": "Some people think... / It is argued...",
+    "example_zh": "有人认为科技让人们的距离更远了。",
+    "example_py": "Yǒu rén rènwéi kējì ràng rénmen de jùlí gèng yuǎn le.",
+    "example_en": "Some people think technology has made people more distant from each other."
+  },
+  {
+    "simp": "正如...所说...",
+    "trad": "正如...所說...",
+    "pinyin": "Zhèng rú... suǒ shuō...",
+    "meaning": "Just as ... said...",
+    "example_zh": "正如老师所说，勤奋是成功的关键。",
+    "example_py": "Zhèng rú lǎoshī suǒ shuō, qínfèn shì chénggōng de guānjiàn.",
+    "example_en": "Just as the teacher said, diligence is the key to success."
+  },
+  {
+    "simp": "在某种程度上...",
+    "trad": "在某種程度上...",
+    "pinyin": "Zài mǒu zhǒng chéngdù shàng...",
+    "meaning": "To a certain extent...",
+    "example_zh": "在某种程度上，压力可以激发人的潜能。",
+    "example_py": "Zài mǒu zhǒng chéngdù shàng, yālì kěyǐ jīfā rén de qiánnéng.",
+    "example_en": "To a certain extent, pressure can stimulate a person's potential."
+  },
+  {
+    "simp": "据报道...",
+    "trad": "據報道...",
+    "pinyin": "Jù bàodào...",
+    "meaning": "According to reports...",
+    "example_zh": "据报道，这项技术将改变我们的生活。",
+    "example_py": "Jù bàodào, zhè xiàng jìshù jiāng gǎibiàn wǒmen de shēnghuó.",
+    "example_en": "According to reports, this technology will change our lives."
+  },
+  {
+    "simp": "以我看来...",
+    "trad": "以我看來...",
+    "pinyin": "Yǐ wǒ kàn lái...",
+    "meaning": "In my opinion... / The way I see it...",
+    "example_zh": "以我看来，解决这个问题需要团队合作。",
+    "example_py": "Yǐ wǒ kàn lái, jiějué zhège wèntí xūyào tuánduì hézuò.",
+    "example_en": "In my opinion, solving this problem requires teamwork."
+  },
+  {
+    "simp": "尽管如此...",
+    "trad": "儘管如此...",
+    "pinyin": "Jǐnguǎn rúcǐ...",
+    "meaning": "Nevertheless... / Even so...",
+    "example_zh": "他遇到了很多困难，尽管如此，他没有放弃。",
+    "example_py": "Tā yùdào le hěn duō kùnnán, jǐnguǎn rúcǐ, tā méiyǒu fàngqì.",
+    "example_en": "He encountered many difficulties; nevertheless, he did not give up."
+  },
+  {
+    "simp": "关于...问题...",
+    "trad": "關於...問題...",
+    "pinyin": "Guānyú... wèntí...",
+    "meaning": "Regarding the issue of...",
+    "example_zh": "关于环境保护问题，政府采取了很多措施。",
+    "example_py": "Guānyú huánjìng bǎohù wèntí, zhèngfǔ cǎiqǔ le hěn duō cuòshī.",
+    "example_en": "Regarding the issue of environmental protection, the government has taken many measures."
+  },
+  {
+    "simp": "值得一提的是...",
+    "trad": "值得一提的是...",
+    "pinyin": "Zhídé yī tí de shì...",
+    "meaning": "It is worth mentioning that...",
+    "example_zh": "值得一提的是，这位科学家只有三十岁。",
+    "example_py": "Zhídé yī tí de shì, zhè wèi kēxuéjiā zhǐyǒu sānshí suì.",
+    "example_en": "It is worth mentioning that this scientist is only thirty years old."
+  },
+  {
+    "simp": "毫无疑问...",
+    "trad": "毫無疑問...",
+    "pinyin": "Háo wú yíwèn...",
+    "meaning": "Without a doubt... / There is no doubt...",
+    "example_zh": "毫无疑问，教育对社会的发展至关重要。",
+    "example_py": "Háo wú yíwèn, jiàoyù duì shèhuì de fāzhǎn zhìguān zhòngyào.",
+    "example_en": "Without a doubt, education is crucial to the development of society."
+  },
+  {
+    "simp": "可以说...",
+    "trad": "可以說...",
+    "pinyin": "Kěyǐ shuō...",
+    "meaning": "It can be said that...",
+    "example_zh": "可以说，努力是成功的基础。",
+    "example_py": "Kěyǐ shuō, nǔlì shì chénggōng de jīchǔ.",
+    "example_en": "It can be said that effort is the foundation of success."
+  },
+  {
+    "simp": "据我所知...",
+    "trad": "據我所知...",
+    "pinyin": "Jù wǒ suǒ zhī...",
+    "meaning": "As far as I know... / To my knowledge...",
+    "example_zh": "据我所知，这个项目已经完成了。",
+    "example_py": "Jù wǒ suǒ zhī, zhège xiàngmù yǐjīng wánchéng le.",
+    "example_en": "As far as I know, this project has already been completed."
+  },
+  {
+    "simp": "从长远来看...",
+    "trad": "從長遠來看...",
+    "pinyin": "Cóng cháng yuǎn lái kàn...",
+    "meaning": "In the long run... / Looking at the long term...",
+    "example_zh": "从长远来看，投资教育是最明智的选择。",
+    "example_py": "Cóng cháng yuǎn lái kàn, tóuzī jiàoyù shì zuì míngzhì de xuǎnzé.",
+    "example_en": "In the long run, investing in education is the wisest choice."
+  },
+  {
+    "simp": "大多数人认为...",
+    "trad": "大多數人認為...",
+    "pinyin": "Dà duōshù rén rènwéi...",
+    "meaning": "Most people think...",
+    "example_zh": "大多数人认为健康比金钱更重要。",
+    "example_py": "Dà duōshù rén rènwéi jiànkāng bǐ jīnqián gèng zhòngyào.",
+    "example_en": "Most people think health is more important than money."
+  },
+  {
+    "simp": "总体而言...",
+    "trad": "總體而言...",
+    "pinyin": "Zǒngtǐ ér yán...",
+    "meaning": "On the whole... / Overall...",
+    "example_zh": "总体而言，这次活动组织得非常好。",
+    "example_py": "Zǒngtǐ ér yán, zhè cì huódòng zǔzhī de fēicháng hǎo.",
+    "example_en": "On the whole, this event was very well organized."
+  },
+  {
+    "simp": "与其...不如...",
+    "trad": "與其...不如...",
+    "pinyin": "Yǔ qí... bùrú...",
+    "meaning": "Rather than... it's better to...",
+    "example_zh": "与其抱怨，不如想办法解决问题。",
+    "example_py": "Yǔ qí bàoyuàn, bùrú xiǎng bànfǎ jiějué wèntí.",
+    "example_en": "Rather than complaining, it's better to think of ways to solve the problem."
+  },
+  {
+    "simp": "说到...就不得不提...",
+    "trad": "說到...就不得不提...",
+    "pinyin": "Shuō dào... jiù bùdébù tí...",
+    "meaning": "Speaking of... one has to mention...",
+    "example_zh": "说到中国文化，就不得不提中医。",
+    "example_py": "Shuō dào Zhōngguó wénhuà, jiù bùdébù tí Zhōngyī.",
+    "example_en": "Speaking of Chinese culture, one has to mention traditional Chinese medicine."
+  },
+  {
+    "simp": "从整体上来看...",
+    "trad": "從整體上來看...",
+    "pinyin": "Cóng zhěngtǐ shàng lái kàn...",
+    "meaning": "Looking at the overall picture...",
+    "example_zh": "从整体上来看，公司的发展势头良好。",
+    "example_py": "Cóng zhěngtǐ shàng lái kàn, gōngsī de fāzhǎn shìtóu liánghǎo.",
+    "example_en": "Looking at the overall picture, the company's development momentum is good."
+  },
+  {
+    "simp": "固然...但...",
+    "trad": "固然...但...",
+    "pinyin": "Gùrán... dàn...",
+    "meaning": "Certainly... but... / It's true... however...",
+    "example_zh": "固然钱很重要，但健康更是无价之宝。",
+    "example_py": "Gùrán qián hěn zhòngyào, dàn jiànkāng gèng shì wú jià zhī bǎo.",
+    "example_en": "Certainly money is important, but health is even more priceless."
+  },
+  {
+    "simp": "现如今...",
+    "trad": "現如今...",
+    "pinyin": "Xiàn rújīn...",
+    "meaning": "Nowadays... / In today's world...",
+    "example_zh": "现如今，智能手机已成为人们生活的必需品。",
+    "example_py": "Xiàn rújīn, zhìnéng shǒujī yǐ chéngwéi rénmen shēnghuó de bìxūpǐn.",
+    "example_en": "Nowadays, smartphones have become a necessity in people's lives."
+  },
+  {
+    "simp": "就...而言...",
+    "trad": "就...而言...",
+    "pinyin": "Jiù... ér yán...",
+    "meaning": "In terms of... / With regard to...",
+    "example_zh": "就环境保护而言，我们还有很长的路要走。",
+    "example_py": "Jiù huánjìng bǎohù ér yán, wǒmen hái yǒu hěn cháng de lù yào zǒu.",
+    "example_en": "In terms of environmental protection, we still have a long way to go."
+  },
+  {
+    "simp": "无论如何...",
+    "trad": "無論如何...",
+    "pinyin": "Wúlùn rúhé...",
+    "meaning": "No matter what... / In any case...",
+    "example_zh": "无论如何，我们都要完成这项任务。",
+    "example_py": "Wúlùn rúhé, wǒmen dōu yào wánchéng zhè xiàng rènwù.",
+    "example_en": "No matter what, we must complete this task."
+  },
+  {
+    "simp": "基于...原因...",
+    "trad": "基於...原因...",
+    "pinyin": "Jīyú... yuányīn...",
+    "meaning": "Based on... reasons...",
+    "example_zh": "基于以上原因，我们决定推迟计划。",
+    "example_py": "Jīyú yǐshàng yuányīn, wǒmen juédìng tuīchí jìhuà.",
+    "example_en": "Based on the above reasons, we decided to postpone the plan."
+  },
+  {
+    "simp": "从另一个角度来看...",
+    "trad": "從另一個角度來看...",
+    "pinyin": "Cóng lìng yī gè jiǎodù lái kàn...",
+    "meaning": "From another angle / From a different perspective...",
+    "example_zh": "从另一个角度来看，这次挫折是一个机会。",
+    "example_py": "Cóng lìng yī gè jiǎodù lái kàn, zhè cì cuòzhé shì yī gè jīhuì.",
+    "example_en": "From another angle, this setback is an opportunity."
+  },
+  {
+    "simp": "令人遗憾的是...",
+    "trad": "令人遺憾的是...",
+    "pinyin": "Lìng rén yíhàn de shì...",
+    "meaning": "Regrettably... / It is a pity that...",
+    "example_zh": "令人遗憾的是，他没能参加这次活动。",
+    "example_py": "Lìng rén yíhàn de shì, tā méi néng cānjiā zhè cì huódòng.",
+    "example_en": "Regrettably, he was unable to attend this event."
+  },
+  {
+    "simp": "可喜的是...",
+    "trad": "可喜的是...",
+    "pinyin": "Kě xǐ de shì...",
+    "meaning": "Pleasingly... / Encouragingly...",
+    "example_zh": "可喜的是，越来越多的年轻人开始关注环保。",
+    "example_py": "Kě xǐ de shì, yuè lái yuè duō de niánqīngrén kāishǐ guānzhù huánbǎo.",
+    "example_en": "Encouragingly, more and more young people are starting to pay attention to environmental protection."
+  },
+  {
+    "simp": "随时随地...",
+    "trad": "隨時隨地...",
+    "pinyin": "Suíshí suídì...",
+    "meaning": "Anytime and anywhere... / At any time and place...",
+    "example_zh": "随时随地，我们都可以通过手机联系。",
+    "example_py": "Suíshí suídì, wǒmen dōu kěyǐ tōngguò shǒujī liánxì.",
+    "example_en": "Anytime and anywhere, we can contact each other through our phones."
+  },
+  {
+    "simp": "对于...来说...",
+    "trad": "對於...來說...",
+    "pinyin": "Duìyú... lái shuō...",
+    "meaning": "For... / As far as ... is concerned...",
+    "example_zh": "对于学生来说，学习是第一位的。",
+    "example_py": "Duìyú xuésheng lái shuō, xuéxí shì dì yī wèi de.",
+    "example_en": "For students, studying comes first."
+  },
+  {
+    "simp": "有目共睹...",
+    "trad": "有目共睹...",
+    "pinyin": "Yǒu mù gòng dǔ...",
+    "meaning": "It is plain for all to see... / Evident to everyone...",
+    "example_zh": "有目共睹，中国这几十年的发展速度令人惊叹。",
+    "example_py": "Yǒu mù gòng dǔ, Zhōngguó zhè jǐ shí nián de fāzhǎn sùdù lìng rén jīngtàn.",
+    "example_en": "It is plain for all to see that China's development speed over the past few decades is astonishing."
+  },
+  {
+    "simp": "进一步说...",
+    "trad": "進一步說...",
+    "pinyin": "Jìn yī bù shuō...",
+    "meaning": "Furthermore... / To go further...",
+    "example_zh": "进一步说，这项政策还需要更多的完善。",
+    "example_py": "Jìn yī bù shuō, zhè xiàng zhèngcè hái xūyào gèng duō de wánshàn.",
+    "example_en": "Furthermore, this policy still needs more improvement."
+  },
+  {
+    "simp": "不可否认...",
+    "trad": "不可否認...",
+    "pinyin": "Bù kě fǒurèn...",
+    "meaning": "Undeniably... / It cannot be denied...",
+    "example_zh": "不可否认，互联网改变了我们的生活方式。",
+    "example_py": "Bù kě fǒurèn, hùliánwǎng gǎibiàn le wǒmen de shēnghuó fāngshì.",
+    "example_en": "Undeniably, the internet has changed our way of life."
+  }
+]

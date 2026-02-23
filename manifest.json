@@ -1,0 +1,27 @@
+{
+  "name": "漢字 · HSK Flashcards",
+  "short_name": "HSK 漢字",
+  "description": "Master Mandarin Chinese with spaced repetition — HSK 1 through HSK 6 with authentic pronunciation.",
+  "start_url": "./chinese-flashcards_2.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f0e8",
+  "theme_color": "#1a1208",
+  "lang": "zh",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

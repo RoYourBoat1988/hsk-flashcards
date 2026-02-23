@@ -1,0 +1,2853 @@
+[
+  {
+    "simp": "把",
+    "trad": "把",
+    "pinyin": "bǎ",
+    "meaning": "preposition indicating disposal of object",
+    "example_zh": "请把书给我。",
+    "example_py": "Qǐng bǎ shū gěi wǒ.",
+    "example_en": "Please give me the book.",
+    "chars": [
+      {
+        "s": "把",
+        "t": "把",
+        "m": "to hold, handle, preposition"
+      }
+    ]
+  },
+  {
+    "simp": "班",
+    "trad": "班",
+    "pinyin": "bān",
+    "meaning": "class; work shift",
+    "example_zh": "我们班有三十个同学。",
+    "example_py": "Wǒmen bān yǒu sānshí gè tóngxué.",
+    "example_en": "Our class has 30 students.",
+    "chars": [
+      {
+        "s": "班",
+        "t": "班",
+        "m": "class, shift, squad"
+      }
+    ]
+  },
+  {
+    "simp": "帮助",
+    "trad": "幫助",
+    "pinyin": "bāngzhù",
+    "meaning": "to help; help",
+    "example_zh": "谢谢你的帮助。",
+    "example_py": "Xièxie nǐ de bāngzhù.",
+    "example_en": "Thank you for your help.",
+    "chars": [
+      {
+        "s": "帮",
+        "t": "幫",
+        "m": "to help, gang"
+      },
+      {
+        "s": "助",
+        "t": "助",
+        "m": "to assist, to help"
+      }
+    ]
+  },
+  {
+    "simp": "报纸",
+    "trad": "報紙",
+    "pinyin": "bàozhǐ",
+    "meaning": "newspaper",
+    "example_zh": "爸爸每天看报纸。",
+    "example_py": "Bàba měitiān kàn bàozhǐ.",
+    "example_en": "Dad reads the newspaper every day.",
+    "chars": [
+      {
+        "s": "报",
+        "t": "報",
+        "m": "newspaper, report"
+      },
+      {
+        "s": "纸",
+        "t": "紙",
+        "m": "paper"
+      }
+    ]
+  },
+  {
+    "simp": "比",
+    "trad": "比",
+    "pinyin": "bǐ",
+    "meaning": "compared to; than",
+    "example_zh": "我比他高。",
+    "example_py": "Wǒ bǐ tā gāo.",
+    "example_en": "I am taller than him.",
+    "chars": [
+      {
+        "s": "比",
+        "t": "比",
+        "m": "to compare, than, ratio"
+      }
+    ]
+  },
+  {
+    "simp": "别",
+    "trad": "別",
+    "pinyin": "bié",
+    "meaning": "don't; other",
+    "example_zh": "别走！",
+    "example_py": "Bié zǒu!",
+    "example_en": "Don't go!",
+    "chars": [
+      {
+        "s": "别",
+        "t": "別",
+        "m": "don't, other, to separate"
+      }
+    ]
+  },
+  {
+    "simp": "病",
+    "trad": "病",
+    "pinyin": "bìng",
+    "meaning": "illness; sick; disease",
+    "example_zh": "他生病了。",
+    "example_py": "Tā shēng bìng le.",
+    "example_en": "He is sick.",
+    "chars": [
+      {
+        "s": "病",
+        "t": "病",
+        "m": "illness, disease, to be sick"
+      }
+    ]
+  },
+  {
+    "simp": "长",
+    "trad": "長",
+    "pinyin": "cháng",
+    "meaning": "long",
+    "example_zh": "这条路很长。",
+    "example_py": "Zhè tiáo lù hěn cháng.",
+    "example_en": "This road is very long.",
+    "chars": [
+      {
+        "s": "长",
+        "t": "長",
+        "m": "long; to grow; elder"
+      }
+    ]
+  },
+  {
+    "simp": "唱歌",
+    "trad": "唱歌",
+    "pinyin": "chàng gē",
+    "meaning": "to sing (a song)",
+    "example_zh": "她唱歌很好听。",
+    "example_py": "Tā chàng gē hěn hǎotīng.",
+    "example_en": "She sings beautifully.",
+    "chars": [
+      {
+        "s": "唱",
+        "t": "唱",
+        "m": "to sing"
+      },
+      {
+        "s": "歌",
+        "t": "歌",
+        "m": "song"
+      }
+    ]
+  },
+  {
+    "simp": "迟到",
+    "trad": "遲到",
+    "pinyin": "chídào",
+    "meaning": "to be late; to arrive late",
+    "example_zh": "你又迟到了！",
+    "example_py": "Nǐ yòu chídào le!",
+    "example_en": "You're late again!",
+    "chars": [
+      {
+        "s": "迟",
+        "t": "遲",
+        "m": "late, slow, to delay"
+      },
+      {
+        "s": "到",
+        "t": "到",
+        "m": "to arrive, to reach"
+      }
+    ]
+  },
+  {
+    "simp": "从",
+    "trad": "從",
+    "pinyin": "cóng",
+    "meaning": "from; since",
+    "example_zh": "我从上海来。",
+    "example_py": "Wǒ cóng Shànghǎi lái.",
+    "example_en": "I come from Shanghai.",
+    "chars": [
+      {
+        "s": "从",
+        "t": "從",
+        "m": "from, since, to follow"
+      }
+    ]
+  },
+  {
+    "simp": "错",
+    "trad": "錯",
+    "pinyin": "cuò",
+    "meaning": "wrong; mistaken; error",
+    "example_zh": "对不起，我说错了。",
+    "example_py": "Duìbuqǐ, wǒ shuō cuò le.",
+    "example_en": "Sorry, I said it wrong.",
+    "chars": [
+      {
+        "s": "错",
+        "t": "錯",
+        "m": "wrong, error, mistake"
+      }
+    ]
+  },
+  {
+    "simp": "打篮球",
+    "trad": "打籃球",
+    "pinyin": "dǎ lánqiú",
+    "meaning": "to play basketball",
+    "example_zh": "他喜欢打篮球。",
+    "example_py": "Tā xǐhuān dǎ lánqiú.",
+    "example_en": "He likes to play basketball.",
+    "chars": [
+      {
+        "s": "打",
+        "t": "打",
+        "m": "to hit, to play"
+      },
+      {
+        "s": "篮",
+        "t": "籃",
+        "m": "basket"
+      },
+      {
+        "s": "球",
+        "t": "球",
+        "m": "ball, sphere"
+      }
+    ]
+  },
+  {
+    "simp": "但是",
+    "trad": "但是",
+    "pinyin": "dànshì",
+    "meaning": "but; however",
+    "example_zh": "我喜欢他，但是他不喜欢我。",
+    "example_py": "Wǒ xǐhuān tā, dànshì tā bù xǐhuān wǒ.",
+    "example_en": "I like him, but he doesn't like me.",
+    "chars": [
+      {
+        "s": "但",
+        "t": "但",
+        "m": "but, only, merely"
+      },
+      {
+        "s": "是",
+        "t": "是",
+        "m": "to be, yes"
+      }
+    ]
+  },
+  {
+    "simp": "当然",
+    "trad": "當然",
+    "pinyin": "dāngrán",
+    "meaning": "of course; certainly",
+    "example_zh": "当然，我会帮你。",
+    "example_py": "Dāngrán, wǒ huì bāng nǐ.",
+    "example_en": "Of course, I'll help you.",
+    "chars": [
+      {
+        "s": "当",
+        "t": "當",
+        "m": "to act as, when, correct"
+      },
+      {
+        "s": "然",
+        "t": "然",
+        "m": "so, like that, correct"
+      }
+    ]
+  },
+  {
+    "simp": "地方",
+    "trad": "地方",
+    "pinyin": "dìfang",
+    "meaning": "place; location; space",
+    "example_zh": "这个地方很漂亮。",
+    "example_py": "Zhège dìfang hěn piàoliang.",
+    "example_en": "This place is very beautiful.",
+    "chars": [
+      {
+        "s": "地",
+        "t": "地",
+        "m": "earth, ground, place"
+      },
+      {
+        "s": "方",
+        "t": "方",
+        "m": "square, direction, method"
+      }
+    ]
+  },
+  {
+    "simp": "第一",
+    "trad": "第一",
+    "pinyin": "dì yī",
+    "meaning": "first; number one",
+    "example_zh": "他第一名！",
+    "example_py": "Tā dì yī míng!",
+    "example_en": "He came in first place!",
+    "chars": [
+      {
+        "s": "第",
+        "t": "第",
+        "m": "ordinal prefix"
+      },
+      {
+        "s": "一",
+        "t": "一",
+        "m": "one"
+      }
+    ]
+  },
+  {
+    "simp": "电影",
+    "trad": "電影",
+    "pinyin": "diànyǐng",
+    "meaning": "movie; film",
+    "example_zh": "我们去看电影吧。",
+    "example_py": "Wǒmen qù kàn diànyǐng ba.",
+    "example_en": "Let's go watch a movie.",
+    "chars": [
+      {
+        "s": "电",
+        "t": "電",
+        "m": "electricity, electric"
+      },
+      {
+        "s": "影",
+        "t": "影",
+        "m": "shadow, image, film"
+      }
+    ]
+  },
+  {
+    "simp": "动物",
+    "trad": "動物",
+    "pinyin": "dòngwù",
+    "meaning": "animal",
+    "example_zh": "我喜欢动物。",
+    "example_py": "Wǒ xǐhuān dòngwù.",
+    "example_en": "I like animals.",
+    "chars": [
+      {
+        "s": "动",
+        "t": "動",
+        "m": "to move, to act"
+      },
+      {
+        "s": "物",
+        "t": "物",
+        "m": "thing, matter, creature"
+      }
+    ]
+  },
+  {
+    "simp": "对",
+    "trad": "對",
+    "pinyin": "duì",
+    "meaning": "correct; right; toward; pair",
+    "example_zh": "你说得对。",
+    "example_py": "Nǐ shuō de duì.",
+    "example_en": "You are right.",
+    "chars": [
+      {
+        "s": "对",
+        "t": "對",
+        "m": "correct, right, toward, to face"
+      }
+    ]
+  },
+  {
+    "simp": "方便",
+    "trad": "方便",
+    "pinyin": "fāngbiàn",
+    "meaning": "convenient; to make it easy for",
+    "example_zh": "这里交通很方便。",
+    "example_py": "Zhèlǐ jiāotōng hěn fāngbiàn.",
+    "example_en": "Transportation here is very convenient.",
+    "chars": [
+      {
+        "s": "方",
+        "t": "方",
+        "m": "square, direction, method"
+      },
+      {
+        "s": "便",
+        "t": "便",
+        "m": "convenient, then, to relieve oneself"
+      }
+    ]
+  },
+  {
+    "simp": "放",
+    "trad": "放",
+    "pinyin": "fàng",
+    "meaning": "to put; to place; to release",
+    "example_zh": "把书放在桌子上。",
+    "example_py": "Bǎ shū fàng zài zhuōzi shàng.",
+    "example_en": "Put the book on the table.",
+    "chars": [
+      {
+        "s": "放",
+        "t": "放",
+        "m": "to put, to place, to release"
+      }
+    ]
+  },
+  {
+    "simp": "服务员",
+    "trad": "服務員",
+    "pinyin": "fúwùyuán",
+    "meaning": "waiter; attendant; server",
+    "example_zh": "服务员，买单！",
+    "example_py": "Fúwùyuán, mǎidān!",
+    "example_en": "Waiter, check please!",
+    "chars": [
+      {
+        "s": "服",
+        "t": "服",
+        "m": "clothing, to serve"
+      },
+      {
+        "s": "务",
+        "t": "務",
+        "m": "affairs, duty, business"
+      },
+      {
+        "s": "员",
+        "t": "員",
+        "m": "person, personnel, member"
+      }
+    ]
+  },
+  {
+    "simp": "附近",
+    "trad": "附近",
+    "pinyin": "fùjìn",
+    "meaning": "nearby; in the vicinity",
+    "example_zh": "附近有没有超市？",
+    "example_py": "Fùjìn yǒu méiyǒu chāoshì?",
+    "example_en": "Is there a supermarket nearby?",
+    "chars": [
+      {
+        "s": "附",
+        "t": "附",
+        "m": "to attach, nearby"
+      },
+      {
+        "s": "近",
+        "t": "近",
+        "m": "near, close, recent"
+      }
+    ]
+  },
+  {
+    "simp": "告诉",
+    "trad": "告訴",
+    "pinyin": "gàosu",
+    "meaning": "to tell; to let know",
+    "example_zh": "请告诉我你的地址。",
+    "example_py": "Qǐng gàosu wǒ nǐ de dìzhǐ.",
+    "example_en": "Please tell me your address.",
+    "chars": [
+      {
+        "s": "告",
+        "t": "告",
+        "m": "to tell, to inform, to accuse"
+      },
+      {
+        "s": "诉",
+        "t": "訴",
+        "m": "to tell, to complain, to appeal"
+      }
+    ]
+  },
+  {
+    "simp": "哥哥",
+    "trad": "哥哥",
+    "pinyin": "gēge",
+    "meaning": "older brother",
+    "example_zh": "我哥哥在大学学习。",
+    "example_py": "Wǒ gēge zài dàxué xuéxí.",
+    "example_en": "My older brother studies at university.",
+    "chars": [
+      {
+        "s": "哥",
+        "t": "哥",
+        "m": "older brother"
+      }
+    ]
+  },
+  {
+    "simp": "给",
+    "trad": "給",
+    "pinyin": "gěi",
+    "meaning": "to give; for; to",
+    "example_zh": "请给我一杯水。",
+    "example_py": "Qǐng gěi wǒ yī bēi shuǐ.",
+    "example_en": "Please give me a glass of water.",
+    "chars": [
+      {
+        "s": "给",
+        "t": "給",
+        "m": "to give, for, to"
+      }
+    ]
+  },
+  {
+    "simp": "公司",
+    "trad": "公司",
+    "pinyin": "gōngsī",
+    "meaning": "company; corporation",
+    "example_zh": "我在一家大公司工作。",
+    "example_py": "Wǒ zài yī jiā dà gōngsī gōngzuò.",
+    "example_en": "I work at a big company.",
+    "chars": [
+      {
+        "s": "公",
+        "t": "公",
+        "m": "public, fair, male, grandfather"
+      },
+      {
+        "s": "司",
+        "t": "司",
+        "m": "to manage, department"
+      }
+    ]
+  },
+  {
+    "simp": "公园",
+    "trad": "公園",
+    "pinyin": "gōngyuán",
+    "meaning": "park",
+    "example_zh": "周末我去公园散步。",
+    "example_py": "Zhōumò wǒ qù gōngyuán sànbù.",
+    "example_en": "I take walks in the park on weekends.",
+    "chars": [
+      {
+        "s": "公",
+        "t": "公",
+        "m": "public"
+      },
+      {
+        "s": "园",
+        "t": "園",
+        "m": "garden, park, orchard"
+      }
+    ]
+  },
+  {
+    "simp": "贵",
+    "trad": "貴",
+    "pinyin": "guì",
+    "meaning": "expensive; precious; honorable",
+    "example_zh": "这件衣服太贵了。",
+    "example_py": "Zhè jiàn yīfu tài guì le.",
+    "example_en": "This clothing is too expensive.",
+    "chars": [
+      {
+        "s": "贵",
+        "t": "貴",
+        "m": "expensive, precious, noble"
+      }
+    ]
+  },
+  {
+    "simp": "还是",
+    "trad": "還是",
+    "pinyin": "háishi",
+    "meaning": "or; still; had better",
+    "example_zh": "你喝茶还是咖啡？",
+    "example_py": "Nǐ hē chá háishi kāfēi?",
+    "example_en": "Do you drink tea or coffee?",
+    "chars": [
+      {
+        "s": "还",
+        "t": "還",
+        "m": "still, yet, also, to return"
+      },
+      {
+        "s": "是",
+        "t": "是",
+        "m": "to be, is, yes"
+      }
+    ]
+  },
+  {
+    "simp": "孩子",
+    "trad": "孩子",
+    "pinyin": "háizi",
+    "meaning": "child; children",
+    "example_zh": "她有两个孩子。",
+    "example_py": "Tā yǒu liǎng gè háizi.",
+    "example_en": "She has two children.",
+    "chars": [
+      {
+        "s": "孩",
+        "t": "孩",
+        "m": "child"
+      },
+      {
+        "s": "子",
+        "t": "子",
+        "m": "son, child, suffix"
+      }
+    ]
+  },
+  {
+    "simp": "黑",
+    "trad": "黑",
+    "pinyin": "hēi",
+    "meaning": "black; dark",
+    "example_zh": "他穿着黑色的衣服。",
+    "example_py": "Tā chuānzhe hēisè de yīfu.",
+    "example_en": "He is wearing black clothing.",
+    "chars": [
+      {
+        "s": "黑",
+        "t": "黑",
+        "m": "black, dark"
+      }
+    ]
+  },
+  {
+    "simp": "红",
+    "trad": "紅",
+    "pinyin": "hóng",
+    "meaning": "red",
+    "example_zh": "她喜欢红色。",
+    "example_py": "Tā xǐhuān hóngsè.",
+    "example_en": "She likes the color red.",
+    "chars": [
+      {
+        "s": "红",
+        "t": "紅",
+        "m": "red, popular, successful"
+      }
+    ]
+  },
+  {
+    "simp": "花",
+    "trad": "花",
+    "pinyin": "huā",
+    "meaning": "flower; to spend",
+    "example_zh": "这朵花很美。",
+    "example_py": "Zhè duǒ huā hěn měi.",
+    "example_en": "This flower is very beautiful.",
+    "chars": [
+      {
+        "s": "花",
+        "t": "花",
+        "m": "flower, to spend, colorful"
+      }
+    ]
+  },
+  {
+    "simp": "欢迎",
+    "trad": "歡迎",
+    "pinyin": "huānyíng",
+    "meaning": "welcome",
+    "example_zh": "欢迎来到中国！",
+    "example_py": "Huānyíng lái dào Zhōngguó!",
+    "example_en": "Welcome to China!",
+    "chars": [
+      {
+        "s": "欢",
+        "t": "歡",
+        "m": "happy, joyful, to enjoy"
+      },
+      {
+        "s": "迎",
+        "t": "迎",
+        "m": "to welcome, to greet, to face"
+      }
+    ]
+  },
+  {
+    "simp": "换",
+    "trad": "換",
+    "pinyin": "huàn",
+    "meaning": "to exchange; to change",
+    "example_zh": "我想换一件衣服。",
+    "example_py": "Wǒ xiǎng huàn yī jiàn yīfu.",
+    "example_en": "I want to change clothes.",
+    "chars": [
+      {
+        "s": "换",
+        "t": "換",
+        "m": "to exchange, to change, to substitute"
+      }
+    ]
+  },
+  {
+    "simp": "机场",
+    "trad": "機場",
+    "pinyin": "jīchǎng",
+    "meaning": "airport",
+    "example_zh": "我去机场接你。",
+    "example_py": "Wǒ qù jīchǎng jiē nǐ.",
+    "example_en": "I'll pick you up at the airport.",
+    "chars": [
+      {
+        "s": "机",
+        "t": "機",
+        "m": "machine, opportunity"
+      },
+      {
+        "s": "场",
+        "t": "場",
+        "m": "field, place, scene"
+      }
+    ]
+  },
+  {
+    "simp": "季节",
+    "trad": "季節",
+    "pinyin": "jìjié",
+    "meaning": "season",
+    "example_zh": "你最喜欢哪个季节？",
+    "example_py": "Nǐ zuì xǐhuān nǎ gè jìjié?",
+    "example_en": "Which season do you like most?",
+    "chars": [
+      {
+        "s": "季",
+        "t": "季",
+        "m": "season, quarter of a year"
+      },
+      {
+        "s": "节",
+        "t": "節",
+        "m": "holiday, section, joint, to restrict"
+      }
+    ]
+  },
+  {
+    "simp": "结婚",
+    "trad": "結婚",
+    "pinyin": "jiéhūn",
+    "meaning": "to get married",
+    "example_zh": "他们明年结婚。",
+    "example_py": "Tāmen míngnián jiéhūn.",
+    "example_en": "They will get married next year.",
+    "chars": [
+      {
+        "s": "结",
+        "t": "結",
+        "m": "to tie, to knot, to result"
+      },
+      {
+        "s": "婚",
+        "t": "婚",
+        "m": "marriage, to marry"
+      }
+    ]
+  },
+  {
+    "simp": "介绍",
+    "trad": "介紹",
+    "pinyin": "jièshào",
+    "meaning": "to introduce; introduction",
+    "example_zh": "请让我介绍一下我自己。",
+    "example_py": "Qǐng ràng wǒ jièshào yīxià wǒ zìjǐ.",
+    "example_en": "Please let me introduce myself.",
+    "chars": [
+      {
+        "s": "介",
+        "t": "介",
+        "m": "between, to introduce"
+      },
+      {
+        "s": "绍",
+        "t": "紹",
+        "m": "to continue, to introduce"
+      }
+    ]
+  },
+  {
+    "simp": "进",
+    "trad": "進",
+    "pinyin": "jìn",
+    "meaning": "to enter; to advance",
+    "example_zh": "请进！",
+    "example_py": "Qǐng jìn!",
+    "example_en": "Please come in!",
+    "chars": [
+      {
+        "s": "进",
+        "t": "進",
+        "m": "to enter, to advance, to go forward"
+      }
+    ]
+  },
+  {
+    "simp": "近",
+    "trad": "近",
+    "pinyin": "jìn",
+    "meaning": "near; close; recent",
+    "example_zh": "学校离这里很近。",
+    "example_py": "Xuéxiào lí zhèlǐ hěn jìn.",
+    "example_en": "The school is very close to here.",
+    "chars": [
+      {
+        "s": "近",
+        "t": "近",
+        "m": "near, close, recent"
+      }
+    ]
+  },
+  {
+    "simp": "就",
+    "trad": "就",
+    "pinyin": "jiù",
+    "meaning": "just; right away; only; then",
+    "example_zh": "我就来了！",
+    "example_py": "Wǒ jiù lái le!",
+    "example_en": "I'm coming right now!",
+    "chars": [
+      {
+        "s": "就",
+        "t": "就",
+        "m": "just, right, only, then, to move toward"
+      }
+    ]
+  },
+  {
+    "simp": "咖啡",
+    "trad": "咖啡",
+    "pinyin": "kāfēi",
+    "meaning": "coffee",
+    "example_zh": "我每天喝一杯咖啡。",
+    "example_py": "Wǒ měitiān hē yī bēi kāfēi.",
+    "example_en": "I drink a cup of coffee every day.",
+    "chars": [
+      {
+        "s": "咖",
+        "t": "咖",
+        "m": "(phonetic) coffee"
+      },
+      {
+        "s": "啡",
+        "t": "啡",
+        "m": "(phonetic) coffee"
+      }
+    ]
+  },
+  {
+    "simp": "开始",
+    "trad": "開始",
+    "pinyin": "kāishǐ",
+    "meaning": "to begin; to start; beginning",
+    "example_zh": "课要开始了。",
+    "example_py": "Kè yào kāishǐ le.",
+    "example_en": "Class is about to begin.",
+    "chars": [
+      {
+        "s": "开",
+        "t": "開",
+        "m": "to open, to start"
+      },
+      {
+        "s": "始",
+        "t": "始",
+        "m": "beginning, to start"
+      }
+    ]
+  },
+  {
+    "simp": "可能",
+    "trad": "可能",
+    "pinyin": "kěnéng",
+    "meaning": "maybe; possible; possibly",
+    "example_zh": "他可能来，也可能不来。",
+    "example_py": "Tā kěnéng lái, yě kěnéng bù lái.",
+    "example_en": "He might come, or might not.",
+    "chars": [
+      {
+        "s": "可",
+        "t": "可",
+        "m": "can, may, but"
+      },
+      {
+        "s": "能",
+        "t": "能",
+        "m": "can, to be able, talent"
+      }
+    ]
+  },
+  {
+    "simp": "可以",
+    "trad": "可以",
+    "pinyin": "kěyǐ",
+    "meaning": "can; may; okay; allowed",
+    "example_zh": "我可以进来吗？",
+    "example_py": "Wǒ kěyǐ jìnlái ma?",
+    "example_en": "May I come in?",
+    "chars": [
+      {
+        "s": "可",
+        "t": "可",
+        "m": "can, may"
+      },
+      {
+        "s": "以",
+        "t": "以",
+        "m": "by means of, because, in order to"
+      }
+    ]
+  },
+  {
+    "simp": "口",
+    "trad": "口",
+    "pinyin": "kǒu",
+    "meaning": "mouth; opening",
+    "example_zh": "她的口很小。",
+    "example_py": "Tā de kǒu hěn xiǎo.",
+    "example_en": "She has a small mouth.",
+    "chars": [
+      {
+        "s": "口",
+        "t": "口",
+        "m": "mouth, opening, entrance"
+      }
+    ]
+  },
+  {
+    "simp": "快",
+    "trad": "快",
+    "pinyin": "kuài",
+    "meaning": "fast; quick; quickly",
+    "example_zh": "请说快一点。",
+    "example_py": "Qǐng shuō kuài yīdiǎn.",
+    "example_en": "Please speak a little faster.",
+    "chars": [
+      {
+        "s": "快",
+        "t": "快",
+        "m": "fast, quick, soon, pleasant"
+      }
+    ]
+  },
+  {
+    "simp": "快乐",
+    "trad": "快樂",
+    "pinyin": "kuàilè",
+    "meaning": "happy; joyful",
+    "example_zh": "生日快乐！",
+    "example_py": "Shēngrì kuàilè!",
+    "example_en": "Happy birthday!",
+    "chars": [
+      {
+        "s": "快",
+        "t": "快",
+        "m": "fast, pleasant, happy"
+      },
+      {
+        "s": "乐",
+        "t": "樂",
+        "m": "happy, music, to enjoy"
+      }
+    ]
+  },
+  {
+    "simp": "离",
+    "trad": "離",
+    "pinyin": "lí",
+    "meaning": "from; away from; to leave",
+    "example_zh": "学校离这里很近。",
+    "example_py": "Xuéxiào lí zhèlǐ hěn jìn.",
+    "example_en": "The school is very close to here.",
+    "chars": [
+      {
+        "s": "离",
+        "t": "離",
+        "m": "to leave, from, away from"
+      }
+    ]
+  },
+  {
+    "simp": "脸",
+    "trad": "臉",
+    "pinyin": "liǎn",
+    "meaning": "face",
+    "example_zh": "你的脸很红。",
+    "example_py": "Nǐ de liǎn hěn hóng.",
+    "example_en": "Your face is very red.",
+    "chars": [
+      {
+        "s": "脸",
+        "t": "臉",
+        "m": "face"
+      }
+    ]
+  },
+  {
+    "simp": "两",
+    "trad": "兩",
+    "pinyin": "liǎng",
+    "meaning": "two (before measure word); both",
+    "example_zh": "我买了两本书。",
+    "example_py": "Wǒ mǎi le liǎng běn shū.",
+    "example_en": "I bought two books.",
+    "chars": [
+      {
+        "s": "两",
+        "t": "兩",
+        "m": "two, both, a pair, tael"
+      }
+    ]
+  },
+  {
+    "simp": "楼",
+    "trad": "樓",
+    "pinyin": "lóu",
+    "meaning": "building; floor (of building)",
+    "example_zh": "我住在三楼。",
+    "example_py": "Wǒ zhù zài sān lóu.",
+    "example_en": "I live on the third floor.",
+    "chars": [
+      {
+        "s": "楼",
+        "t": "樓",
+        "m": "building with floors, floor"
+      }
+    ]
+  },
+  {
+    "simp": "路",
+    "trad": "路",
+    "pinyin": "lù",
+    "meaning": "road; path; route",
+    "example_zh": "这条路很长。",
+    "example_py": "Zhè tiáo lù hěn cháng.",
+    "example_en": "This road is very long.",
+    "chars": [
+      {
+        "s": "路",
+        "t": "路",
+        "m": "road, path, route"
+      }
+    ]
+  },
+  {
+    "simp": "旅游",
+    "trad": "旅遊",
+    "pinyin": "lǚyóu",
+    "meaning": "to travel; tour; tourism",
+    "example_zh": "我喜欢去外国旅游。",
+    "example_py": "Wǒ xǐhuān qù wàiguó lǚyóu.",
+    "example_en": "I like traveling abroad.",
+    "chars": [
+      {
+        "s": "旅",
+        "t": "旅",
+        "m": "travel, troops"
+      },
+      {
+        "s": "游",
+        "t": "遊",
+        "m": "to travel, to swim"
+      }
+    ]
+  },
+  {
+    "simp": "卖",
+    "trad": "賣",
+    "pinyin": "mài",
+    "meaning": "to sell",
+    "example_zh": "这里卖什么？",
+    "example_py": "Zhèlǐ mài shénme?",
+    "example_en": "What do they sell here?",
+    "chars": [
+      {
+        "s": "卖",
+        "t": "賣",
+        "m": "to sell"
+      }
+    ]
+  },
+  {
+    "simp": "慢",
+    "trad": "慢",
+    "pinyin": "màn",
+    "meaning": "slow; slowly",
+    "example_zh": "请说慢一点。",
+    "example_py": "Qǐng shuō màn yīdiǎn.",
+    "example_en": "Please speak a little slower.",
+    "chars": [
+      {
+        "s": "慢",
+        "t": "慢",
+        "m": "slow, slowly, leisurely"
+      }
+    ]
+  },
+  {
+    "simp": "每",
+    "trad": "每",
+    "pinyin": "měi",
+    "meaning": "every; each",
+    "example_zh": "我每天锻炼。",
+    "example_py": "Wǒ měitiān duànliàn.",
+    "example_en": "I exercise every day.",
+    "chars": [
+      {
+        "s": "每",
+        "t": "每",
+        "m": "every, each"
+      }
+    ]
+  },
+  {
+    "simp": "门",
+    "trad": "門",
+    "pinyin": "mén",
+    "meaning": "door; gate",
+    "example_zh": "请关门。",
+    "example_py": "Qǐng guān mén.",
+    "example_en": "Please close the door.",
+    "chars": [
+      {
+        "s": "门",
+        "t": "門",
+        "m": "door, gate, entrance"
+      }
+    ]
+  },
+  {
+    "simp": "面条",
+    "trad": "麵條",
+    "pinyin": "miàntiáo",
+    "meaning": "noodles",
+    "example_zh": "我喜欢吃面条。",
+    "example_py": "Wǒ xǐhuān chī miàntiáo.",
+    "example_en": "I like eating noodles.",
+    "chars": [
+      {
+        "s": "面",
+        "t": "麵",
+        "m": "flour, noodles, face"
+      },
+      {
+        "s": "条",
+        "t": "條",
+        "m": "strip, item, clause"
+      }
+    ]
+  },
+  {
+    "simp": "明白",
+    "trad": "明白",
+    "pinyin": "míngbai",
+    "meaning": "to understand; clear; obvious",
+    "example_zh": "我明白你的意思了。",
+    "example_py": "Wǒ míngbai nǐ de yìsi le.",
+    "example_en": "I understand your meaning.",
+    "chars": [
+      {
+        "s": "明",
+        "t": "明",
+        "m": "bright, clear, tomorrow"
+      },
+      {
+        "s": "白",
+        "t": "白",
+        "m": "white, clear, in vain"
+      }
+    ]
+  },
+  {
+    "simp": "拿",
+    "trad": "拿",
+    "pinyin": "ná",
+    "meaning": "to take; to hold; to get",
+    "example_zh": "请帮我拿一下书。",
+    "example_py": "Qǐng bāng wǒ ná yīxià shū.",
+    "example_en": "Please help me get the book.",
+    "chars": [
+      {
+        "s": "拿",
+        "t": "拿",
+        "m": "to take, to hold, to get"
+      }
+    ]
+  },
+  {
+    "simp": "奶奶",
+    "trad": "奶奶",
+    "pinyin": "nǎinai",
+    "meaning": "paternal grandmother",
+    "example_zh": "我奶奶住在农村。",
+    "example_py": "Wǒ nǎinai zhù zài nóngcūn.",
+    "example_en": "My grandmother lives in the countryside.",
+    "chars": [
+      {
+        "s": "奶",
+        "t": "奶",
+        "m": "breast, milk, grandmother"
+      }
+    ]
+  },
+  {
+    "simp": "男",
+    "trad": "男",
+    "pinyin": "nán",
+    "meaning": "male; man; son",
+    "example_zh": "那个男孩子很帅。",
+    "example_py": "Nàge nán háizi hěn shuài.",
+    "example_en": "That boy is very handsome.",
+    "chars": [
+      {
+        "s": "男",
+        "t": "男",
+        "m": "male, man, son"
+      }
+    ]
+  },
+  {
+    "simp": "您",
+    "trad": "您",
+    "pinyin": "nín",
+    "meaning": "you (polite form)",
+    "example_zh": "您好！请问有什么需要？",
+    "example_py": "Nín hǎo! Qǐngwèn yǒu shénme xūyào?",
+    "example_en": "How do you do! What do you need?",
+    "chars": [
+      {
+        "s": "您",
+        "t": "您",
+        "m": "you (polite/respectful form)"
+      }
+    ]
+  },
+  {
+    "simp": "女",
+    "trad": "女",
+    "pinyin": "nǚ",
+    "meaning": "female; woman; daughter",
+    "example_zh": "那个女孩子很漂亮。",
+    "example_py": "Nàge nǚ háizi hěn piàoliang.",
+    "example_en": "That girl is very beautiful.",
+    "chars": [
+      {
+        "s": "女",
+        "t": "女",
+        "m": "female, woman, daughter"
+      }
+    ]
+  },
+  {
+    "simp": "爬山",
+    "trad": "爬山",
+    "pinyin": "pá shān",
+    "meaning": "to climb a mountain; to hike",
+    "example_zh": "我们周末去爬山吧。",
+    "example_py": "Wǒmen zhōumò qù pá shān ba.",
+    "example_en": "Let's go mountain climbing this weekend.",
+    "chars": [
+      {
+        "s": "爬",
+        "t": "爬",
+        "m": "to climb, to crawl"
+      },
+      {
+        "s": "山",
+        "t": "山",
+        "m": "mountain, hill"
+      }
+    ]
+  },
+  {
+    "simp": "旁边",
+    "trad": "旁邊",
+    "pinyin": "pángbiān",
+    "meaning": "beside; next to; nearby",
+    "example_zh": "我家旁边有一个公园。",
+    "example_py": "Wǒ jiā pángbiān yǒu yī gè gōngyuán.",
+    "example_en": "There is a park next to my home.",
+    "chars": [
+      {
+        "s": "旁",
+        "t": "旁",
+        "m": "side, beside"
+      },
+      {
+        "s": "边",
+        "t": "邊",
+        "m": "side, edge, border"
+      }
+    ]
+  },
+  {
+    "simp": "跑步",
+    "trad": "跑步",
+    "pinyin": "pǎobù",
+    "meaning": "to run; running; jogging",
+    "example_zh": "我每天早上跑步。",
+    "example_py": "Wǒ měitiān zǎoshang pǎobù.",
+    "example_en": "I jog every morning.",
+    "chars": [
+      {
+        "s": "跑",
+        "t": "跑",
+        "m": "to run"
+      },
+      {
+        "s": "步",
+        "t": "步",
+        "m": "step, pace, stage"
+      }
+    ]
+  },
+  {
+    "simp": "便宜",
+    "trad": "便宜",
+    "pinyin": "piányí",
+    "meaning": "cheap; inexpensive",
+    "example_zh": "这里的东西很便宜。",
+    "example_py": "Zhèlǐ de dōngxi hěn piányí.",
+    "example_en": "Things here are very cheap.",
+    "chars": [
+      {
+        "s": "便",
+        "t": "便",
+        "m": "convenient, cheap"
+      },
+      {
+        "s": "宜",
+        "t": "宜",
+        "m": "suitable, appropriate, cheap"
+      }
+    ]
+  },
+  {
+    "simp": "票",
+    "trad": "票",
+    "pinyin": "piào",
+    "meaning": "ticket; bill; note",
+    "example_zh": "我买了两张票。",
+    "example_py": "Wǒ mǎi le liǎng zhāng piào.",
+    "example_en": "I bought two tickets.",
+    "chars": [
+      {
+        "s": "票",
+        "t": "票",
+        "m": "ticket, note, ballot"
+      }
+    ]
+  },
+  {
+    "simp": "妻子",
+    "trad": "妻子",
+    "pinyin": "qīzi",
+    "meaning": "wife",
+    "example_zh": "他的妻子很漂亮。",
+    "example_py": "Tā de qīzi hěn piàoliang.",
+    "example_en": "His wife is very beautiful.",
+    "chars": [
+      {
+        "s": "妻",
+        "t": "妻",
+        "m": "wife"
+      },
+      {
+        "s": "子",
+        "t": "子",
+        "m": "child; suffix"
+      }
+    ]
+  },
+  {
+    "simp": "起床",
+    "trad": "起床",
+    "pinyin": "qǐ chuáng",
+    "meaning": "to get up; to get out of bed",
+    "example_zh": "我每天七点起床。",
+    "example_py": "Wǒ měitiān qī diǎn qǐ chuáng.",
+    "example_en": "I get up at 7 o'clock every day.",
+    "chars": [
+      {
+        "s": "起",
+        "t": "起",
+        "m": "to rise, to get up"
+      },
+      {
+        "s": "床",
+        "t": "床",
+        "m": "bed"
+      }
+    ]
+  },
+  {
+    "simp": "骑",
+    "trad": "騎",
+    "pinyin": "qí",
+    "meaning": "to ride (horse, bike)",
+    "example_zh": "我骑自行车上班。",
+    "example_py": "Wǒ qí zìxíngchē shàngbān.",
+    "example_en": "I ride my bicycle to work.",
+    "chars": [
+      {
+        "s": "骑",
+        "t": "騎",
+        "m": "to ride (horse, bike)"
+      }
+    ]
+  },
+  {
+    "simp": "起来",
+    "trad": "起來",
+    "pinyin": "qǐlái",
+    "meaning": "to get up; to rise; (verb complement)",
+    "example_zh": "他站起来说话。",
+    "example_py": "Tā zhàn qǐlái shuōhuà.",
+    "example_en": "He stood up to speak.",
+    "chars": [
+      {
+        "s": "起",
+        "t": "起",
+        "m": "to rise"
+      },
+      {
+        "s": "来",
+        "t": "來",
+        "m": "to come"
+      }
+    ]
+  },
+  {
+    "simp": "其实",
+    "trad": "其實",
+    "pinyin": "qíshí",
+    "meaning": "actually; in fact; as a matter of fact",
+    "example_zh": "其实我不喜欢这个。",
+    "example_py": "Qíshí wǒ bù xǐhuān zhège.",
+    "example_en": "Actually, I don't like this.",
+    "chars": [
+      {
+        "s": "其",
+        "t": "其",
+        "m": "its, his, that"
+      },
+      {
+        "s": "实",
+        "t": "實",
+        "m": "real, solid, full"
+      }
+    ]
+  },
+  {
+    "simp": "上班",
+    "trad": "上班",
+    "pinyin": "shàng bān",
+    "meaning": "to go to work; to start work",
+    "example_zh": "你几点上班？",
+    "example_py": "Nǐ jǐ diǎn shàng bān?",
+    "example_en": "What time do you start work?",
+    "chars": [
+      {
+        "s": "上",
+        "t": "上",
+        "m": "up, to go"
+      },
+      {
+        "s": "班",
+        "t": "班",
+        "m": "class, shift, work"
+      }
+    ]
+  },
+  {
+    "simp": "身体",
+    "trad": "身體",
+    "pinyin": "shēntǐ",
+    "meaning": "body; health",
+    "example_zh": "注意身体！",
+    "example_py": "Zhùyì shēntǐ!",
+    "example_en": "Take care of your health!",
+    "chars": [
+      {
+        "s": "身",
+        "t": "身",
+        "m": "body, oneself"
+      },
+      {
+        "s": "体",
+        "t": "體",
+        "m": "body, form, system"
+      }
+    ]
+  },
+  {
+    "simp": "生气",
+    "trad": "生氣",
+    "pinyin": "shēng qì",
+    "meaning": "to be angry; angry",
+    "example_zh": "她为什么生气？",
+    "example_py": "Tā wèishénme shēng qì?",
+    "example_en": "Why is she angry?",
+    "chars": [
+      {
+        "s": "生",
+        "t": "生",
+        "m": "to live, life"
+      },
+      {
+        "s": "气",
+        "t": "氣",
+        "m": "air, spirit, to anger"
+      }
+    ]
+  },
+  {
+    "simp": "手机",
+    "trad": "手機",
+    "pinyin": "shǒujī",
+    "meaning": "cell phone; mobile phone",
+    "example_zh": "我的手机没电了。",
+    "example_py": "Wǒ de shǒujī méi diàn le.",
+    "example_en": "My phone is out of battery.",
+    "chars": [
+      {
+        "s": "手",
+        "t": "手",
+        "m": "hand"
+      },
+      {
+        "s": "机",
+        "t": "機",
+        "m": "machine, device, opportunity"
+      }
+    ]
+  },
+  {
+    "simp": "送",
+    "trad": "送",
+    "pinyin": "sòng",
+    "meaning": "to give (as gift); to send; to escort",
+    "example_zh": "他送我一本书作为礼物。",
+    "example_py": "Tā sòng wǒ yī běn shū zuòwéi lǐwù.",
+    "example_en": "He gave me a book as a gift.",
+    "chars": [
+      {
+        "s": "送",
+        "t": "送",
+        "m": "to give, to send, to escort"
+      }
+    ]
+  },
+  {
+    "simp": "虽然",
+    "trad": "雖然",
+    "pinyin": "suīrán",
+    "meaning": "although; even though",
+    "example_zh": "虽然下雨，我还是去了。",
+    "example_py": "Suīrán xià yǔ, wǒ háishi qù le.",
+    "example_en": "Although it rained, I still went.",
+    "chars": [
+      {
+        "s": "虽",
+        "t": "雖",
+        "m": "although, even though"
+      },
+      {
+        "s": "然",
+        "t": "然",
+        "m": "so, like that, correct"
+      }
+    ]
+  },
+  {
+    "simp": "甜",
+    "trad": "甜",
+    "pinyin": "tián",
+    "meaning": "sweet; gratifying",
+    "example_zh": "这个蛋糕很甜。",
+    "example_py": "Zhège dàngāo hěn tián.",
+    "example_en": "This cake is very sweet.",
+    "chars": [
+      {
+        "s": "甜",
+        "t": "甜",
+        "m": "sweet, pleasant"
+      }
+    ]
+  },
+  {
+    "simp": "跳舞",
+    "trad": "跳舞",
+    "pinyin": "tiào wǔ",
+    "meaning": "to dance",
+    "example_zh": "她跳舞跳得很好。",
+    "example_py": "Tā tiào wǔ tiào de hěn hǎo.",
+    "example_en": "She dances very well.",
+    "chars": [
+      {
+        "s": "跳",
+        "t": "跳",
+        "m": "to jump, to leap, to dance"
+      },
+      {
+        "s": "舞",
+        "t": "舞",
+        "m": "dance, to dance"
+      }
+    ]
+  },
+  {
+    "simp": "完",
+    "trad": "完",
+    "pinyin": "wán",
+    "meaning": "to finish; complete",
+    "example_zh": "作业做完了吗？",
+    "example_py": "Zuòyè zuò wán le ma?",
+    "example_en": "Is the homework done?",
+    "chars": [
+      {
+        "s": "完",
+        "t": "完",
+        "m": "complete, finished, to run out"
+      }
+    ]
+  },
+  {
+    "simp": "玩",
+    "trad": "玩",
+    "pinyin": "wán",
+    "meaning": "to play; to have fun; to visit",
+    "example_zh": "孩子们在玩。",
+    "example_py": "Háizimen zài wán.",
+    "example_en": "The children are playing.",
+    "chars": [
+      {
+        "s": "玩",
+        "t": "玩",
+        "m": "to play, to enjoy, to have fun"
+      }
+    ]
+  },
+  {
+    "simp": "晚上",
+    "trad": "晚上",
+    "pinyin": "wǎnshàng",
+    "meaning": "evening; night",
+    "example_zh": "晚上我们一起吃饭。",
+    "example_py": "Wǎnshàng wǒmen yīqǐ chīfàn.",
+    "example_en": "Let's eat together this evening.",
+    "chars": [
+      {
+        "s": "晚",
+        "t": "晚",
+        "m": "late, evening, night"
+      },
+      {
+        "s": "上",
+        "t": "上",
+        "m": "up, on, above"
+      }
+    ]
+  },
+  {
+    "simp": "为什么",
+    "trad": "為什麼",
+    "pinyin": "wèishénme",
+    "meaning": "why; for what reason",
+    "example_zh": "你为什么哭？",
+    "example_py": "Nǐ wèishénme kū?",
+    "example_en": "Why are you crying?",
+    "chars": [
+      {
+        "s": "为",
+        "t": "為",
+        "m": "for, because of, to be"
+      },
+      {
+        "s": "什",
+        "t": "什",
+        "m": "what"
+      },
+      {
+        "s": "么",
+        "t": "麼",
+        "m": "suffix"
+      }
+    ]
+  },
+  {
+    "simp": "问",
+    "trad": "問",
+    "pinyin": "wèn",
+    "meaning": "to ask; to inquire",
+    "example_zh": "我想问你一个问题。",
+    "example_py": "Wǒ xiǎng wèn nǐ yī gè wèntí.",
+    "example_en": "I want to ask you a question.",
+    "chars": [
+      {
+        "s": "问",
+        "t": "問",
+        "m": "to ask, to inquire"
+      }
+    ]
+  },
+  {
+    "simp": "希望",
+    "trad": "希望",
+    "pinyin": "xīwàng",
+    "meaning": "to hope; hope; wish",
+    "example_zh": "我希望你成功。",
+    "example_py": "Wǒ xīwàng nǐ chénggōng.",
+    "example_en": "I hope you succeed.",
+    "chars": [
+      {
+        "s": "希",
+        "t": "希",
+        "m": "to hope, rare"
+      },
+      {
+        "s": "望",
+        "t": "望",
+        "m": "to hope, to look at, fame"
+      }
+    ]
+  },
+  {
+    "simp": "向",
+    "trad": "向",
+    "pinyin": "xiàng",
+    "meaning": "toward; facing; to face",
+    "example_zh": "请向右转。",
+    "example_py": "Qǐng xiàng yòu zhuǎn.",
+    "example_en": "Please turn right.",
+    "chars": [
+      {
+        "s": "向",
+        "t": "向",
+        "m": "toward, facing, direction"
+      }
+    ]
+  },
+  {
+    "simp": "笑",
+    "trad": "笑",
+    "pinyin": "xiào",
+    "meaning": "to laugh; to smile; to laugh at",
+    "example_zh": "她的笑很好看。",
+    "example_py": "Tā de xiào hěn hǎokàn.",
+    "example_en": "Her smile is very beautiful.",
+    "chars": [
+      {
+        "s": "笑",
+        "t": "笑",
+        "m": "to laugh, to smile"
+      }
+    ]
+  },
+  {
+    "simp": "新",
+    "trad": "新",
+    "pinyin": "xīn",
+    "meaning": "new",
+    "example_zh": "我买了一本新书。",
+    "example_py": "Wǒ mǎi le yī běn xīn shū.",
+    "example_en": "I bought a new book.",
+    "chars": [
+      {
+        "s": "新",
+        "t": "新",
+        "m": "new, fresh, recently"
+      }
+    ]
+  },
+  {
+    "simp": "姓",
+    "trad": "姓",
+    "pinyin": "xìng",
+    "meaning": "surname; family name; to be surnamed",
+    "example_zh": "你贵姓？",
+    "example_py": "Nǐ guì xìng?",
+    "example_en": "What is your honorable surname?",
+    "chars": [
+      {
+        "s": "姓",
+        "t": "姓",
+        "m": "surname, family name"
+      }
+    ]
+  },
+  {
+    "simp": "休息",
+    "trad": "休息",
+    "pinyin": "xiūxi",
+    "meaning": "to rest; to have a break",
+    "example_zh": "我需要休息一下。",
+    "example_py": "Wǒ xūyào xiūxi yīxià.",
+    "example_en": "I need to rest for a while.",
+    "chars": [
+      {
+        "s": "休",
+        "t": "休",
+        "m": "to rest, to stop"
+      },
+      {
+        "s": "息",
+        "t": "息",
+        "m": "breath, rest, news"
+      }
+    ]
+  },
+  {
+    "simp": "须要",
+    "trad": "需要",
+    "pinyin": "xūyào",
+    "meaning": "to need; to require; need",
+    "example_zh": "我需要你的帮助。",
+    "example_py": "Wǒ xūyào nǐ de bāngzhù.",
+    "example_en": "I need your help.",
+    "chars": [
+      {
+        "s": "需",
+        "t": "需",
+        "m": "to need, to require"
+      },
+      {
+        "s": "要",
+        "t": "要",
+        "m": "to want, important, will"
+      }
+    ]
+  },
+  {
+    "simp": "一起",
+    "trad": "一起",
+    "pinyin": "yīqǐ",
+    "meaning": "together; all together",
+    "example_zh": "我们一起去吧！",
+    "example_py": "Wǒmen yīqǐ qù ba!",
+    "example_en": "Let's go together!",
+    "chars": [
+      {
+        "s": "一",
+        "t": "一",
+        "m": "one"
+      },
+      {
+        "s": "起",
+        "t": "起",
+        "m": "to rise, to start, together"
+      }
+    ]
+  },
+  {
+    "simp": "已经",
+    "trad": "已經",
+    "pinyin": "yǐjīng",
+    "meaning": "already",
+    "example_zh": "他已经走了。",
+    "example_py": "Tā yǐjīng zǒu le.",
+    "example_en": "He has already left.",
+    "chars": [
+      {
+        "s": "已",
+        "t": "已",
+        "m": "already, to stop"
+      },
+      {
+        "s": "经",
+        "t": "經",
+        "m": "to pass through, scripture"
+      }
+    ]
+  },
+  {
+    "simp": "以后",
+    "trad": "以後",
+    "pinyin": "yǐhòu",
+    "meaning": "after; afterwards; later on",
+    "example_zh": "以后我们常联系。",
+    "example_py": "Yǐhòu wǒmen cháng liánxì.",
+    "example_en": "Let's stay in touch afterwards.",
+    "chars": [
+      {
+        "s": "以",
+        "t": "以",
+        "m": "by means of, in order to"
+      },
+      {
+        "s": "后",
+        "t": "後",
+        "m": "behind, after, back"
+      }
+    ]
+  },
+  {
+    "simp": "一下",
+    "trad": "一下",
+    "pinyin": "yīxià",
+    "meaning": "a little; briefly; once",
+    "example_zh": "请等我一下。",
+    "example_py": "Qǐng děng wǒ yīxià.",
+    "example_en": "Please wait for me briefly.",
+    "chars": [
+      {
+        "s": "一",
+        "t": "一",
+        "m": "one"
+      },
+      {
+        "s": "下",
+        "t": "下",
+        "m": "below, next, briefly"
+      }
+    ]
+  },
+  {
+    "simp": "因为",
+    "trad": "因為",
+    "pinyin": "yīnwèi",
+    "meaning": "because; since",
+    "example_zh": "因为下雨，我没出门。",
+    "example_py": "Yīnwèi xià yǔ, wǒ méi chū mén.",
+    "example_en": "Because it was raining, I didn't go out.",
+    "chars": [
+      {
+        "s": "因",
+        "t": "因",
+        "m": "cause, reason, because"
+      },
+      {
+        "s": "为",
+        "t": "為",
+        "m": "because, for, to be"
+      }
+    ]
+  },
+  {
+    "simp": "游泳",
+    "trad": "游泳",
+    "pinyin": "yóuyǒng",
+    "meaning": "to swim; swimming",
+    "example_zh": "我喜欢游泳。",
+    "example_py": "Wǒ xǐhuān yóuyǒng.",
+    "example_en": "I like swimming.",
+    "chars": [
+      {
+        "s": "游",
+        "t": "遊",
+        "m": "to travel, to swim"
+      },
+      {
+        "s": "泳",
+        "t": "泳",
+        "m": "to swim, swimming"
+      }
+    ]
+  },
+  {
+    "simp": "右边",
+    "trad": "右邊",
+    "pinyin": "yòubiān",
+    "meaning": "right side",
+    "example_zh": "银行在路的右边。",
+    "example_py": "Yínháng zài lù de yòubiān.",
+    "example_en": "The bank is on the right side of the road.",
+    "chars": [
+      {
+        "s": "右",
+        "t": "右",
+        "m": "right (direction)"
+      },
+      {
+        "s": "边",
+        "t": "邊",
+        "m": "side, edge, border"
+      }
+    ]
+  },
+  {
+    "simp": "鱼",
+    "trad": "魚",
+    "pinyin": "yú",
+    "meaning": "fish",
+    "example_zh": "我喜欢吃鱼。",
+    "example_py": "Wǒ xǐhuān chī yú.",
+    "example_en": "I like eating fish.",
+    "chars": [
+      {
+        "s": "鱼",
+        "t": "魚",
+        "m": "fish"
+      }
+    ]
+  },
+  {
+    "simp": "越",
+    "trad": "越",
+    "pinyin": "yuè",
+    "meaning": "to exceed; the more...the more",
+    "example_zh": "越来越好。",
+    "example_py": "Yuè lái yuè hǎo.",
+    "example_en": "Getting better and better.",
+    "chars": [
+      {
+        "s": "越",
+        "t": "越",
+        "m": "to exceed, to surpass, more and more"
+      }
+    ]
+  },
+  {
+    "simp": "运动",
+    "trad": "運動",
+    "pinyin": "yùndòng",
+    "meaning": "sport; exercise; to exercise",
+    "example_zh": "你喜欢什么运动？",
+    "example_py": "Nǐ xǐhuān shénme yùndòng?",
+    "example_en": "What sports do you like?",
+    "chars": [
+      {
+        "s": "运",
+        "t": "運",
+        "m": "to transport, luck, movement"
+      },
+      {
+        "s": "动",
+        "t": "動",
+        "m": "to move, movement"
+      }
+    ]
+  },
+  {
+    "simp": "再",
+    "trad": "再",
+    "pinyin": "zài",
+    "meaning": "again; once more; then",
+    "example_zh": "请再说一遍。",
+    "example_py": "Qǐng zài shuō yī biàn.",
+    "example_en": "Please say it again.",
+    "chars": [
+      {
+        "s": "再",
+        "t": "再",
+        "m": "again, once more, then"
+      }
+    ]
+  },
+  {
+    "simp": "早上",
+    "trad": "早上",
+    "pinyin": "zǎoshang",
+    "meaning": "morning; early morning",
+    "example_zh": "早上好！",
+    "example_py": "Zǎoshang hǎo!",
+    "example_en": "Good morning!",
+    "chars": [
+      {
+        "s": "早",
+        "t": "早",
+        "m": "early, morning"
+      },
+      {
+        "s": "上",
+        "t": "上",
+        "m": "up, on"
+      }
+    ]
+  },
+  {
+    "simp": "丈夫",
+    "trad": "丈夫",
+    "pinyin": "zhàngfu",
+    "meaning": "husband",
+    "example_zh": "她的丈夫是医生。",
+    "example_py": "Tā de zhàngfu shì yīshēng.",
+    "example_en": "Her husband is a doctor.",
+    "chars": [
+      {
+        "s": "丈",
+        "t": "丈",
+        "m": "unit of length, husband"
+      },
+      {
+        "s": "夫",
+        "t": "夫",
+        "m": "man, husband, labourer"
+      }
+    ]
+  },
+  {
+    "simp": "找",
+    "trad": "找",
+    "pinyin": "zhǎo",
+    "meaning": "to look for; to seek; to find",
+    "example_zh": "我在找我的钥匙。",
+    "example_py": "Wǒ zài zhǎo wǒ de yàoshi.",
+    "example_en": "I'm looking for my keys.",
+    "chars": [
+      {
+        "s": "找",
+        "t": "找",
+        "m": "to look for, to seek"
+      }
+    ]
+  },
+  {
+    "simp": "着",
+    "trad": "著",
+    "pinyin": "zhe",
+    "meaning": "aspect particle indicating ongoing action",
+    "example_zh": "他穿着红色衣服。",
+    "example_py": "Tā chuānzhe hóngsè yīfu.",
+    "example_en": "He is wearing red clothing.",
+    "chars": [
+      {
+        "s": "着",
+        "t": "著",
+        "m": "ongoing aspect particle, attached to"
+      }
+    ]
+  },
+  {
+    "simp": "知道",
+    "trad": "知道",
+    "pinyin": "zhīdào",
+    "meaning": "to know; to be aware of",
+    "example_zh": "我不知道他在哪里。",
+    "example_py": "Wǒ bù zhīdào tā zài nǎlǐ.",
+    "example_en": "I don't know where he is.",
+    "chars": [
+      {
+        "s": "知",
+        "t": "知",
+        "m": "to know, to realize"
+      },
+      {
+        "s": "道",
+        "t": "道",
+        "m": "road, way, principle, to say"
+      }
+    ]
+  },
+  {
+    "simp": "中间",
+    "trad": "中間",
+    "pinyin": "zhōngjiān",
+    "meaning": "middle; center; between",
+    "example_zh": "学校在银行和医院中间。",
+    "example_py": "Xuéxiào zài yínháng hé yīyuàn zhōngjiān.",
+    "example_en": "The school is between the bank and the hospital.",
+    "chars": [
+      {
+        "s": "中",
+        "t": "中",
+        "m": "middle, center"
+      },
+      {
+        "s": "间",
+        "t": "間",
+        "m": "between, space, room"
+      }
+    ]
+  },
+  {
+    "simp": "终于",
+    "trad": "終於",
+    "pinyin": "zhōngyú",
+    "meaning": "finally; at last",
+    "example_zh": "终于找到了！",
+    "example_py": "Zhōngyú zhǎodào le!",
+    "example_en": "Finally found it!",
+    "chars": [
+      {
+        "s": "终",
+        "t": "終",
+        "m": "end, final, to end"
+      },
+      {
+        "s": "于",
+        "t": "於",
+        "m": "in, at, than, for"
+      }
+    ]
+  },
+  {
+    "simp": "重要",
+    "trad": "重要",
+    "pinyin": "zhòngyào",
+    "meaning": "important; significant",
+    "example_zh": "这件事很重要。",
+    "example_py": "Zhè jiàn shì hěn zhòngyào.",
+    "example_en": "This matter is very important.",
+    "chars": [
+      {
+        "s": "重",
+        "t": "重",
+        "m": "heavy, important, again"
+      },
+      {
+        "s": "要",
+        "t": "要",
+        "m": "important, to want, will"
+      }
+    ]
+  },
+  {
+    "simp": "最",
+    "trad": "最",
+    "pinyin": "zuì",
+    "meaning": "most; -est",
+    "example_zh": "这是最好的书。",
+    "example_py": "Zhè shì zuì hǎo de shū.",
+    "example_en": "This is the best book.",
+    "chars": [
+      {
+        "s": "最",
+        "t": "最",
+        "m": "most, -est (superlative)"
+      }
+    ]
+  },
+  {
+    "simp": "左边",
+    "trad": "左邊",
+    "pinyin": "zuǒbiān",
+    "meaning": "left side",
+    "example_zh": "银行在路的左边。",
+    "example_py": "Yínháng zài lù de zuǒbiān.",
+    "example_en": "The bank is on the left side of the road.",
+    "chars": [
+      {
+        "s": "左",
+        "t": "左",
+        "m": "left (direction)"
+      },
+      {
+        "s": "边",
+        "t": "邊",
+        "m": "side, edge, border"
+      }
+    ]
+  },
+  {
+    "simp": "才",
+    "trad": "才",
+    "pinyin": "cái",
+    "meaning": "just now; only; talent",
+    "example_zh": "我刚才看到你。",
+    "example_py": "Wǒ gāngcái kàndào nǐ.",
+    "example_en": "I just saw you.",
+    "chars": [
+      {
+        "s": "才",
+        "t": "才",
+        "m": "just now, talent"
+      }
+    ]
+  },
+  {
+    "simp": "出",
+    "trad": "出",
+    "pinyin": "chū",
+    "meaning": "to go out; out",
+    "example_zh": "他今天出去工作。",
+    "example_py": "Tā jīntiān chūqù gōngzuò.",
+    "example_en": "He went out to work today.",
+    "chars": [
+      {
+        "s": "出",
+        "t": "出",
+        "m": "go out, out"
+      }
+    ]
+  },
+  {
+    "simp": "得",
+    "trad": "得",
+    "pinyin": "dé",
+    "meaning": "to obtain; must; modal particle",
+    "example_zh": "你必须得去。",
+    "example_py": "Nǐ bìxū dé qù.",
+    "example_en": "You must go.",
+    "chars": [
+      {
+        "s": "得",
+        "t": "得",
+        "m": "obtain, must"
+      }
+    ]
+  },
+  {
+    "simp": "等",
+    "trad": "等",
+    "pinyin": "děng",
+    "meaning": "to wait; etc.",
+    "example_zh": "请稍等一下。",
+    "example_py": "Qǐng shāoděng yīxià.",
+    "example_en": "Please wait a moment.",
+    "chars": [
+      {
+        "s": "等",
+        "t": "等",
+        "m": "wait, equal"
+      }
+    ]
+  },
+  {
+    "simp": "非常",
+    "trad": "非常",
+    "pinyin": "fēicháng",
+    "meaning": "very; extremely",
+    "example_zh": "这件事非常重要。",
+    "example_py": "Zhè jiàn shì fēicháng zhòngyào.",
+    "example_en": "This matter is extremely important.",
+    "chars": [
+      {
+        "s": "非",
+        "t": "非",
+        "m": "not, wrong"
+      },
+      {
+        "s": "常",
+        "t": "常",
+        "m": "often, usual"
+      }
+    ]
+  },
+  {
+    "simp": "干净",
+    "trad": "乾淨",
+    "pinyin": "gānjìng",
+    "meaning": "clean",
+    "example_zh": "房间很干净。",
+    "example_py": "Fángjiān hěn gānjìng.",
+    "example_en": "The room is very clean.",
+    "chars": [
+      {
+        "s": "干",
+        "t": "乾",
+        "m": "dry, clean"
+      },
+      {
+        "s": "净",
+        "t": "淨",
+        "m": "clean, pure"
+      }
+    ]
+  },
+  {
+    "simp": "过",
+    "trad": "過",
+    "pinyin": "guò",
+    "meaning": "to pass; to spend; past",
+    "example_zh": "时间过得很快。",
+    "example_py": "Shíjiān guò de hěn kuài.",
+    "example_en": "Time passes very quickly.",
+    "chars": [
+      {
+        "s": "过",
+        "t": "過",
+        "m": "pass, spend"
+      }
+    ]
+  },
+  {
+    "simp": "黑板",
+    "trad": "黑板",
+    "pinyin": "hēibǎn",
+    "meaning": "blackboard",
+    "example_zh": "老师在黑板上写字。",
+    "example_py": "Lǎoshī zài hēibǎn shang xiězì.",
+    "example_en": "The teacher writes characters on the blackboard.",
+    "chars": [
+      {
+        "s": "黑",
+        "t": "黑",
+        "m": "black"
+      },
+      {
+        "s": "板",
+        "t": "板",
+        "m": "board, plank"
+      }
+    ]
+  },
+  {
+    "simp": "教",
+    "trad": "教",
+    "pinyin": "jiāo",
+    "meaning": "to teach",
+    "example_zh": "她教中文。",
+    "example_py": "Tā jiāo zhōngwén.",
+    "example_en": "She teaches Chinese.",
+    "chars": [
+      {
+        "s": "教",
+        "t": "教",
+        "m": "teach, religion"
+      }
+    ]
+  },
+  {
+    "simp": "节",
+    "trad": "節",
+    "pinyin": "jié",
+    "meaning": "section; festival; to save",
+    "example_zh": "春节快乐。",
+    "example_py": "Chūnjié kuàilè.",
+    "example_en": "Happy Spring Festival.",
+    "chars": [
+      {
+        "s": "节",
+        "t": "節",
+        "m": "section, festival"
+      }
+    ]
+  },
+  {
+    "simp": "老",
+    "trad": "老",
+    "pinyin": "lǎo",
+    "meaning": "old; always",
+    "example_zh": "他是个老师。",
+    "example_py": "Tā shì ge lǎoshī.",
+    "example_en": "He is a teacher.",
+    "chars": [
+      {
+        "s": "老",
+        "t": "老",
+        "m": "old, always"
+      }
+    ]
+  },
+  {
+    "simp": "离开",
+    "trad": "離開",
+    "pinyin": "líkāi",
+    "meaning": "to leave; to depart",
+    "example_zh": "他今天离开公司。",
+    "example_py": "Tā jīntiān líkāi gōngsī.",
+    "example_en": "He left the company today.",
+    "chars": [
+      {
+        "s": "离",
+        "t": "離",
+        "m": "leave, depart"
+      },
+      {
+        "s": "开",
+        "t": "開",
+        "m": "open, depart"
+      }
+    ]
+  },
+  {
+    "simp": "马上",
+    "trad": "馬上",
+    "pinyin": "mǎshang",
+    "meaning": "immediately; at once",
+    "example_zh": "请马上来。",
+    "example_py": "Qǐng mǎshang lái.",
+    "example_en": "Please come immediately.",
+    "chars": [
+      {
+        "s": "马",
+        "t": "馬",
+        "m": "horse"
+      },
+      {
+        "s": "上",
+        "t": "上",
+        "m": "up, on"
+      }
+    ]
+  },
+  {
+    "simp": "明天",
+    "trad": "明天",
+    "pinyin": "míngtiān",
+    "meaning": "tomorrow",
+    "example_zh": "明天见。",
+    "example_py": "Míngtiān jiàn.",
+    "example_en": "See you tomorrow.",
+    "chars": [
+      {
+        "s": "明",
+        "t": "明",
+        "m": "bright, tomorrow"
+      },
+      {
+        "s": "天",
+        "t": "天",
+        "m": "day, sky"
+      }
+    ]
+  },
+  {
+    "simp": "明年",
+    "trad": "明年",
+    "pinyin": "míngniián",
+    "meaning": "next year",
+    "example_zh": "明年再来。",
+    "example_py": "Míngniián zài lái.",
+    "example_en": "Come again next year.",
+    "chars": [
+      {
+        "s": "明",
+        "t": "明",
+        "m": "bright, next"
+      },
+      {
+        "s": "年",
+        "t": "年",
+        "m": "year"
+      }
+    ]
+  },
+  {
+    "simp": "那儿",
+    "trad": "那兒",
+    "pinyin": "nàr",
+    "meaning": "there",
+    "example_zh": "我们在那儿见。",
+    "example_py": "Wǒmen zài nàr jiàn.",
+    "example_en": "Let's meet there.",
+    "chars": [
+      {
+        "s": "那",
+        "t": "那",
+        "m": "that"
+      },
+      {
+        "s": "儿",
+        "t": "兒",
+        "m": "child, son"
+      }
+    ]
+  },
+  {
+    "simp": "跑",
+    "trad": "跑",
+    "pinyin": "pǎo",
+    "meaning": "to run",
+    "example_zh": "他每天跑步。",
+    "example_py": "Tā měi tiān pǎobù.",
+    "example_en": "He runs every day.",
+    "chars": [
+      {
+        "s": "跑",
+        "t": "跑",
+        "m": "run"
+      }
+    ]
+  },
+  {
+    "simp": "然后",
+    "trad": "然後",
+    "pinyin": "ránhòu",
+    "meaning": "then; afterwards",
+    "example_zh": "先吃饭，然后睡觉。",
+    "example_py": "Xiān chīfàn, ránhòu shuìjiào.",
+    "example_en": "Eat first, then sleep.",
+    "chars": [
+      {
+        "s": "然",
+        "t": "然",
+        "m": "then, so"
+      },
+      {
+        "s": "后",
+        "t": "後",
+        "m": "after, behind"
+      }
+    ]
+  },
+  {
+    "simp": "数学",
+    "trad": "數學",
+    "pinyin": "shùxué",
+    "meaning": "mathematics",
+    "example_zh": "我喜欢数学课。",
+    "example_py": "Wǒ xǐhuān shùxué kè.",
+    "example_en": "I like mathematics class.",
+    "chars": [
+      {
+        "s": "数",
+        "t": "數",
+        "m": "number, count"
+      },
+      {
+        "s": "学",
+        "t": "學",
+        "m": "study, learn"
+      }
+    ]
+  },
+  {
+    "simp": "它",
+    "trad": "它",
+    "pinyin": "tā",
+    "meaning": "it (for non-humans)",
+    "example_zh": "这是什么？它很有意思。",
+    "example_py": "Zhè shì shénme? Tā hěn yǒu yìsi.",
+    "example_en": "What is this? It's very interesting.",
+    "chars": [
+      {
+        "s": "它",
+        "t": "它",
+        "m": "it"
+      }
+    ]
+  },
+  {
+    "simp": "外",
+    "trad": "外",
+    "pinyin": "wài",
+    "meaning": "outside; foreign",
+    "example_zh": "外面下雨了。",
+    "example_py": "Wàimiàn xiàyǔ le.",
+    "example_en": "It's raining outside.",
+    "chars": [
+      {
+        "s": "外",
+        "t": "外",
+        "m": "outside, foreign"
+      }
+    ]
+  },
+  {
+    "simp": "完成",
+    "trad": "完成",
+    "pinyin": "wánchéng",
+    "meaning": "to complete; to finish",
+    "example_zh": "我已经完成作业。",
+    "example_py": "Wǒ yǐjīng wánchéng zuòyè.",
+    "example_en": "I have already completed my homework.",
+    "chars": [
+      {
+        "s": "完",
+        "t": "完",
+        "m": "complete, finish"
+      },
+      {
+        "s": "成",
+        "t": "成",
+        "m": "become, succeed"
+      }
+    ]
+  },
+  {
+    "simp": "羊",
+    "trad": "羊",
+    "pinyin": "yáng",
+    "meaning": "sheep; goat",
+    "example_zh": "农场里有很多羊。",
+    "example_py": "Nóngchǎng li yǒu hěnduō yáng.",
+    "example_en": "There are many sheep on the farm.",
+    "chars": [
+      {
+        "s": "羊",
+        "t": "羊",
+        "m": "sheep, goat"
+      }
+    ]
+  },
+  {
+    "simp": "一样",
+    "trad": "一樣",
+    "pinyin": "yīyàng",
+    "meaning": "the same; alike",
+    "example_zh": "我们的想法一样。",
+    "example_py": "Wǒmen de xiǎngfǎ yīyàng.",
+    "example_en": "Our ideas are the same.",
+    "chars": [
+      {
+        "s": "一",
+        "t": "一",
+        "m": "one"
+      },
+      {
+        "s": "样",
+        "t": "樣",
+        "m": "appearance, same"
+      }
+    ]
+  },
+  {
+    "simp": "用",
+    "trad": "用",
+    "pinyin": "yòng",
+    "meaning": "to use; use",
+    "example_zh": "这个工具很有用。",
+    "example_py": "Zhège gōngjù hěn yǒuyòng.",
+    "example_en": "This tool is very useful.",
+    "chars": [
+      {
+        "s": "用",
+        "t": "用",
+        "m": "use, useful"
+      }
+    ]
+  },
+  {
+    "simp": "有意思",
+    "trad": "有意思",
+    "pinyin": "yǒu yìsi",
+    "meaning": "interesting; fun",
+    "example_zh": "这个游戏很有意思。",
+    "example_py": "Zhège yóuxì hěn yǒu yìsi.",
+    "example_en": "This game is very interesting.",
+    "chars": [
+      {
+        "s": "有",
+        "t": "有",
+        "m": "have, there is"
+      },
+      {
+        "s": "意",
+        "t": "意",
+        "m": "idea, meaning"
+      },
+      {
+        "s": "思",
+        "t": "思",
+        "m": "think, idea"
+      }
+    ]
+  },
+  {
+    "simp": "语文",
+    "trad": "語文",
+    "pinyin": "yǔwén",
+    "meaning": "language and literature",
+    "example_zh": "语文课在下午。",
+    "example_py": "Yǔwén kè zài xiàwǔ.",
+    "example_en": "Language class is in the afternoon.",
+    "chars": [
+      {
+        "s": "语",
+        "t": "語",
+        "m": "language"
+      },
+      {
+        "s": "文",
+        "t": "文",
+        "m": "language, literature"
+      }
+    ]
+  },
+  {
+    "simp": "正在",
+    "trad": "正在",
+    "pinyin": "zhèngzài",
+    "meaning": "is ... ing; in the process of",
+    "example_zh": "他正在做饭。",
+    "example_py": "Tā zhèngzài zuòfàn.",
+    "example_en": "He is cooking.",
+    "chars": [
+      {
+        "s": "正",
+        "t": "正",
+        "m": "correct, right"
+      },
+      {
+        "s": "在",
+        "t": "在",
+        "m": "be, at"
+      }
+    ]
+  },
+  {
+    "simp": "这儿",
+    "trad": "這兒",
+    "pinyin": "zhèr",
+    "meaning": "here",
+    "example_zh": "请坐在这儿。",
+    "example_py": "Qǐng zuò zài zhèr.",
+    "example_en": "Please sit here.",
+    "chars": [
+      {
+        "s": "这",
+        "t": "這",
+        "m": "this"
+      },
+      {
+        "s": "儿",
+        "t": "兒",
+        "m": "child, son"
+      }
+    ]
+  },
+  {
+    "simp": "这里",
+    "trad": "這裡",
+    "pinyin": "zhèli",
+    "meaning": "here; this place",
+    "example_zh": "这里很漂亮。",
+    "example_py": "Zhèli hěn piàoliang.",
+    "example_en": "This place is very beautiful.",
+    "chars": [
+      {
+        "s": "这",
+        "t": "這",
+        "m": "this"
+      },
+      {
+        "s": "里",
+        "t": "裡",
+        "m": "inside, distance"
+      }
+    ]
+  },
+  {
+    "simp": "走",
+    "trad": "走",
+    "pinyin": "zǒu",
+    "meaning": "to walk; to go",
+    "example_zh": "我们一起走吧。",
+    "example_py": "Wǒmen yīqǐ zǒu ba.",
+    "example_en": "Let's go together.",
+    "chars": [
+      {
+        "s": "走",
+        "t": "走",
+        "m": "walk, go"
+      }
+    ]
+  },
+  {
+    "simp": "左",
+    "trad": "左",
+    "pinyin": "zuǒ",
+    "meaning": "left",
+    "example_zh": "在左边转弯。",
+    "example_py": "Zài zuǒbiān zhuǎnwān.",
+    "example_en": "Turn at the left side.",
+    "chars": [
+      {
+        "s": "左",
+        "t": "左",
+        "m": "left"
+      }
+    ]
+  }
+]

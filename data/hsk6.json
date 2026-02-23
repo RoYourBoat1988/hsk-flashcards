@@ -1,0 +1,2296 @@
+[
+  {
+    "simp": "阐述",
+    "trad": "闡述",
+    "pinyin": "chǎnshù",
+    "meaning": "to expound; to elaborate on; to set forth",
+    "example_zh": "请阐述你的观点。",
+    "example_py": "Qǐng chǎnshù nǐ de guāndiǎn.",
+    "example_en": "Please elaborate on your viewpoint.",
+    "chars": [
+      {
+        "s": "阐",
+        "t": "闡",
+        "m": "to expound, to make clear"
+      },
+      {
+        "s": "述",
+        "t": "述",
+        "m": "to state, to narrate, to express"
+      }
+    ]
+  },
+  {
+    "simp": "辨别",
+    "trad": "辨別",
+    "pinyin": "biànbié",
+    "meaning": "to differentiate; to distinguish",
+    "example_zh": "要善于辨别真假信息。",
+    "example_py": "Yào shànyú biànbié zhēnjiǎ xìnxī.",
+    "example_en": "One should be good at distinguishing true from false information.",
+    "chars": [
+      {
+        "s": "辨",
+        "t": "辨",
+        "m": "to distinguish, to differentiate"
+      },
+      {
+        "s": "别",
+        "t": "別",
+        "m": "other, don't, to separate"
+      }
+    ]
+  },
+  {
+    "simp": "俯瞰",
+    "trad": "俯瞰",
+    "pinyin": "fǔkàn",
+    "meaning": "to overlook; to look down at; bird's eye view",
+    "example_zh": "从山顶可以俯瞰整个城市。",
+    "example_py": "Cóng shāndǐng kěyǐ fǔkàn zhěnggè chéngshì.",
+    "example_en": "From the mountaintop, you can overlook the entire city.",
+    "chars": [
+      {
+        "s": "俯",
+        "t": "俯",
+        "m": "to bow down, to look down"
+      },
+      {
+        "s": "瞰",
+        "t": "瞰",
+        "m": "to look down from above, to overlook"
+      }
+    ]
+  },
+  {
+    "simp": "诠释",
+    "trad": "詮釋",
+    "pinyin": "quánshì",
+    "meaning": "to interpret; to explain; interpretation",
+    "example_zh": "她对这首诗做出了独特的诠释。",
+    "example_py": "Tā duì zhè shǒu shī zuòchū le dútè de quánshì.",
+    "example_en": "She gave a unique interpretation of this poem.",
+    "chars": [
+      {
+        "s": "诠",
+        "t": "詮",
+        "m": "to explain fully, to comment"
+      },
+      {
+        "s": "释",
+        "t": "釋",
+        "m": "to release, to explain, to clarify"
+      }
+    ]
+  },
+  {
+    "simp": "凝聚",
+    "trad": "凝聚",
+    "pinyin": "níngjù",
+    "meaning": "to condense; to gather; to concentrate",
+    "example_zh": "这首歌凝聚了许多情感。",
+    "example_py": "Zhè shǒu gē níngjù le xǔduō qínggǎn.",
+    "example_en": "This song concentrates a lot of emotions.",
+    "chars": [
+      {
+        "s": "凝",
+        "t": "凝",
+        "m": "to congeal, to concentrate, to stare"
+      },
+      {
+        "s": "聚",
+        "t": "聚",
+        "m": "to gather, to assemble, to collect"
+      }
+    ]
+  },
+  {
+    "simp": "渗透",
+    "trad": "滲透",
+    "pinyin": "shèntòu",
+    "meaning": "to permeate; to infiltrate; to seep through",
+    "example_zh": "文化已经渗透到日常生活的各个方面。",
+    "example_py": "Wénhuà yǐjīng shèntòu dào rìcháng shēnghuó de gègè fāngmiàn.",
+    "example_en": "Culture has permeated every aspect of daily life.",
+    "chars": [
+      {
+        "s": "渗",
+        "t": "滲",
+        "m": "to seep, to infiltrate, to exude"
+      },
+      {
+        "s": "透",
+        "t": "透",
+        "m": "to penetrate, transparent, thoroughly"
+      }
+    ]
+  },
+  {
+    "simp": "蕴含",
+    "trad": "蘊含",
+    "pinyin": "yùnhán",
+    "meaning": "to contain; to embody; to imply",
+    "example_zh": "这句话蕴含着深刻的道理。",
+    "example_py": "Zhè jù huà yùnhán zhe shēnkè de dàolǐ.",
+    "example_en": "This sentence embodies a profound truth.",
+    "chars": [
+      {
+        "s": "蕴",
+        "t": "蘊",
+        "m": "to contain, to accumulate, profound"
+      },
+      {
+        "s": "含",
+        "t": "含",
+        "m": "to contain, to include, to hold in mouth"
+      }
+    ]
+  },
+  {
+    "simp": "斟酌",
+    "trad": "斟酌",
+    "pinyin": "zhēnzhuó",
+    "meaning": "to consider carefully; to weigh; to deliberate",
+    "example_zh": "这个决定需要仔细斟酌。",
+    "example_py": "Zhège juédìng xūyào zǐxì zhēnzhuó.",
+    "example_en": "This decision needs careful deliberation.",
+    "chars": [
+      {
+        "s": "斟",
+        "t": "斟",
+        "m": "to pour (liquor), to deliberate"
+      },
+      {
+        "s": "酌",
+        "t": "酌",
+        "m": "to pour wine, to consider carefully"
+      }
+    ]
+  },
+  {
+    "simp": "铸就",
+    "trad": "鑄就",
+    "pinyin": "zhùjiù",
+    "meaning": "to forge; to create; to accomplish",
+    "example_zh": "坚持不懈铸就了他的成功。",
+    "example_py": "Jiānchí bùxiè zhùjiù le tā de chénggōng.",
+    "example_en": "Perseverance forged his success.",
+    "chars": [
+      {
+        "s": "铸",
+        "t": "鑄",
+        "m": "to cast metal, to forge, to mold"
+      },
+      {
+        "s": "就",
+        "t": "就",
+        "m": "to accomplish, right away, then"
+      }
+    ]
+  },
+  {
+    "simp": "融合",
+    "trad": "融合",
+    "pinyin": "rónghé",
+    "meaning": "to blend; to merge; integration",
+    "example_zh": "东西方文化的融合是一种趋势。",
+    "example_py": "Dōngxī fāng wénhuà de rónghé shì yī zhǒng qūshì.",
+    "example_en": "The integration of Eastern and Western cultures is a trend.",
+    "chars": [
+      {
+        "s": "融",
+        "t": "融",
+        "m": "to melt, to blend, harmony"
+      },
+      {
+        "s": "合",
+        "t": "合",
+        "m": "to unite, to close, suitable"
+      }
+    ]
+  },
+  {
+    "simp": "巩固",
+    "trad": "鞏固",
+    "pinyin": "gǒnggù",
+    "meaning": "to consolidate; to strengthen; to solidify",
+    "example_zh": "我们要巩固已取得的成果。",
+    "example_py": "Wǒmen yào gǒnggù yǐ qǔdé de chéngguǒ.",
+    "example_en": "We must consolidate the achievements already made.",
+    "chars": [
+      {
+        "s": "巩",
+        "t": "鞏",
+        "m": "to consolidate, solid, firm"
+      },
+      {
+        "s": "固",
+        "t": "固",
+        "m": "solid, hard, firm, stubborn"
+      }
+    ]
+  },
+  {
+    "simp": "演绎",
+    "trad": "演繹",
+    "pinyin": "yǎnyì",
+    "meaning": "to deduce; to perform; deduction",
+    "example_zh": "她用音乐演绎了一段动人的故事。",
+    "example_py": "Tā yòng yīnyuè yǎnyì le yī duàn dòng rén de gùshi.",
+    "example_en": "She performed a touching story through music.",
+    "chars": [
+      {
+        "s": "演",
+        "t": "演",
+        "m": "to perform, to evolve, to develop"
+      },
+      {
+        "s": "绎",
+        "t": "繹",
+        "m": "to unravel, to deduce, continuous"
+      }
+    ]
+  },
+  {
+    "simp": "沉淀",
+    "trad": "沉澱",
+    "pinyin": "chéndiàn",
+    "meaning": "to precipitate; to settle; sediment; accumulation",
+    "example_zh": "岁月的沉淀让人更加成熟。",
+    "example_py": "Suìyuè de chéndiàn ràng rén gèngjiā chéngshú.",
+    "example_en": "The accumulation of years makes people more mature.",
+    "chars": [
+      {
+        "s": "沉",
+        "t": "沉",
+        "m": "to sink, heavy, deep"
+      },
+      {
+        "s": "淀",
+        "t": "澱",
+        "m": "to settle, sediment, shallow lake"
+      }
+    ]
+  },
+  {
+    "simp": "斡旋",
+    "trad": "斡旋",
+    "pinyin": "wòxuán",
+    "meaning": "to mediate; to broker; to intercede",
+    "example_zh": "他在双方之间进行了斡旋。",
+    "example_py": "Tā zài shuāngfāng zhījiān jìnxíng le wòxuán.",
+    "example_en": "He mediated between both parties.",
+    "chars": [
+      {
+        "s": "斡",
+        "t": "斡",
+        "m": "to rotate, to mediate"
+      },
+      {
+        "s": "旋",
+        "t": "旋",
+        "m": "to rotate, to circle, to return"
+      }
+    ]
+  },
+  {
+    "simp": "沧桑",
+    "trad": "滄桑",
+    "pinyin": "cāngsāng",
+    "meaning": "vicissitudes of life; change over time",
+    "example_zh": "历经沧桑的老人讲述了许多故事。",
+    "example_py": "Lìjīng cāngsāng de lǎorén jiǎngshù le xǔduō gùshi.",
+    "example_en": "The elderly person who had experienced many vicissitudes told many stories.",
+    "chars": [
+      {
+        "s": "沧",
+        "t": "滄",
+        "m": "deep blue, the sea, vast"
+      },
+      {
+        "s": "桑",
+        "t": "桑",
+        "m": "mulberry tree"
+      }
+    ]
+  },
+  {
+    "simp": "恪守",
+    "trad": "恪守",
+    "pinyin": "kèshǒu",
+    "meaning": "to scrupulously abide by; to strictly observe",
+    "example_zh": "我们应恪守职业道德。",
+    "example_py": "Wǒmen yīng kèshǒu zhíyè dàodé.",
+    "example_en": "We should scrupulously abide by professional ethics.",
+    "chars": [
+      {
+        "s": "恪",
+        "t": "恪",
+        "m": "to be respectful, to be careful"
+      },
+      {
+        "s": "守",
+        "t": "守",
+        "m": "to guard, to keep, to observe"
+      }
+    ]
+  },
+  {
+    "simp": "涵盖",
+    "trad": "涵蓋",
+    "pinyin": "hángài",
+    "meaning": "to cover; to encompass; to include",
+    "example_zh": "这本书涵盖了很多重要话题。",
+    "example_py": "Zhè běn shū hángài le hěn duō zhòngyào huàtí.",
+    "example_en": "This book covers many important topics.",
+    "chars": [
+      {
+        "s": "涵",
+        "t": "涵",
+        "m": "to contain, to include, broad"
+      },
+      {
+        "s": "盖",
+        "t": "蓋",
+        "m": "to cover, lid, to surpass"
+      }
+    ]
+  },
+  {
+    "simp": "溯源",
+    "trad": "溯源",
+    "pinyin": "sùyuán",
+    "meaning": "to trace back to the origin; etymology",
+    "example_zh": "让我们溯源这个词的历史。",
+    "example_py": "Ràng wǒmen sùyuán zhège cí de lìshǐ.",
+    "example_en": "Let us trace back the history of this word.",
+    "chars": [
+      {
+        "s": "溯",
+        "t": "溯",
+        "m": "to go upstream, to trace back"
+      },
+      {
+        "s": "源",
+        "t": "源",
+        "m": "source, origin, spring"
+      }
+    ]
+  },
+  {
+    "simp": "辩证",
+    "trad": "辯證",
+    "pinyin": "biànzhèng",
+    "meaning": "dialectical; to argue from evidence",
+    "example_zh": "要用辩证的方法看问题。",
+    "example_py": "Yào yòng biànzhèng de fāngfǎ kàn wèntí.",
+    "example_en": "One should use a dialectical method to view problems.",
+    "chars": [
+      {
+        "s": "辩",
+        "t": "辯",
+        "m": "to argue, to dispute"
+      },
+      {
+        "s": "证",
+        "t": "證",
+        "m": "to prove, evidence, certificate"
+      }
+    ]
+  },
+  {
+    "simp": "熏陶",
+    "trad": "薰陶",
+    "pinyin": "xūntáo",
+    "meaning": "to edify; to influence gradually; to nurture",
+    "example_zh": "他从小受到音乐的熏陶。",
+    "example_py": "Tā cóng xiǎo shòudào yīnyuè de xūntáo.",
+    "example_en": "He was nurtured by music since childhood.",
+    "chars": [
+      {
+        "s": "熏",
+        "t": "薰",
+        "m": "to smoke, to fumigate, to influence"
+      },
+      {
+        "s": "陶",
+        "t": "陶",
+        "m": "pottery, to mold, happy"
+      }
+    ]
+  },
+  {
+    "simp": "契合",
+    "trad": "契合",
+    "pinyin": "qìhé",
+    "meaning": "to fit; to match; to be in sync",
+    "example_zh": "他的想法与我们的目标契合。",
+    "example_py": "Tā de xiǎngfǎ yǔ wǒmen de mùbiāo qìhé.",
+    "example_en": "His ideas fit with our goals.",
+    "chars": [
+      {
+        "s": "契",
+        "t": "契",
+        "m": "contract, agreement, to carve"
+      },
+      {
+        "s": "合",
+        "t": "合",
+        "m": "to unite, suitable, to close"
+      }
+    ]
+  },
+  {
+    "simp": "博弈",
+    "trad": "博弈",
+    "pinyin": "báyì",
+    "meaning": "game theory; strategic interaction; to compete",
+    "example_zh": "国际贸易中的博弈决定了市场的格局。",
+    "example_py": "Guójì màoyì zhōng de báyì juédìng le shìchǎng de géjú.",
+    "example_en": "Strategic interactions in international trade determine market structure.",
+    "chars": [
+      {
+        "s": "博",
+        "t": "博",
+        "m": "broad, game"
+      },
+      {
+        "s": "弈",
+        "t": "弈",
+        "m": "play game, compete"
+      }
+    ]
+  },
+  {
+    "simp": "阐明",
+    "trad": "闡明",
+    "pinyin": "chǎnmíng",
+    "meaning": "to clarify; to elucidate; to explain clearly",
+    "example_zh": "报告详细地阐明了改革的必要性。",
+    "example_py": "Bàogào xiángxì de chǎnmíng le gǎigé de bìyàoxìng.",
+    "example_en": "The report clearly explained the necessity of reform.",
+    "chars": [
+      {
+        "s": "阐",
+        "t": "闡",
+        "m": "clarify, elaborate"
+      },
+      {
+        "s": "明",
+        "t": "明",
+        "m": "bright, clear"
+      }
+    ]
+  },
+  {
+    "simp": "超越",
+    "trad": "超越",
+    "pinyin": "chāoyuè",
+    "meaning": "to transcend; to surpass; to exceed; transcendence",
+    "example_zh": "我们要不断超越自己，追求卓越。",
+    "example_py": "Wǒmen yào búduàn chāoyuè zìjǐ, zhuīqiú zhuóyuè.",
+    "example_en": "We must continuously transcend ourselves and pursue excellence.",
+    "chars": [
+      {
+        "s": "超",
+        "t": "超",
+        "m": "exceed, transcend"
+      },
+      {
+        "s": "越",
+        "t": "越",
+        "m": "cross, surpass"
+      }
+    ]
+  },
+  {
+    "simp": "传承",
+    "trad": "傳承",
+    "pinyin": "chuánchéng",
+    "meaning": "to inherit; to pass on; inheritance; legacy",
+    "example_zh": "中华文明的传承需要每一代人的努力。",
+    "example_py": "Zhōnghuá wénmíng de chuánchéng xūyào měi yī dài rén de nǔlì.",
+    "example_en": "The inheritance of Chinese civilization requires the effort of every generation.",
+    "chars": [
+      {
+        "s": "传",
+        "t": "傳",
+        "m": "transmit, inherit"
+      },
+      {
+        "s": "承",
+        "t": "承",
+        "m": "undertake, inherit"
+      }
+    ]
+  },
+  {
+    "simp": "创举",
+    "trad": "創舉",
+    "pinyin": "chuàngjǔ",
+    "meaning": "pioneering feat; groundbreaking move; innovation",
+    "example_zh": "这个项目是中国历史上的一个伟大创举。",
+    "example_py": "Zhège xiàngmù shì Zhōngguó lìshǐ shang de yīge wěidà chuàngjǔ.",
+    "example_en": "This project is a great pioneering feat in Chinese history.",
+    "chars": [
+      {
+        "s": "创",
+        "t": "創",
+        "m": "create, pioneering"
+      },
+      {
+        "s": "举",
+        "t": "舉",
+        "m": "hold, feat"
+      }
+    ]
+  },
+  {
+    "simp": "错综",
+    "trad": "錯綜",
+    "pinyin": "cuòzōng",
+    "meaning": "complex; intricate; tangled",
+    "example_zh": "国际形势错综复杂，充满了挑战。",
+    "example_py": "Guójì xíngshì cuòzōng fùzá, chōngmǎn le tiǎozhàn.",
+    "example_en": "International situation is complex and full of challenges.",
+    "chars": [
+      {
+        "s": "错",
+        "t": "錯",
+        "m": "wrong, complex"
+      },
+      {
+        "s": "综",
+        "t": "綜",
+        "m": "combine, complex"
+      }
+    ]
+  },
+  {
+    "simp": "打破",
+    "trad": "打破",
+    "pinyin": "dǎpò",
+    "meaning": "to break; to shatter; to overthrow",
+    "example_zh": "科技创新打破了传统产业的格局。",
+    "example_py": "Kējì chuàngxīn dǎpò le chuántǒng chǎnyè de géjú.",
+    "example_en": "Technological innovation shattered the traditional industry landscape.",
+    "chars": [
+      {
+        "s": "打",
+        "t": "打",
+        "m": "hit, break"
+      },
+      {
+        "s": "破",
+        "t": "破",
+        "m": "break, shatter"
+      }
+    ]
+  },
+  {
+    "simp": "独到",
+    "trad": "獨到",
+    "pinyin": "dúdào",
+    "meaning": "unique; distinctive; original insight",
+    "example_zh": "他对问题有独到的见解。",
+    "example_py": "Tā duì wèntí yǒu dúdào de jiànjiě.",
+    "example_en": "He has unique insights into the problem.",
+    "chars": [
+      {
+        "s": "独",
+        "t": "獨",
+        "m": "alone, unique"
+      },
+      {
+        "s": "到",
+        "t": "到",
+        "m": "arrive, insight"
+      }
+    ]
+  },
+  {
+    "simp": "发人深省",
+    "trad": "發人深省",
+    "pinyin": "fā rén shēn shěng",
+    "meaning": "to be thought-provoking; to make one reflect deeply",
+    "example_zh": "这部纪录片的内容发人深省，令人思考。",
+    "example_py": "Zhè bù jìlùpiàn de nèiróng fā rén shēn shěng, lìngrén sīkǎo.",
+    "example_en": "The content of this documentary is thought-provoking and causes reflection.",
+    "chars": [
+      {
+        "s": "发",
+        "t": "發",
+        "m": "emit, provoke"
+      },
+      {
+        "s": "人",
+        "t": "人",
+        "m": "person"
+      },
+      {
+        "s": "深",
+        "t": "深",
+        "m": "deep"
+      },
+      {
+        "s": "省",
+        "t": "省",
+        "m": "reflect, realize"
+      }
+    ]
+  },
+  {
+    "simp": "范畴",
+    "trad": "範疇",
+    "pinyin": "fànchóu",
+    "meaning": "category; scope; domain; field",
+    "example_zh": "这个问题超出了我们的研究范畴。",
+    "example_py": "Zhège wèntí chāochū le wǒmen de yánjiū fànchóu.",
+    "example_en": "This issue goes beyond the scope of our research.",
+    "chars": [
+      {
+        "s": "范",
+        "t": "範",
+        "m": "example, category"
+      },
+      {
+        "s": "畴",
+        "t": "疇",
+        "m": "field, category"
+      }
+    ]
+  },
+  {
+    "simp": "分歧",
+    "trad": "分歧",
+    "pinyin": "fēnqī",
+    "meaning": "disagreement; divergence; difference",
+    "example_zh": "两国在贸易问题上存在分歧。",
+    "example_py": "Liǎng guó zài màoyì wèntí shang cunzài fēnqī.",
+    "example_en": "The two countries have disagreements on trade issues.",
+    "chars": [
+      {
+        "s": "分",
+        "t": "分",
+        "m": "divide, disagree"
+      },
+      {
+        "s": "歧",
+        "t": "歧",
+        "m": "diverge, disagreement"
+      }
+    ]
+  },
+  {
+    "simp": "奋进",
+    "trad": "奮進",
+    "pinyin": "fèngjìn",
+    "meaning": "to forge ahead; to strive forward; to advance",
+    "example_zh": "我们要奋进新时代，开创美好未来。",
+    "example_py": "Wǒmen yào fèngjìn xīn shídài, kāichuàng měihǎo wèilái.",
+    "example_en": "We must forge ahead in the new era and create a better future.",
+    "chars": [
+      {
+        "s": "奋",
+        "t": "奮",
+        "m": "exert oneself, advance"
+      },
+      {
+        "s": "进",
+        "t": "進",
+        "m": "advance, progress"
+      }
+    ]
+  },
+  {
+    "simp": "赋予",
+    "trad": "賦予",
+    "pinyin": "fùyǔ",
+    "meaning": "to bestow; to endow; to give",
+    "example_zh": "教育赋予人类获取知识的能力。",
+    "example_py": "Jiàoyù fùyǔ rénlèi huòqǔ zhīshi de néinglì.",
+    "example_en": "Education endows humanity with the ability to acquire knowledge.",
+    "chars": [
+      {
+        "s": "赋",
+        "t": "賦",
+        "m": "endow, give"
+      },
+      {
+        "s": "予",
+        "t": "予",
+        "m": "give, bestow"
+      }
+    ]
+  },
+  {
+    "simp": "感召",
+    "trad": "感召",
+    "pinyin": "gǎnzhào",
+    "meaning": "to inspire; to move; inspiration; call",
+    "example_zh": "伟大的理想感召着千千万万的人民。",
+    "example_py": "Wěidà de lǐxiǎng gǎnzhào zhe qiānqiānwànwan de rénmín.",
+    "example_en": "Great ideals inspire millions of people.",
+    "chars": [
+      {
+        "s": "感",
+        "t": "感",
+        "m": "feel, inspire"
+      },
+      {
+        "s": "召",
+        "t": "召",
+        "m": "summon, call"
+      }
+    ]
+  },
+  {
+    "simp": "高屋建瓴",
+    "trad": "高屋建瓴",
+    "pinyin": "gāo wū jiàn líng",
+    "meaning": "from a commanding height; with a broad perspective",
+    "example_zh": "领导要从高屋建瓴的角度看待问题。",
+    "example_py": "Lǐngdǎo yào cóng gāo wū jiàn líng de jiǎodù kàndài wèntí.",
+    "example_en": "Leaders should view issues from a commanding perspective.",
+    "chars": [
+      {
+        "s": "高",
+        "t": "高",
+        "m": "high"
+      },
+      {
+        "s": "屋",
+        "t": "屋",
+        "m": "house"
+      },
+      {
+        "s": "建",
+        "t": "建",
+        "m": "build"
+      },
+      {
+        "s": "瓴",
+        "t": "瓴",
+        "m": "steep"
+      }
+    ]
+  },
+  {
+    "simp": "革新",
+    "trad": "革新",
+    "pinyin": "géxīn",
+    "meaning": "to innovate; reform; innovation",
+    "example_zh": "企业需要不断革新来适应市场变化。",
+    "example_py": "Qǐyè xūyào búduàn géxīn lái shìyìng shìchǎng biànhuà.",
+    "example_en": "Enterprises must continuously innovate to adapt to market changes.",
+    "chars": [
+      {
+        "s": "革",
+        "t": "革",
+        "m": "reform, innovation"
+      },
+      {
+        "s": "新",
+        "t": "新",
+        "m": "new, innovate"
+      }
+    ]
+  },
+  {
+    "simp": "贯彻",
+    "trad": "貫徹",
+    "pinyin": "guànchè",
+    "meaning": "to carry out; to implement thoroughly; to fulfill",
+    "example_zh": "要贯彻执行党的方针政策。",
+    "example_py": "Yào guànchè zhíxíng dǎng de fāngzhēn zhèngcè.",
+    "example_en": "One must thoroughly implement the party's policies.",
+    "chars": [
+      {
+        "s": "贯",
+        "t": "貫",
+        "m": "penetrate, carry out"
+      },
+      {
+        "s": "彻",
+        "t": "徹",
+        "m": "thorough, complete"
+      }
+    ]
+  },
+  {
+    "simp": "贯通",
+    "trad": "貫通",
+    "pinyin": "guàntōng",
+    "meaning": "to connect; to integrate; to understand thoroughly",
+    "example_zh": "要贯通古今中外的思想资源。",
+    "example_py": "Yào guàntōng gǔjīn zhōngwài de sīxiǎng zīyuán.",
+    "example_en": "One should integrate intellectual resources from throughout time and the world.",
+    "chars": [
+      {
+        "s": "贯",
+        "t": "貫",
+        "m": "penetrate, connect"
+      },
+      {
+        "s": "通",
+        "t": "通",
+        "m": "connect, integrate"
+      }
+    ]
+  },
+  {
+    "simp": "归宿",
+    "trad": "歸宿",
+    "pinyin": "guīsu",
+    "meaning": "final destination; ultimate end; resting place",
+    "example_zh": "坚持中国特色社会主义是我们的历史归宿。",
+    "example_py": "Jiānchí Zhōngguó tèsè shèhuìzhǔyì shì wǒmen de lìshǐ guīsu.",
+    "example_en": "Persisting in Chinese socialism with characteristics is our historical destiny.",
+    "chars": [
+      {
+        "s": "归",
+        "t": "歸",
+        "m": "return, destination"
+      },
+      {
+        "s": "宿",
+        "t": "宿",
+        "m": "lodge, resting place"
+      }
+    ]
+  },
+  {
+    "simp": "含蓄",
+    "trad": "含蓄",
+    "pinyin": "hányù",
+    "meaning": "implicit; restrained; suggestive; subtle",
+    "example_zh": "这部作品的表达方式很含蓄，需要深入理解。",
+    "example_py": "Zhè bù zuòpǐn de biǎodá fāngshì hěn hányù, xūyào shēnrù lǐjiě.",
+    "example_en": "This work's expression is subtle and requires deep understanding.",
+    "chars": [
+      {
+        "s": "含",
+        "t": "含",
+        "m": "contain, implicit"
+      },
+      {
+        "s": "蓄",
+        "t": "蓄",
+        "m": "store, restrained"
+      }
+    ]
+  },
+  {
+    "simp": "号角",
+    "trad": "號角",
+    "pinyin": "háojiǎo",
+    "meaning": "bugle; clarion; call to action",
+    "example_zh": "我们吹响了新时代的号角。",
+    "example_py": "Wǒmen chuīxiǎng le xīn shídài de háojiǎo.",
+    "example_en": "We sounded the bugle call of the new era.",
+    "chars": [
+      {
+        "s": "号",
+        "t": "號",
+        "m": "sound, bugle"
+      },
+      {
+        "s": "角",
+        "t": "角",
+        "m": "horn, clarion"
+      }
+    ]
+  },
+  {
+    "simp": "鸿沟",
+    "trad": "鴻溝",
+    "pinyin": "hóngōu",
+    "meaning": "wide gap; chasm; wide gulf",
+    "example_zh": "贫富之间的鸿沟不断扩大。",
+    "example_py": "Píngù zhījiān de hóngōu búduàn kuòdà.",
+    "example_en": "The gap between rich and poor continues to widen.",
+    "chars": [
+      {
+        "s": "鸿",
+        "t": "鴻",
+        "m": "grand, wide"
+      },
+      {
+        "s": "沟",
+        "t": "溝",
+        "m": "ditch, gap"
+      }
+    ]
+  },
+  {
+    "simp": "化解",
+    "trad": "化解",
+    "pinyin": "huàjiě",
+    "meaning": "to resolve; to ease; to dissolve",
+    "example_zh": "双方通过协商成功化解了矛盾。",
+    "example_py": "Shuāngfāng tōngguò xiéshang chénggōng huàjiě le máodùn.",
+    "example_en": "The two parties successfully resolved the conflict through negotiation.",
+    "chars": [
+      {
+        "s": "化",
+        "t": "化",
+        "m": "change, resolve"
+      },
+      {
+        "s": "解",
+        "t": "解",
+        "m": "solve, ease"
+      }
+    ]
+  },
+  {
+    "simp": "焕发",
+    "trad": "煥發",
+    "pinyin": "huànfā",
+    "meaning": "to radiate; to display; to show vitality",
+    "example_zh": "改革开放使中国焕发了新的生机。",
+    "example_py": "Gǎigé kāifàng shǐ Zhōngguó huànfā le xīn de shēngjī.",
+    "example_en": "Reform and opening up gave China new vitality.",
+    "chars": [
+      {
+        "s": "焕",
+        "t": "煥",
+        "m": "bright, radiate"
+      },
+      {
+        "s": "发",
+        "t": "發",
+        "m": "send, display"
+      }
+    ]
+  },
+  {
+    "simp": "汇聚",
+    "trad": "匯聚",
+    "pinyin": "huìjù",
+    "meaning": "to gather; to converge; to assemble",
+    "example_zh": "各种文化在这个城市汇聚。",
+    "example_py": "Gèzhǒng wénhuà zài zhège chéngshì huìjù.",
+    "example_en": "Various cultures converge in this city.",
+    "chars": [
+      {
+        "s": "汇",
+        "t": "匯",
+        "m": "collect, gather"
+      },
+      {
+        "s": "聚",
+        "t": "聚",
+        "m": "gather, assemble"
+      }
+    ]
+  },
+  {
+    "simp": "激荡",
+    "trad": "激蕩",
+    "pinyin": "jīdàng",
+    "meaning": "to surge; to swell; to stir",
+    "example_zh": "思想的激荡推动了社会的进步。",
+    "example_py": "Sīxiǎng de jīdàng tuīdòng le shèhuì de jìnbù.",
+    "example_en": "The surge of thought drove social progress.",
+    "chars": [
+      {
+        "s": "激",
+        "t": "激",
+        "m": "excite, surge"
+      },
+      {
+        "s": "荡",
+        "t": "蕩",
+        "m": "rock, swell"
+      }
+    ]
+  },
+  {
+    "simp": "积淀",
+    "trad": "積澱",
+    "pinyin": "jīdiàn",
+    "meaning": "accumulation; sedimentation; buildup",
+    "example_zh": "深厚的文化积淀是我们的财富。",
+    "example_py": "Shēnhòu de wénhuà jīdiàn shì wǒmen de cáifù.",
+    "example_en": "Deep cultural accumulation is our wealth.",
+    "chars": [
+      {
+        "s": "积",
+        "t": "積",
+        "m": "accumulate"
+      },
+      {
+        "s": "淀",
+        "t": "澱",
+        "m": "sediment, accumulation"
+      }
+    ]
+  },
+  {
+    "simp": "继承",
+    "trad": "繼承",
+    "pinyin": "jìchéng",
+    "meaning": "to inherit; to succeed; inheritance",
+    "example_zh": "我们要继承前人的优秀成果。",
+    "example_py": "Wǒmen yào jìchéng qiánrén de yōuxiù chéngguǒ.",
+    "example_en": "We must inherit the excellent achievements of our predecessors.",
+    "chars": [
+      {
+        "s": "继",
+        "t": "繼",
+        "m": "continue, inherit"
+      },
+      {
+        "s": "承",
+        "t": "承",
+        "m": "undertake, inherit"
+      }
+    ]
+  },
+  {
+    "simp": "兼顾",
+    "trad": "兼顧",
+    "pinyin": "jiānggù",
+    "meaning": "to give consideration to both; to balance; to attend to",
+    "example_zh": "发展要兼顾经济和生态的协调。",
+    "example_py": "Fāzhǎn yào jiānggù jīngjì hé shēngtài de xiétiáo.",
+    "example_en": "Development must balance economic and ecological coordination.",
+    "chars": [
+      {
+        "s": "兼",
+        "t": "兼",
+        "m": "hold both, balance"
+      },
+      {
+        "s": "顾",
+        "t": "顧",
+        "m": "consider, attend to"
+      }
+    ]
+  },
+  {
+    "simp": "鉴别",
+    "trad": "鑑別",
+    "pinyin": "jiànbié",
+    "meaning": "to discriminate; to distinguish; to identify",
+    "example_zh": "要提高群众鉴别真假信息的能力。",
+    "example_py": "Yào tígāo qúnzhòng jiànbié zhēnjiǎ xìnxī de néinglì.",
+    "example_en": "We must improve the public's ability to distinguish true from false information.",
+    "chars": [
+      {
+        "s": "鉴",
+        "t": "鑑",
+        "m": "examine, discriminate"
+      },
+      {
+        "s": "别",
+        "t": "別",
+        "m": "different, distinguish"
+      }
+    ]
+  },
+  {
+    "simp": "交融",
+    "trad": "交融",
+    "pinyin": "jiāoróng",
+    "meaning": "to integrate; to blend; to merge",
+    "example_zh": "东西方文化的交融产生了新的艺术形式。",
+    "example_py": "Dōngxīfāng wénhuà de jiāoróng chǎnshēng le xīn de yìshù xíngshì.",
+    "example_en": "The integration of Eastern and Western cultures created new art forms.",
+    "chars": [
+      {
+        "s": "交",
+        "t": "交",
+        "m": "exchange, blend"
+      },
+      {
+        "s": "融",
+        "t": "融",
+        "m": "melt, integrate"
+      }
+    ]
+  },
+  {
+    "simp": "借鉴",
+    "trad": "借鑑",
+    "pinyin": "jièjiàn",
+    "meaning": "to learn from; to draw lessons from; reference",
+    "example_zh": "我们要借鉴国外先进的经验。",
+    "example_py": "Wǒmen yào jièjiàn guówài xiānjìn de jīngyàn.",
+    "example_en": "We should learn from advanced international experience.",
+    "chars": [
+      {
+        "s": "借",
+        "t": "借",
+        "m": "borrow, learn from"
+      },
+      {
+        "s": "鉴",
+        "t": "鑑",
+        "m": "examine, reference"
+      }
+    ]
+  },
+  {
+    "simp": "精髓",
+    "trad": "精髓",
+    "pinyin": "jīngsuǐ",
+    "meaning": "essence; core; quintessence",
+    "example_zh": "传统文化的精髓需要代代相传。",
+    "example_py": "Chuántǒng wénhuà de jīngsuǐ xūyào dàidài xiāngchuán.",
+    "example_en": "The essence of traditional culture must be passed down through generations.",
+    "chars": [
+      {
+        "s": "精",
+        "t": "精",
+        "m": "essential, essence"
+      },
+      {
+        "s": "髓",
+        "t": "髓",
+        "m": "marrow, core"
+      }
+    ]
+  },
+  {
+    "simp": "洞察",
+    "trad": "洞察",
+    "pinyin": "dòngchá",
+    "meaning": "to perceive; to see through; keen insight",
+    "example_zh": "领导者要有洞察时代发展的眼光。",
+    "example_py": "Lǐngdǎozhě yào yǒu dòngchá shídài fāzhǎn de yǎnguāng.",
+    "example_en": "Leaders must have keen insight into the development of the times.",
+    "chars": [
+      {
+        "s": "洞",
+        "t": "洞",
+        "m": "penetrate, perceive"
+      },
+      {
+        "s": "察",
+        "t": "察",
+        "m": "observe, insight"
+      }
+    ]
+  },
+  {
+    "simp": "境界",
+    "trad": "境界",
+    "pinyin": "jìngjiè",
+    "meaning": "realm; sphere; level of achievement",
+    "example_zh": "艺术创作要追求更高的境界。",
+    "example_py": "Yìshù chuàngzuò yào zhuīqiú gèng gāo de jìngjiè.",
+    "example_en": "Artistic creation should pursue a higher realm.",
+    "chars": [
+      {
+        "s": "境",
+        "t": "境",
+        "m": "boundary, realm"
+      },
+      {
+        "s": "界",
+        "t": "界",
+        "m": "boundary, sphere"
+      }
+    ]
+  },
+  {
+    "simp": "开拓",
+    "trad": "開拓",
+    "pinyin": "kāituò",
+    "meaning": "to pioneer; to explore; to expand; opening",
+    "example_zh": "我们要开拓新的市场和领域。",
+    "example_py": "Wǒmen yào kāituò xīn de shìchǎng hé lǐngyù.",
+    "example_en": "We must explore new markets and fields.",
+    "chars": [
+      {
+        "s": "开",
+        "t": "開",
+        "m": "open, pioneer"
+      },
+      {
+        "s": "拓",
+        "t": "拓",
+        "m": "expand, explore"
+      }
+    ]
+  },
+  {
+    "simp": "刻骨铭心",
+    "trad": "刻骨銘心",
+    "pinyin": "kègǔ míngxīn",
+    "meaning": "engraved in one's heart; unforgettable; deeply remembered",
+    "example_zh": "这次经历给我留下了刻骨铭心的印象。",
+    "example_py": "Zhè cì jīnglì gěi wǒ liúxia le kègǔ míngxīn de yìnxiàng.",
+    "example_en": "This experience left an unforgettable impression on me.",
+    "chars": [
+      {
+        "s": "刻",
+        "t": "刻",
+        "m": "engrave, deep"
+      },
+      {
+        "s": "骨",
+        "t": "骨",
+        "m": "bone, deep"
+      },
+      {
+        "s": "铭",
+        "t": "銘",
+        "m": "engrave, remember"
+      },
+      {
+        "s": "心",
+        "t": "心",
+        "m": "heart, remember"
+      }
+    ]
+  },
+  {
+    "simp": "宽容",
+    "trad": "寬容",
+    "pinyin": "kuānróng",
+    "meaning": "tolerant; magnanimous; to tolerate; tolerance",
+    "example_zh": "一个成熟的社会需要宽容的精神。",
+    "example_py": "Yīge chéngshú de shèhuì xūyào kuānróng de jīngshén.",
+    "example_en": "A mature society needs a spirit of tolerance.",
+    "chars": [
+      {
+        "s": "宽",
+        "t": "寬",
+        "m": "broad, tolerant"
+      },
+      {
+        "s": "容",
+        "t": "容",
+        "m": "allow, magnanimous"
+      }
+    ]
+  },
+  {
+    "simp": "匮乏",
+    "trad": "匱乏",
+    "pinyin": "kuìfá",
+    "meaning": "to be scarce; deficiency; shortage",
+    "example_zh": "发展中国家面临资本匮乏的挑战。",
+    "example_py": "Fāzhǎnzhōng guójiā miànlín zīběn kuìfá de tiǎozhàn.",
+    "example_en": "Developing countries face challenges of capital shortage.",
+    "chars": [
+      {
+        "s": "匮",
+        "t": "匱",
+        "m": "empty, scarce"
+      },
+      {
+        "s": "乏",
+        "t": "乏",
+        "m": "lack, deficiency"
+      }
+    ]
+  },
+  {
+    "simp": "理念",
+    "trad": "理念",
+    "pinyin": "lǐniàn",
+    "meaning": "concept; idea; ideology; philosophy",
+    "example_zh": "可持续发展是现代社会的核心理念。",
+    "example_py": "Kě chíxù fāzhǎn shì xiàndài shèhuì de héxīn lǐniàn.",
+    "example_en": "Sustainable development is the core concept of modern society.",
+    "chars": [
+      {
+        "s": "理",
+        "t": "理",
+        "m": "principle, concept"
+      },
+      {
+        "s": "念",
+        "t": "念",
+        "m": "thought, idea"
+      }
+    ]
+  },
+  {
+    "simp": "历久弥新",
+    "trad": "歷久彌新",
+    "pinyin": "lìjiǔ míxīn",
+    "meaning": "to become ever fresher with age; timeless; enduring charm",
+    "example_zh": "经典之作往往历久弥新，代代相传。",
+    "example_py": "Jīngdiǎn zhī zuò wǎngwǎng lìjiǔ míxīn, dàidài xiāngchuán.",
+    "example_en": "Classic works often become fresher with age and are passed down through generations.",
+    "chars": [
+      {
+        "s": "历",
+        "t": "歷",
+        "m": "experience, endure"
+      },
+      {
+        "s": "久",
+        "t": "久",
+        "m": "long, lasting"
+      },
+      {
+        "s": "弥",
+        "t": "彌",
+        "m": "fill, fresher"
+      },
+      {
+        "s": "新",
+        "t": "新",
+        "m": "new"
+      }
+    ]
+  },
+  {
+    "simp": "利弊",
+    "trad": "利弊",
+    "pinyin": "lìbì",
+    "meaning": "advantages and disadvantages; pros and cons",
+    "example_zh": "要全面分析这个政策的利弊。",
+    "example_py": "Yào quánmiàn fēnxī zhège zhèngcè de lìbì.",
+    "example_en": "One should analyze the pros and cons of this policy comprehensively.",
+    "chars": [
+      {
+        "s": "利",
+        "t": "利",
+        "m": "benefit, advantage"
+      },
+      {
+        "s": "弊",
+        "t": "弊",
+        "m": "harm, disadvantage"
+      }
+    ]
+  },
+  {
+    "simp": "磨砺",
+    "trad": "磨勵",
+    "pinyin": "móli",
+    "meaning": "to temper; to refine; to hone",
+    "example_zh": "在实践中磨砺意志，增强能力。",
+    "example_py": "Zài shíjiàn zhōng móli yìzhì, zēngqiáng néinglì.",
+    "example_en": "Temper one's will in practice and strengthen abilities.",
+    "chars": [
+      {
+        "s": "磨",
+        "t": "磨",
+        "m": "grind, temper"
+      },
+      {
+        "s": "砺",
+        "t": "勵",
+        "m": "sharpen, refine"
+      }
+    ]
+  },
+  {
+    "simp": "凝练",
+    "trad": "凝練",
+    "pinyin": "níngliàn",
+    "meaning": "concise; refined; polished",
+    "example_zh": "语言要凝练有力，表达要准确。",
+    "example_py": "Yǔyán yào níngliàn yǒulì, biǎodá yào zhǔnquè.",
+    "example_en": "Language should be concise and powerful, expression should be accurate.",
+    "chars": [
+      {
+        "s": "凝",
+        "t": "凝",
+        "m": "congeal, concise"
+      },
+      {
+        "s": "练",
+        "t": "練",
+        "m": "practice, refined"
+      }
+    ]
+  },
+  {
+    "simp": "品格",
+    "trad": "品格",
+    "pinyin": "pǐngé",
+    "meaning": "character; integrity; moral quality",
+    "example_zh": "品格是一个人最重要的财富。",
+    "example_py": "Pǐngé shì yīge rén zuì zhòngyào de cáifù.",
+    "example_en": "Character is a person's most valuable asset.",
+    "chars": [
+      {
+        "s": "品",
+        "t": "品",
+        "m": "article, character"
+      },
+      {
+        "s": "格",
+        "t": "格",
+        "m": "standard, integrity"
+      }
+    ]
+  },
+  {
+    "simp": "平衡",
+    "trad": "平衡",
+    "pinyin": "pínghuà",
+    "meaning": "balance; to balance; equilibrium",
+    "example_zh": "企业发展要在速度和质量之间找到平衡。",
+    "example_py": "Qǐyè fāzhǎn yào zài sùdù hé zhìliàng zhījiān zhǎodào pínghuà.",
+    "example_en": "Enterprise development must find balance between speed and quality.",
+    "chars": [
+      {
+        "s": "平",
+        "t": "平",
+        "m": "flat, balance"
+      },
+      {
+        "s": "衡",
+        "t": "衡",
+        "m": "weigh, balance"
+      }
+    ]
+  },
+  {
+    "simp": "启示",
+    "trad": "啟示",
+    "pinyin": "qǐshì",
+    "meaning": "revelation; enlightenment; to illuminate",
+    "example_zh": "这个成功案例给我们很多启示。",
+    "example_py": "Zhège chénggōng àn lì gěi wǒmen hěn duō qǐshì.",
+    "example_en": "This success case provides us many insights.",
+    "chars": [
+      {
+        "s": "启",
+        "t": "啟",
+        "m": "open, enlightenment"
+      },
+      {
+        "s": "示",
+        "t": "示",
+        "m": "show, revelation"
+      }
+    ]
+  },
+  {
+    "simp": "前瞻",
+    "trad": "前瞻",
+    "pinyin": "qiánzhān",
+    "meaning": "forward-looking; visionary; to look ahead",
+    "example_zh": "我们要有前瞻的眼光规划未来。",
+    "example_py": "Wǒmen yào yǒu qiánzhān de yǎnguāng guīhuà wèilái.",
+    "example_en": "We must have forward-looking vision to plan for the future.",
+    "chars": [
+      {
+        "s": "前",
+        "t": "前",
+        "m": "front, forward"
+      },
+      {
+        "s": "瞻",
+        "t": "瞻",
+        "m": "look at, visionary"
+      }
+    ]
+  },
+  {
+    "simp": "潜力",
+    "trad": "潛力",
+    "pinyin": "qiánlì",
+    "meaning": "potential; hidden capacity; latent power",
+    "example_zh": "年轻一代蕴含着巨大的潜力。",
+    "example_py": "Niánqīng yī dài yùnhán zhe jùdà de qiánlì.",
+    "example_en": "The younger generation has enormous potential.",
+    "chars": [
+      {
+        "s": "潜",
+        "t": "潛",
+        "m": "hidden, potential"
+      },
+      {
+        "s": "力",
+        "t": "力",
+        "m": "strength, capacity"
+      }
+    ]
+  },
+  {
+    "simp": "强韧",
+    "trad": "強韌",
+    "pinyin": "qiáng ruìn",
+    "meaning": "tough; resilient; strong yet flexible",
+    "example_zh": "中华民族有强韧的生命力和适应力。",
+    "example_py": "Zhōnghuá mínzú yǒu qiáng ruìn de shēngmìnglì hé shìyìnglì.",
+    "example_en": "The Chinese nation has strong resilience and adaptability.",
+    "chars": [
+      {
+        "s": "强",
+        "t": "強",
+        "m": "strong"
+      },
+      {
+        "s": "韧",
+        "t": "韌",
+        "m": "tough, resilient"
+      }
+    ]
+  },
+  {
+    "simp": "情怀",
+    "trad": "情懷",
+    "pinyin": "qínghuái",
+    "meaning": "sentiment; feeling; emotion; nostalgia",
+    "example_zh": "艺术作品要传达深层的情怀。",
+    "example_py": "Yìshù zuòpǐn yào chuándá shēncéng de qínghuái.",
+    "example_en": "Artistic works should convey deep emotion.",
+    "chars": [
+      {
+        "s": "情",
+        "t": "情",
+        "m": "emotion, feeling"
+      },
+      {
+        "s": "怀",
+        "t": "懷",
+        "m": "harbor, sentiment"
+      }
+    ]
+  },
+  {
+    "simp": "求索",
+    "trad": "求索",
+    "pinyin": "qiúsuǒ",
+    "meaning": "to seek; to search; to pursue",
+    "example_zh": "人生就是一个不断求索的过程。",
+    "example_py": "Rénshēng jiùshì yīge búduàn qiúsuǒ de guòchéng.",
+    "example_en": "Life is a process of continuous seeking.",
+    "chars": [
+      {
+        "s": "求",
+        "t": "求",
+        "m": "seek, pursue"
+      },
+      {
+        "s": "索",
+        "t": "索",
+        "m": "search, explore"
+      }
+    ]
+  },
+  {
+    "simp": "热忱",
+    "trad": "熱忱",
+    "pinyin": "règhěn",
+    "meaning": "warmth; enthusiasm; earnestness",
+    "example_zh": "我们以热忱的态度为人民服务。",
+    "example_py": "Wǒmen yǐ règhěn de tàidu wèi rénmín fúwù.",
+    "example_en": "We serve the people with warm enthusiasm.",
+    "chars": [
+      {
+        "s": "热",
+        "t": "熱",
+        "m": "hot, warmth"
+      },
+      {
+        "s": "忱",
+        "t": "忱",
+        "m": "earnest, enthusiasm"
+      }
+    ]
+  },
+  {
+    "simp": "人文",
+    "trad": "人文",
+    "pinyin": "rénwén",
+    "meaning": "humanities; human culture; liberal arts",
+    "example_zh": "人文精神对社会发展至关重要。",
+    "example_py": "Rénwén jīngshén duì shèhuì fāzhǎn zhìguānzhòngyào.",
+    "example_en": "The humanistic spirit is crucial to social development.",
+    "chars": [
+      {
+        "s": "人",
+        "t": "人",
+        "m": "person"
+      },
+      {
+        "s": "文",
+        "t": "文",
+        "m": "culture, humanities"
+      }
+    ]
+  },
+  {
+    "simp": "锐意进取",
+    "trad": "銳意進取",
+    "pinyin": "ruìyì jìnqǔ",
+    "meaning": "to be sharp and enterprising; to be vigorously progressive",
+    "example_zh": "要锐意进取，不能固步自封。",
+    "example_py": "Yào ruìyì jìnqǔ, búnéng gùbu zìfēng.",
+    "example_en": "One must be vigorously progressive and not stagnate.",
+    "chars": [
+      {
+        "s": "锐",
+        "t": "銳",
+        "m": "sharp, keen"
+      },
+      {
+        "s": "意",
+        "t": "意",
+        "m": "intention, will"
+      },
+      {
+        "s": "进",
+        "t": "進",
+        "m": "advance"
+      },
+      {
+        "s": "取",
+        "t": "取",
+        "m": "take, pursue"
+      }
+    ]
+  },
+  {
+    "simp": "善于",
+    "trad": "善於",
+    "pinyin": "shànyú",
+    "meaning": "to be good at; to be skilled in",
+    "example_zh": "成功的人往往善于学习和创新。",
+    "example_py": "Chénggōng de rén wǎngwǎng shànyú xuéxí hé chuàngxīn.",
+    "example_en": "Successful people are often skilled at learning and innovation.",
+    "chars": [
+      {
+        "s": "善",
+        "t": "善",
+        "m": "good, skilled"
+      },
+      {
+        "s": "于",
+        "t": "於",
+        "m": "at, in"
+      }
+    ]
+  },
+  {
+    "simp": "生生不息",
+    "trad": "生生不息",
+    "pinyin": "shēng shēng búxí",
+    "meaning": "to thrive continuously; to prosper eternally",
+    "example_zh": "中华文明生生不息，延续至今。",
+    "example_py": "Zhōnghuá wénmíng shēng shēng búxí, yánxù zhì jīn.",
+    "example_en": "Chinese civilization has thrived continuously and persists to the present day.",
+    "chars": [
+      {
+        "s": "生",
+        "t": "生",
+        "m": "life, thrive"
+      },
+      {
+        "s": "生",
+        "t": "生",
+        "m": "life, thrive"
+      },
+      {
+        "s": "不",
+        "t": "不",
+        "m": "not"
+      },
+      {
+        "s": "息",
+        "t": "息",
+        "m": "cease, prosper"
+      }
+    ]
+  },
+  {
+    "simp": "深邃",
+    "trad": "深邃",
+    "pinyin": "shēnsuì",
+    "meaning": "profound; deep; abstruse",
+    "example_zh": "哲学思想往往深邃而复杂。",
+    "example_py": "Zhéxué sīxiǎng wǎngwǎng shēnsuì ér fùzá.",
+    "example_en": "Philosophical thought is often profound and complex.",
+    "chars": [
+      {
+        "s": "深",
+        "t": "深",
+        "m": "deep, profound"
+      },
+      {
+        "s": "邃",
+        "t": "邃",
+        "m": "deep, abstruse"
+      }
+    ]
+  },
+  {
+    "simp": "梳理",
+    "trad": "梳理",
+    "pinyin": "shūlǐ",
+    "meaning": "to organize; to sort out; to arrange",
+    "example_zh": "要梳理历史脉络，理解发展规律。",
+    "example_py": "Yào shūlǐ lìshǐ màiluò, lǐjiě fāzhǎn guīlǜ.",
+    "example_en": "One should organize historical threads and understand development laws.",
+    "chars": [
+      {
+        "s": "梳",
+        "t": "梳",
+        "m": "comb, organize"
+      },
+      {
+        "s": "理",
+        "t": "理",
+        "m": "arrange, organize"
+      }
+    ]
+  },
+  {
+    "simp": "思辨",
+    "trad": "思辨",
+    "pinyin": "sībiàn",
+    "meaning": "logical thinking; dialectical reasoning; to debate intellectually",
+    "example_zh": "要学会思辨，不能盲目跟风。",
+    "example_py": "Yào xuéhuì sībiàn, búnéng máng mù gēnfēng.",
+    "example_en": "One must learn dialectical thinking and not blindly follow trends.",
+    "chars": [
+      {
+        "s": "思",
+        "t": "思",
+        "m": "think, reasoning"
+      },
+      {
+        "s": "辨",
+        "t": "辨",
+        "m": "distinguish, debate"
+      }
+    ]
+  },
+  {
+    "simp": "探究",
+    "trad": "探究",
+    "pinyin": "tànjiū",
+    "meaning": "to investigate; to probe; to delve into",
+    "example_zh": "科学家们深入探究了这个现象的原因。",
+    "example_py": "Kēxuéjiāmen shēnrù tànjiū le zhège xiànxiàng de yuányīn.",
+    "example_en": "Scientists deeply investigated the cause of this phenomenon.",
+    "chars": [
+      {
+        "s": "探",
+        "t": "探",
+        "m": "explore, investigate"
+      },
+      {
+        "s": "究",
+        "t": "究",
+        "m": "investigate, probe"
+      }
+    ]
+  },
+  {
+    "simp": "体悟",
+    "trad": "體悟",
+    "pinyin": "tǐwù",
+    "meaning": "to realize through experience; to grasp intuitively; to comprehend",
+    "example_zh": "通过实践，我们才能体悟道理的深意。",
+    "example_py": "Tōngguò shíjiàn, wǒmen cáinéng tǐwù dàolǐ de shēnyì.",
+    "example_en": "Through practice, we can truly grasp the deeper meaning of principle.",
+    "chars": [
+      {
+        "s": "体",
+        "t": "體",
+        "m": "body, realize"
+      },
+      {
+        "s": "悟",
+        "t": "悟",
+        "m": "realize, understand"
+      }
+    ]
+  },
+  {
+    "simp": "调和",
+    "trad": "調和",
+    "pinyin": "tiáohé",
+    "meaning": "to reconcile; to harmonize; harmony",
+    "example_zh": "要调和各方的利益关系。",
+    "example_py": "Yào tiáohé gèfāng de lìyì guānxi.",
+    "example_en": "One must reconcile the interests of all parties.",
+    "chars": [
+      {
+        "s": "调",
+        "t": "調",
+        "m": "adjust, reconcile"
+      },
+      {
+        "s": "和",
+        "t": "和",
+        "m": "harmony, reconcile"
+      }
+    ]
+  },
+  {
+    "simp": "统筹",
+    "trad": "統籌",
+    "pinyin": "tǒngchóu",
+    "meaning": "to plan as a whole; to coordinate comprehensively",
+    "example_zh": "要统筹兼顾长期和短期的目标。",
+    "example_py": "Yào tǒngchóu jiānggù chángqī hé duǎnqī de mùbiāo.",
+    "example_en": "One must comprehensively coordinate long-term and short-term goals.",
+    "chars": [
+      {
+        "s": "统",
+        "t": "統",
+        "m": "plan, coordinate"
+      },
+      {
+        "s": "筹",
+        "t": "籌",
+        "m": "plan, organize"
+      }
+    ]
+  },
+  {
+    "simp": "拓展",
+    "trad": "拓展",
+    "pinyin": "tuòzhǎn",
+    "meaning": "to expand; to broaden; expansion",
+    "example_zh": "我们要拓展国际合作的范围。",
+    "example_py": "Wǒmen yào tuòzhǎn guójì hézuò de fànwéi.",
+    "example_en": "We must broaden the scope of international cooperation.",
+    "chars": [
+      {
+        "s": "拓",
+        "t": "拓",
+        "m": "expand"
+      },
+      {
+        "s": "展",
+        "t": "展",
+        "m": "unfold, expand"
+      }
+    ]
+  },
+  {
+    "simp": "完备",
+    "trad": "完備",
+    "pinyin": "wánbèi",
+    "meaning": "complete; comprehensive; well-developed",
+    "example_zh": "法律体系要完备，确保有法可依。",
+    "example_py": "Fǎlǜ tǐxì yào wánbèi, quèbǎo yǒufa kěyī.",
+    "example_en": "The legal system must be comprehensive to ensure laws to follow.",
+    "chars": [
+      {
+        "s": "完",
+        "t": "完",
+        "m": "complete"
+      },
+      {
+        "s": "备",
+        "t": "備",
+        "m": "prepare, comprehensive"
+      }
+    ]
+  },
+  {
+    "simp": "万象更新",
+    "trad": "萬象更新",
+    "pinyin": "wànxiàng gēngxīn",
+    "meaning": "all things are renewed; a fresh beginning; renewal of all things",
+    "example_zh": "春天到来，大自然万象更新。",
+    "example_py": "Chūntiān dàolái, dà zìránjiè wànxiàng gēngxīn.",
+    "example_en": "With spring's arrival, all of nature is renewed.",
+    "chars": [
+      {
+        "s": "万",
+        "t": "萬",
+        "m": "ten thousand, all"
+      },
+      {
+        "s": "象",
+        "t": "象",
+        "m": "phenomenon, things"
+      },
+      {
+        "s": "更",
+        "t": "更",
+        "m": "more, renewed"
+      },
+      {
+        "s": "新",
+        "t": "新",
+        "m": "new"
+      }
+    ]
+  },
+  {
+    "simp": "文脉",
+    "trad": "文脈",
+    "pinyin": "wènmài",
+    "meaning": "cultural heritage; cultural lineage; thread of culture",
+    "example_zh": "要保护和传承中华文脉。",
+    "example_py": "Yào bǎohù hé chuánchéng Zhōnghuá wènmài.",
+    "example_en": "We must protect and pass down Chinese cultural heritage.",
+    "chars": [
+      {
+        "s": "文",
+        "t": "文",
+        "m": "culture"
+      },
+      {
+        "s": "脉",
+        "t": "脈",
+        "m": "vein, lineage"
+      }
+    ]
+  },
+  {
+    "simp": "无懈可击",
+    "trad": "無懈可擊",
+    "pinyin": "wú xiè kějī",
+    "meaning": "watertight; impeccable; invulnerable; leaving no room for attack",
+    "example_zh": "论证要严密，做到无懈可击。",
+    "example_py": "Lùnzhèng yào yánmì, zuòdào wú xiè kějī.",
+    "example_en": "Arguments must be rigorous and impeccable.",
+    "chars": [
+      {
+        "s": "无",
+        "t": "無",
+        "m": "not, no"
+      },
+      {
+        "s": "懈",
+        "t": "懈",
+        "m": "slack, lax"
+      },
+      {
+        "s": "可",
+        "t": "可",
+        "m": "can, possible"
+      },
+      {
+        "s": "击",
+        "t": "擊",
+        "m": "hit, attack"
+      }
+    ]
+  },
+  {
+    "simp": "悟性",
+    "trad": "悟性",
+    "pinyin": "wùxìng",
+    "meaning": "insight; perception; intuitive understanding",
+    "example_zh": "学习需要有一定的悟性。",
+    "example_py": "Xuéxí xūyào yǒu yīdìng de wùxìng.",
+    "example_en": "Learning requires a certain level of insight.",
+    "chars": [
+      {
+        "s": "悟",
+        "t": "悟",
+        "m": "realize, insight"
+      },
+      {
+        "s": "性",
+        "t": "性",
+        "m": "nature, ability"
+      }
+    ]
+  },
+  {
+    "simp": "相辅相成",
+    "trad": "相輔相成",
+    "pinyin": "xiāng fǔ xiāng chéng",
+    "meaning": "to complement each other; to promote one another",
+    "example_zh": "理论和实践相辅相成，缺一不可。",
+    "example_py": "Lǐlùn hé shíjiàn xiāng fǔ xiāng chéng, quē yī búkě.",
+    "example_en": "Theory and practice complement each other and are both essential.",
+    "chars": [
+      {
+        "s": "相",
+        "t": "相",
+        "m": "each other"
+      },
+      {
+        "s": "辅",
+        "t": "輔",
+        "m": "assist, complement"
+      },
+      {
+        "s": "相",
+        "t": "相",
+        "m": "each other"
+      },
+      {
+        "s": "成",
+        "t": "成",
+        "m": "become, promote"
+      }
+    ]
+  },
+  {
+    "simp": "新颖",
+    "trad": "新穎",
+    "pinyin": "xīnyǐng",
+    "meaning": "novel; original; fresh; innovative",
+    "example_zh": "设计要新颖，能吸引消费者的注意。",
+    "example_py": "Shèjì yào xīnyǐng, néng xīyǐn xiāofèizhě de zhùyìlì.",
+    "example_en": "Design should be novel and attract consumer attention.",
+    "chars": [
+      {
+        "s": "新",
+        "t": "新",
+        "m": "new"
+      },
+      {
+        "s": "颖",
+        "t": "穎",
+        "m": "sharp, original"
+      }
+    ]
+  },
+  {
+    "simp": "寻根",
+    "trad": "尋根",
+    "pinyin": "xúnhēn",
+    "meaning": "to trace origins; to go back to roots",
+    "example_zh": "我们要寻根溯源，理解文化的起源。",
+    "example_py": "Wǒmen yào xúnhēn sùyuán, lǐjiě wénhuà de qǐyuán.",
+    "example_en": "We must trace our cultural roots to understand their origins.",
+    "chars": [
+      {
+        "s": "寻",
+        "t": "尋",
+        "m": "seek, trace"
+      },
+      {
+        "s": "根",
+        "t": "根",
+        "m": "root"
+      }
+    ]
+  },
+  {
+    "simp": "雅致",
+    "trad": "雅致",
+    "pinyin": "yǎzhì",
+    "meaning": "elegant; refined; tasteful; sophisticated",
+    "example_zh": "这个设计很雅致，符合现代审美。",
+    "example_py": "Zhège shèjì hěn yǎzhì, fúhé xiàndài shěnměi.",
+    "example_en": "This design is elegant and meets modern aesthetic standards.",
+    "chars": [
+      {
+        "s": "雅",
+        "t": "雅",
+        "m": "elegant, refined"
+      },
+      {
+        "s": "致",
+        "t": "致",
+        "m": "pursue, refined"
+      }
+    ]
+  },
+  {
+    "simp": "应运而生",
+    "trad": "應運而生",
+    "pinyin": "yìngyùn ér shēng",
+    "meaning": "to emerge in response to circumstances; to come into being opportunely",
+    "example_zh": "互联网技术应运而生，改变了世界。",
+    "example_py": "Hùliánwǎng jìshù yìngyùn ér shēng, gǎibiàn le shìjiè.",
+    "example_en": "Internet technology emerged in response to circumstances and changed the world.",
+    "chars": [
+      {
+        "s": "应",
+        "t": "應",
+        "m": "respond, meet"
+      },
+      {
+        "s": "运",
+        "t": "運",
+        "m": "luck, fortune"
+      },
+      {
+        "s": "而",
+        "t": "而",
+        "m": "and"
+      },
+      {
+        "s": "生",
+        "t": "生",
+        "m": "life, born"
+      }
+    ]
+  },
+  {
+    "simp": "运筹",
+    "trad": "運籌",
+    "pinyin": "yùnchóu",
+    "meaning": "to plan; to manage; strategic planning",
+    "example_zh": "领导者要懂得运筹帷幄。",
+    "example_py": "Lǐngdǎozhě yào dǒngde yùnchóu wéiwò.",
+    "example_en": "Leaders must master strategic planning.",
+    "chars": [
+      {
+        "s": "运",
+        "t": "運",
+        "m": "manage, plan"
+      },
+      {
+        "s": "筹",
+        "t": "籌",
+        "m": "plan, organize"
+      }
+    ]
+  },
+  {
+    "simp": "整合",
+    "trad": "整合",
+    "pinyin": "zhěnghé",
+    "meaning": "to integrate; to combine; integration",
+    "example_zh": "要整合各种资源实现高效发展。",
+    "example_py": "Yào zhěnghé gèzhǒng zīyuán shíxiàn gāoxiào fāzhǎn.",
+    "example_en": "One must integrate various resources to achieve efficient development.",
+    "chars": [
+      {
+        "s": "整",
+        "t": "整",
+        "m": "whole, integrate"
+      },
+      {
+        "s": "合",
+        "t": "合",
+        "m": "combine, integrate"
+      }
+    ]
+  },
+  {
+    "simp": "至关重要",
+    "trad": "至關重要",
+    "pinyin": "zhì guān zhòngyào",
+    "meaning": "crucial; vital; extremely important",
+    "example_zh": "教育对国家发展至关重要。",
+    "example_py": "Jiàoyù duì guójiā fāzhǎn zhì guān zhòngyào.",
+    "example_en": "Education is crucial to national development.",
+    "chars": [
+      {
+        "s": "至",
+        "t": "至",
+        "m": "arrive at, vital"
+      },
+      {
+        "s": "关",
+        "t": "關",
+        "m": "key, crucial"
+      },
+      {
+        "s": "重",
+        "t": "重",
+        "m": "heavy, important"
+      },
+      {
+        "s": "要",
+        "t": "要",
+        "m": "important, important"
+      }
+    ]
+  },
+  {
+    "simp": "志向",
+    "trad": "志向",
+    "pinyin": "zhìxiàng",
+    "meaning": "ambition; aspiration; goal in life",
+    "example_zh": "他的志向是为社会作出贡献。",
+    "example_py": "Tā de zhìxiàng shì wèi shèhuì zuòchū gòngxiàn.",
+    "example_en": "His aspiration is to make contributions to society.",
+    "chars": [
+      {
+        "s": "志",
+        "t": "志",
+        "m": "will, ambition"
+      },
+      {
+        "s": "向",
+        "t": "向",
+        "m": "towards, aspiration"
+      }
+    ]
+  },
+  {
+    "simp": "助力",
+    "trad": "助力",
+    "pinyin": "zhùlì",
+    "meaning": "to lend support; to contribute; to facilitate",
+    "example_zh": "科技创新对产业升级起到了重要的助力。",
+    "example_py": "Kējì chuàngxīn duì chǎnyè shēngjí qǐdào le zhòngyào de zhùlì.",
+    "example_en": "Technological innovation provided important support for industrial upgrade.",
+    "chars": [
+      {
+        "s": "助",
+        "t": "助",
+        "m": "help, support"
+      },
+      {
+        "s": "力",
+        "t": "力",
+        "m": "strength, power"
+      }
+    ]
+  },
+  {
+    "simp": "自强",
+    "trad": "自強",
+    "pinyin": "zìqiáng",
+    "meaning": "to strive to improve oneself; self-strengthening; self-reliance",
+    "example_zh": "民族的复兴需要自强自立的精神。",
+    "example_py": "Mínzú de fùxīng xūyào zìqiáng zìlì de jīngshén.",
+    "example_en": "National rejuvenation requires the spirit of self-strengthening and independence.",
+    "chars": [
+      {
+        "s": "自",
+        "t": "自",
+        "m": "self"
+      },
+      {
+        "s": "强",
+        "t": "強",
+        "m": "strong, strengthen"
+      }
+    ]
+  },
+  {
+    "simp": "综观",
+    "trad": "綜觀",
+    "pinyin": "zōngguān",
+    "meaning": "to view as a whole; to take a comprehensive view; comprehensively",
+    "example_zh": "综观人类发展的历史，我们可以发现规律。",
+    "example_py": "Zōngguān rénlèi fāzhǎn de lìshǐ, wǒmen kěyǐ fāxiàn guīlǜ.",
+    "example_en": "Looking at the history of human development comprehensively, we can discover patterns.",
+    "chars": [
+      {
+        "s": "综",
+        "t": "綜",
+        "m": "combine, comprehensive"
+      },
+      {
+        "s": "观",
+        "t": "觀",
+        "m": "view, observe"
+      }
+    ]
+  },
+  {
+    "simp": "卓越",
+    "trad": "卓越",
+    "pinyin": "zhuóyuè",
+    "meaning": "outstanding; excellent; superiority",
+    "example_zh": "追求卓越是优秀企业的特点。",
+    "example_py": "Zhuīqiú zhuóyuè shì yōuxiù qǐyè de tèdiǎn.",
+    "example_en": "Pursuing excellence is a characteristic of outstanding enterprises.",
+    "chars": [
+      {
+        "s": "卓",
+        "t": "卓",
+        "m": "excellent, outstanding"
+      },
+      {
+        "s": "越",
+        "t": "越",
+        "m": "exceed, excellence"
+      }
+    ]
+  }
+]
