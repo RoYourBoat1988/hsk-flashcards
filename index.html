@@ -1258,6 +1258,84 @@
   }
 
   /* ========================
+     HSK CONFIG OVERLAY
+  ======================== */
+  .hsk-config-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,18,8,0.6);
+    z-index: 300;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hsk-config-overlay.open { opacity: 1; pointer-events: all; }
+  .hsk-config-modal {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 2rem;
+    max-width: 460px;
+    width: 92%;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+  }
+  .hsk-config-back {
+    display: block; background: none; border: none;
+    color: var(--muted); font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; cursor: pointer; padding: 0 0 1rem 0;
+    text-align: left; transition: color 0.2s;
+  }
+  .hsk-config-back:hover { color: var(--ink); }
+  .hsk-config-title { font-size: 1.3rem; font-weight: 300; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+  .hsk-config-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .level-toggle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .level-toggle-btn {
+    border: 2px solid var(--border);
+    border-radius: 2px;
+    padding: 0.8rem 0.5rem;
+    background: var(--paper2);
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    transition: all 0.2s;
+    display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  }
+  .level-toggle-btn:hover { border-color: var(--ink); }
+  .level-toggle-btn.active { border-color: var(--red); background: var(--paper); }
+  .level-toggle-btn.active .ltb-name { color: var(--red); }
+  .level-toggle-btn.disabled-toggle { opacity: 0.4; cursor: not-allowed; }
+  .ltb-name { font-size: 1rem; font-weight: 600; }
+  .ltb-sub { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .ltb-count { font-size: 0.65rem; color: var(--muted); font-style: italic; }
+  .hsk-stats-bar {
+    display: flex; justify-content: center; gap: 2rem;
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hsk-stat-item { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+  .hsk-stat-value { font-size: 1.4rem; font-weight: 300; font-family: 'Cormorant Garamond', serif; color: var(--ink); }
+  .hsk-stat-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hsk-start-btn {
+    width: 100%;
+    background: var(--red); color: var(--paper);
+    border: none; border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; letter-spacing: 0.08em;
+    padding: 0.9rem 1.5rem;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .hsk-start-btn:hover { opacity: 0.88; }
+  .hsk-start-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ========================
      TEXT SIZE PICKER
   ======================== */
   .size-picker {
@@ -1541,6 +1619,63 @@
     <button class="deck-modal-close" onclick="closeDeckOverlay()">Cancel</button>
   </div>
 </div>
+
+<!-- HSK ALL LEVELS CONFIG MODAL -->
+<div class="hsk-config-overlay" id="hsk-config-overlay">
+  <div class="hsk-config-modal">
+    <button class="hsk-config-back" onclick="closeHSKConfig()">← Back</button>
+    <div class="hsk-config-title">HSK All Levels</div>
+    <div class="hsk-config-sub">Select the levels to include in your session</div>
+    <div class="level-toggle-grid">
+      <button class="level-toggle-btn active" data-level="1" onclick="toggleHSKLevel(1)">
+        <span class="ltb-name">HSK 1</span>
+        <span class="ltb-sub">Beginner</span>
+        <span class="ltb-count">154 words</span>
+      </button>
+      <button class="level-toggle-btn active" data-level="2" onclick="toggleHSKLevel(2)">
+        <span class="ltb-name">HSK 2</span>
+        <span class="ltb-sub">Elementary</span>
+        <span class="ltb-count">151 words</span>
+      </button>
+      <button class="level-toggle-btn active" data-level="3" onclick="toggleHSKLevel(3)">
+        <span class="ltb-name">HSK 3</span>
+        <span class="ltb-sub">Pre-Intermediate</span>
+        <span class="ltb-count">327 words</span>
+      </button>
+      <button class="level-toggle-btn active" data-level="4" onclick="toggleHSKLevel(4)">
+        <span class="ltb-name">HSK 4</span>
+        <span class="ltb-sub">Intermediate</span>
+        <span class="ltb-count">615 words</span>
+      </button>
+      <button class="level-toggle-btn active" data-level="5" onclick="toggleHSKLevel(5)">
+        <span class="ltb-name">HSK 5</span>
+        <span class="ltb-sub">Upper-Int.</span>
+        <span class="ltb-count">1,316 words</span>
+      </button>
+      <button class="level-toggle-btn active" data-level="6" onclick="toggleHSKLevel(6)">
+        <span class="ltb-name">HSK 6</span>
+        <span class="ltb-sub">Advanced</span>
+        <span class="ltb-count">104 words</span>
+      </button>
+    </div>
+    <div class="hsk-stats-bar">
+      <div class="hsk-stat-item">
+        <span class="hsk-stat-value" id="hsk-stat-words">—</span>
+        <span class="hsk-stat-label">Words</span>
+      </div>
+      <div class="hsk-stat-item">
+        <span class="hsk-stat-value" id="hsk-stat-due">—</span>
+        <span class="hsk-stat-label">Due Today</span>
+      </div>
+      <div class="hsk-stat-item">
+        <span class="hsk-stat-value" id="hsk-stat-new">—</span>
+        <span class="hsk-stat-label">New Available</span>
+      </div>
+    </div>
+    <button class="hsk-start-btn" id="hsk-start-btn" onclick="startHSKAll()">Start Session</button>
+  </div>
+</div>
+
 
 <!-- VOICE PICKER MODAL -->
 <div class="voice-overlay" id="voice-overlay" onclick="closeVoicePicker(event)">
@@ -1914,7 +2049,7 @@ function buildQueue() {
       else if (isDue(srs)) reviewCards.push(item);
     });
   } else if (currentDeck === 'hsk') {
-    for (const level of [1,2,3,4,5,6]) {
+    for (const level of selectedHSKLevels) {
       const words = DECK_CACHE.hsk[level] || [];
       words.forEach((word, idx) => {
         const srs = getCardSRS(level, idx);
@@ -1958,7 +2093,7 @@ function updateStats() {
       else doneCount++;
     });
   } else if (currentDeck === 'hsk') {
-    for (const level of [1,2,3,4,5,6]) {
+    for (const level of selectedHSKLevels) {
       const words = DECK_CACHE.hsk[level] || [];
       words.forEach((word, idx) => {
         const srs = getCardSRS(level, idx);
@@ -2854,9 +2989,122 @@ function buildActivityRows() {
 }
 
 // ============================================================
+// HSK ALL LEVELS CONFIG
+// ============================================================
+const HSK_ALL_LEVELS_KEY = 'hsk_all_levels';
+let selectedHSKLevels = JSON.parse(localStorage.getItem(HSK_ALL_LEVELS_KEY) || '[1,2,3,4,5,6]');
+let hskConfigSource = 'intro'; // 'intro' | 'session'
+
+const HSK_LEVEL_INFO = {
+  1: { name: 'HSK 1', sub: 'Beginner',          count: 154  },
+  2: { name: 'HSK 2', sub: 'Elementary',         count: 151  },
+  3: { name: 'HSK 3', sub: 'Pre-Intermediate',   count: 327  },
+  4: { name: 'HSK 4', sub: 'Intermediate',       count: 615  },
+  5: { name: 'HSK 5', sub: 'Upper-Intermediate', count: 1316 },
+  6: { name: 'HSK 6', sub: 'Advanced',           count: 104  },
+};
+
+function openHSKConfig(source) {
+  hskConfigSource = source || 'intro';
+  updateHSKConfigUI();
+  updateHSKConfigStats();
+  document.getElementById('hsk-config-overlay').classList.add('open');
+}
+
+function closeHSKConfig() {
+  document.getElementById('hsk-config-overlay').classList.remove('open');
+}
+
+function toggleHSKLevel(level) {
+  const idx = selectedHSKLevels.indexOf(level);
+  if (idx > -1) {
+    if (selectedHSKLevels.length === 1) return; // keep at least one
+    selectedHSKLevels.splice(idx, 1);
+  } else {
+    selectedHSKLevels.push(level);
+    selectedHSKLevels.sort((a, b) => a - b);
+  }
+  // Save immediately so selection persists even if user just closes
+  localStorage.setItem(HSK_ALL_LEVELS_KEY, JSON.stringify(selectedHSKLevels));
+  updateHSKConfigUI();
+  updateHSKConfigStats();
+}
+
+function updateHSKConfigUI() {
+  for (let level = 1; level <= 6; level++) {
+    const btn = document.querySelector(`.level-toggle-btn[data-level="${level}"]`);
+    if (!btn) continue;
+    const isActive = selectedHSKLevels.includes(level);
+    btn.classList.toggle('active', isActive);
+    // Mark last remaining active as disabled so it can't be deselected
+    btn.classList.toggle('disabled-toggle', isActive && selectedHSKLevels.length === 1);
+  }
+}
+
+function updateHSKConfigStats() {
+  const maxNew = (state && state.settings && state.settings.newCardsPerDay) ? state.settings.newCardsPerDay : 20;
+  let totalWords = 0, dueCount = 0, newCount = 0;
+  for (const level of selectedHSKLevels) {
+    const words = DECK_CACHE.hsk[level] || [];
+    totalWords += words.length;
+    words.forEach((word, idx) => {
+      const srs = getCardSRS(level, idx);
+      if (!srs.nextReview) newCount++;
+      else if (isDue(srs)) dueCount++;
+    });
+  }
+  const cappedNew = Math.min(newCount, maxNew);
+  document.getElementById('hsk-stat-words').textContent = totalWords.toLocaleString();
+  document.getElementById('hsk-stat-due').textContent   = dueCount;
+  document.getElementById('hsk-stat-new').textContent   = cappedNew;
+  const total = dueCount + cappedNew;
+  const btn = document.getElementById('hsk-start-btn');
+  btn.textContent = total > 0 ? `Start — ${total} cards` : 'Start Session';
+  btn.disabled = selectedHSKLevels.length === 0;
+}
+
+function startHSKAll() {
+  localStorage.setItem(HSK_ALL_LEVELS_KEY, JSON.stringify(selectedHSKLevels));
+  document.getElementById('hsk-config-overlay').classList.remove('open');
+  document.getElementById('deck-overlay').classList.remove('open');
+
+  if (hskConfigSource === 'intro') {
+    // Transition from intro screen to session
+    currentDeck = 'hsk';
+    const intro = document.getElementById('intro-screen');
+    intro.style.transition = 'opacity 0.5s ease';
+    intro.style.opacity = '0';
+    setTimeout(() => { intro.style.display = 'none'; }, 500);
+    const levelBar = document.getElementById('level-bar');
+    if (levelBar) levelBar.style.display = 'none';
+    setTimeout(() => { loadVoices(); }, 300);
+    setTimeout(() => { loadVoices(); }, 1000);
+    activeDeck = 'hsk';
+    currentCardIdx = 0;
+    sessionReviewed = 0;
+    buildQueue();
+    showCard();
+  } else {
+    // Mid-session: force fresh queue immediately
+    currentDeck = 'hsk';
+    activeDeck = 'hsk';
+    currentCardIdx = 0;
+    sessionReviewed = 0;
+    synth.cancel();
+    buildQueue();
+    showCard();
+    showToast('Switched to HSK All Levels');
+  }
+}
+
+// ============================================================
 // DECK SELECTION
 // ============================================================
 function introDeckSelect(deck) {
+  if (deck === 'hsk') {
+    openHSKConfig('intro');
+    return;
+  }
   currentDeck = deck;
   document.querySelectorAll('[id^="deck-card-"]').forEach(el => {
     el.classList.toggle('selected', el.id === 'deck-card-' + deck);
@@ -2876,6 +3124,11 @@ function closeDeckOverlay(event) {
 }
 
 function switchDeck(deck) {
+  if (deck === 'hsk') {
+    document.getElementById('deck-overlay').classList.remove('open');
+    openHSKConfig('session');
+    return;
+  }
   if (deck === currentDeck) {
     document.getElementById('deck-overlay').classList.remove('open');
     return;
