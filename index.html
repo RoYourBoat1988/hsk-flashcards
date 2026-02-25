@@ -1695,6 +1695,136 @@
     animation: pulse-sync 0.8s infinite alternate;
   }
   @keyframes pulse-sync { from { opacity: 1; } to { opacity: 0.3; } }
+
+  /* ── LOCKED DECK CARDS ──────────────────────────────────── */
+  .deck-card.locked {
+    opacity: 0.72;
+    cursor: pointer;
+    position: relative;
+  }
+  .deck-card.locked::after {
+    content: '🔒';
+    position: absolute;
+    top: 0.55rem; right: 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+  .deck-card.locked .deck-card-count {
+    color: var(--muted);
+  }
+  .deck-card.coming-soon {
+    opacity: 0.5;
+    cursor: default;
+    position: relative;
+  }
+  .deck-card.coming-soon::after {
+    content: 'Soon';
+    position: absolute;
+    top: 0.55rem; right: 0.6rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.1rem 0.3rem;
+    background: var(--paper2);
+  }
+  .deck-card.unlocked-badge::after {
+    content: '✓';
+    position: absolute;
+    top: 0.55rem; right: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* ── UPGRADE MODAL ──────────────────────────────────────── */
+  .upgrade-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,18,8,0.6);
+    z-index: 500;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .upgrade-overlay.open { opacity: 1; pointer-events: all; }
+
+  .upgrade-modal {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 92%; max-width: 400px;
+    padding: 2rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+    position: relative;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .upgrade-modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: none; border: none;
+    font-size: 1.1rem; cursor: pointer;
+    color: var(--muted);
+  }
+  .upgrade-modal-close:hover { color: var(--ink); }
+
+  .upgrade-modal-icon { font-size: 2.2rem; text-align: center; line-height: 1; }
+
+  .upgrade-modal-title {
+    font-size: 1.4rem; font-weight: 600;
+    text-align: center; color: var(--ink);
+  }
+
+  .upgrade-modal-desc {
+    font-size: 0.88rem; color: var(--muted);
+    text-align: center; line-height: 1.55;
+  }
+
+  .upgrade-price-row {
+    display: flex; align-items: baseline;
+    justify-content: center; gap: 0.4rem;
+    margin: 0.25rem 0;
+  }
+  .upgrade-price {
+    font-size: 2rem; font-weight: 600; color: var(--ink); line-height: 1;
+  }
+  .upgrade-price-note {
+    font-size: 0.8rem; color: var(--muted);
+  }
+
+  .upgrade-features {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column; gap: 0.4rem;
+    font-size: 0.85rem; color: var(--muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 0;
+  }
+  .upgrade-features li::before { content: '✓  '; color: var(--green); font-weight: 700; }
+
+  .upgrade-buy-btn {
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    background: var(--ink); color: var(--paper);
+    border: none; border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; letter-spacing: 0.06em;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .upgrade-buy-btn:hover { opacity: 0.85; }
+  .upgrade-buy-btn:disabled { opacity: 0.45; cursor: default; }
+
+  .upgrade-signin-note {
+    font-size: 0.78rem; color: var(--muted);
+    text-align: center; line-height: 1.5;
+  }
+  .upgrade-signin-link {
+    color: var(--red); cursor: pointer;
+    background: none; border: none;
+    font-family: inherit; font-size: inherit; padding: 0;
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
@@ -1914,6 +2044,27 @@
   </div>
 </div>
 
+<!-- UPGRADE MODAL -->
+<div class="upgrade-overlay" id="upgrade-overlay" onclick="closeUpgradeModal(event)">
+  <div class="upgrade-modal" onclick="event.stopPropagation()">
+    <button class="upgrade-modal-close" onclick="closeUpgradeModal()">✕</button>
+    <div class="upgrade-modal-icon" id="upgrade-icon">🀄</div>
+    <div class="upgrade-modal-title" id="upgrade-title">Unlock HSK 4</div>
+    <div class="upgrade-modal-desc" id="upgrade-desc">One-time purchase. Yours forever.</div>
+    <div class="upgrade-price-row">
+      <span class="upgrade-price" id="upgrade-price">—</span>
+      <span class="upgrade-price-note">one-time</span>
+    </div>
+    <ul class="upgrade-features" id="upgrade-features">
+      <li>Full deck access — all cards</li>
+      <li>Spaced repetition progress saved</li>
+      <li>Works offline</li>
+    </ul>
+    <button class="upgrade-buy-btn" id="upgrade-buy-btn" onclick="startCheckout()">Buy Now</button>
+    <div class="upgrade-signin-note" id="upgrade-signin-note"></div>
+  </div>
+</div>
+
 <!-- AUTH MODAL -->
 <div class="auth-overlay" id="auth-overlay" onclick="closeAuthModal(event)">
   <div class="auth-modal" onclick="event.stopPropagation()">
@@ -2108,6 +2259,175 @@ const SUPABASE_CONFIGURED = SUPABASE_URL.length > 0 && SUPABASE_ANON_KEY.length 
 let sbClient = null;          // Supabase client instance (null if not configured)
 let supabaseUser = null;       // currently signed-in user (null = guest)
 let authMode = 'signin';       // 'signin' | 'signup'
+
+// ============================================================
+// DECK ENTITLEMENTS + PAYWALL
+// ============================================================
+
+// Decks that are always free — no purchase needed
+const FREE_DECKS = new Set(['hsk1', 'hsk2', 'hsk3']);
+
+// Decks that are not yet available for purchase
+const COMING_SOON_DECKS = new Set(['hsk6']);
+
+// Deck metadata for the upgrade modal
+// prices are display strings only — actual amounts live in Stripe (set in GBP)
+const DECK_UPGRADE_INFO = {
+  hsk4:      { icon: '🀄', title: 'Unlock HSK 4', desc: 'Intermediate · 615 words — abstract concepts, opinions, and a wide range of topics.', price: '£2', features: ['615 intermediate words', 'Spaced repetition progress saved', 'Works offline'] },
+  hsk5:      { icon: '🀄', title: 'Unlock HSK 5', desc: 'Upper-Intermediate · 1,316 words — newspapers, films, and professional communication.', price: '£2', features: ['1,316 upper-intermediate words', 'Spaced repetition progress saved', 'Works offline'] },
+  hsk:       { icon: '🀄', title: 'Unlock HSK All Levels', desc: 'All 2,667 words across HSK 1–6 in a single combined deck. Study everything in one place.', price: '£5', features: ['All 2,667 words in one deck', 'Choose which levels to include', 'SRS progress from individual decks carries over', 'Works offline'] },
+  sentences: { icon: '💬', title: 'Unlock Sentence Starters', desc: '49 essential sentence patterns for natural, fluent conversation.', price: '£2', features: ['49 conversational patterns', 'Spaced repetition progress saved', 'Works offline'] },
+};
+
+// The currently owned entitlements — populated after sign-in
+let userEntitlements = new Set(); // e.g. Set { 'hsk4', 'hsk5' }
+
+// The deck the upgrade modal is currently showing
+let upgradeDeckId = null;
+
+// ── Entitlement helpers ──────────────────────────────────────
+
+function isUnlocked(deckId) {
+  if (FREE_DECKS.has(deckId)) return true;
+  if (userEntitlements.has(deckId)) return true;
+  return false;
+}
+
+async function loadEntitlements() {
+  if (!sbClient || !supabaseUser) { userEntitlements = new Set(); return; }
+  try {
+    const { data, error } = await sbClient
+      .from('user_entitlements')
+      .select('deck_id')
+      .eq('user_id', supabaseUser.id);
+    if (error) { console.warn('Failed to load entitlements:', error); return; }
+    userEntitlements = new Set((data || []).map(r => r.deck_id));
+  } catch (e) {
+    console.warn('loadEntitlements error:', e);
+  }
+  applyLockStateToDeckCards();
+}
+
+// ── Lock state on deck cards ────────────────────────────────
+
+function applyLockStateToDeckCards() {
+  const allDeckIds = ['hsk1','hsk2','hsk3','hsk4','hsk5','hsk6','hsk','sentences'];
+  allDeckIds.forEach(id => {
+    ['deck-card-', 'modal-deck-'].forEach(prefix => {
+      const el = document.getElementById(prefix + id);
+      if (!el) return;
+      el.classList.remove('locked', 'unlocked-badge', 'coming-soon');
+      if (COMING_SOON_DECKS.has(id)) {
+        el.classList.add('coming-soon');
+      } else if (isUnlocked(id)) {
+        if (!FREE_DECKS.has(id)) el.classList.add('unlocked-badge');
+      } else {
+        el.classList.add('locked');
+      }
+    });
+  });
+}
+
+// ── Upgrade modal ───────────────────────────────────────────
+
+function openUpgradeModal(deckId) {
+  upgradeDeckId = deckId;
+  const info = DECK_UPGRADE_INFO[deckId];
+  if (!info) return;
+
+  document.getElementById('upgrade-icon').textContent  = info.icon;
+  document.getElementById('upgrade-title').textContent = info.title;
+  document.getElementById('upgrade-desc').textContent  = info.desc;
+  document.getElementById('upgrade-price').textContent = info.price;
+
+  const featuresList = document.getElementById('upgrade-features');
+  featuresList.innerHTML = info.features.map(f => `<li>${f}</li>`).join('');
+
+  const noteEl  = document.getElementById('upgrade-signin-note');
+  const buyBtn  = document.getElementById('upgrade-buy-btn');
+
+  if (!supabaseUser) {
+    noteEl.innerHTML = 'Please <button class="upgrade-signin-link" onclick="closeUpgradeModal();openAuthModal(\'signin\')">sign in</button> to purchase.';
+    buyBtn.disabled = true;
+  } else {
+    noteEl.textContent = '';
+    buyBtn.disabled = false;
+  }
+
+  document.getElementById('upgrade-overlay').classList.add('open');
+}
+
+function closeUpgradeModal(e) {
+  if (e && e.target !== document.getElementById('upgrade-overlay')) return;
+  document.getElementById('upgrade-overlay').classList.remove('open');
+  upgradeDeckId = null;
+}
+
+// ── Stripe checkout ─────────────────────────────────────────
+
+async function startCheckout() {
+  if (!supabaseUser || !upgradeDeckId) return;
+
+  const btn = document.getElementById('upgrade-buy-btn');
+  btn.disabled = true;
+  btn.textContent = 'Loading…';
+
+  try {
+    // Call our Supabase Edge Function to create a Stripe Checkout session
+    const { data: { session: authSession } } = await sbClient.auth.getSession();
+    const token = authSession?.access_token;
+    if (!token) throw new Error('No auth token');
+
+    const res = await fetch(
+      `${SUPABASE_URL}/functions/v1/create-checkout-session`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({ deck_id: upgradeDeckId }),
+      }
+    );
+
+    const json = await res.json();
+    if (!res.ok || !json.url) throw new Error(json.error || 'No checkout URL returned');
+
+    // Redirect to Stripe Checkout
+    window.location.href = json.url;
+
+  } catch (err) {
+    console.error('Checkout error:', err);
+    btn.disabled = false;
+    btn.textContent = 'Buy Now';
+    showToast('Payment error — please try again');
+  }
+}
+
+// ── Handle return from Stripe ───────────────────────────────
+
+function handlePaymentReturn() {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get('payment');
+  const deck   = params.get('deck');
+
+  if (!status) return;
+
+  // Clean the URL so refresh doesn't re-trigger this
+  const cleanUrl = window.location.pathname;
+  window.history.replaceState({}, '', cleanUrl);
+
+  if (status === 'success' && deck) {
+    // Reload entitlements from Supabase — webhook should have inserted by now
+    setTimeout(async () => {
+      await loadEntitlements();
+      const info = DECK_UPGRADE_INFO[deck];
+      showToast(`✓ ${info ? info.title.replace('Unlock ', '') : deck} unlocked!`);
+    }, 1500); // small delay to let webhook complete
+  } else if (status === 'cancelled') {
+    showToast('Payment cancelled');
+  }
+}
 let syncTimeout = null;        // debounce handle for cloud saves
 
 // ============================================================
@@ -2328,6 +2648,9 @@ const SRS_TABLE = 'user_srs_state';
 
 async function onUserSignedIn(isFreshLogin) {
   if (!sbClient || !supabaseUser) return;
+
+  // Load purchased decks first so lock state updates immediately
+  await loadEntitlements();
 
   try {
     // Check if the user has existing state on the server
@@ -3707,6 +4030,8 @@ function startHSKAll() {
 // DECK SELECTION
 // ============================================================
 function introDeckSelect(deck) {
+  if (COMING_SOON_DECKS.has(deck)) { showToast('Coming soon — check back shortly!'); return; }
+  if (!isUnlocked(deck)) { openUpgradeModal(deck); return; }
   if (deck === 'hsk') {
     openHSKConfig('intro');
     return;
@@ -3730,6 +4055,8 @@ function closeDeckOverlay(event) {
 }
 
 function switchDeck(deck) {
+  if (COMING_SOON_DECKS.has(deck)) { document.getElementById('deck-overlay').classList.remove('open'); showToast('Coming soon — check back shortly!'); return; }
+  if (!isUnlocked(deck)) { document.getElementById('deck-overlay').classList.remove('open'); openUpgradeModal(deck); return; }
   if (deck === 'hsk') {
     document.getElementById('deck-overlay').classList.remove('open');
     openHSKConfig('session');
@@ -3842,6 +4169,8 @@ function startApp() {
 loadTextSize();
 loadState();
 updateAuthHeaderButton(); // show/hide auth row immediately (Supabase loads async below)
+applyLockStateToDeckCards(); // apply lock state with no entitlements (guest view)
+handlePaymentReturn();       // check for ?payment=success in URL after Stripe redirect
 loadAllDecks().then(() => {
   buildQueue();
 }).catch(err => {
