@@ -16,8 +16,7 @@
 <!-- ─────────────────────────────────────────────────────── -->
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+SC&display=swap" rel="stylesheet">
-<!-- ── Supabase JS (Auth + Database) ───────────────────────── -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
 <style>
   :root {
     --ink: #1a1208;
@@ -3842,7 +3841,7 @@ function startApp() {
 // Init — load deck JSON files then start
 loadTextSize();
 loadState();
-initSupabase(); // sets up auth listener; no-op if SUPABASE_URL is blank
+updateAuthHeaderButton(); // show/hide auth row immediately (Supabase loads async below)
 loadAllDecks().then(() => {
   buildQueue();
 }).catch(err => {
@@ -3850,6 +3849,11 @@ loadAllDecks().then(() => {
   document.body.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif"><h2>Failed to load deck data</h2><p>Please refresh the page.</p></div>';
 });
 </script>
+
+<!-- ── Supabase JS (Auth + Database) — loaded async, never blocks page ── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"
+        onload="initSupabase()"
+        onerror="console.warn('Supabase CDN failed to load — auth disabled')"></script>
 
 <!-- ── Service Worker Registration (PWA / offline) ────────── -->
 <script>
