@@ -12,6 +12,22 @@
   "lang": "zh",
   "categories": ["education", "productivity"],
   "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "screenshot-1.png",
+      "sizes": "3358x1374",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Flashcard study screen"
+    },
+    {
+      "src": "screenshot-2.png",
+      "sizes": "3360x1744",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Deck selection screen"
+    }
+  ],
   "icons": [
     {
       "src": "icon-192.png",
