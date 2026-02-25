@@ -2385,13 +2385,19 @@ async function startCheckout() {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
+          'apikey': SUPABASE_ANON_KEY,
         },
         body: JSON.stringify({ deck_id: upgradeDeckId }),
       }
     );
 
-    const json = await res.json();
-    if (!res.ok || !json.url) throw new Error(json.error || 'No checkout URL returned');
+    let json;
+    try { json = await res.json(); } catch(e) { throw new Error(`Server returned non-JSON (status ${res.status})`); }
+
+    console.log('Checkout response:', res.status, json); // helpful for debugging
+    if (!res.ok || !json.url) {
+      throw new Error(json.error || json.message || `Server error ${res.status}`);
+    }
 
     // Redirect to Stripe Checkout
     window.location.href = json.url;
@@ -2400,7 +2406,7 @@ async function startCheckout() {
     console.error('Checkout error:', err);
     btn.disabled = false;
     btn.textContent = 'Buy Now';
-    showToast('Payment error — please try again');
+    showToast('Error: ' + err.message);
   }
 }
 
