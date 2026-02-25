@@ -5,7 +5,7 @@
 // Version bump CACHE_NAME to force a refresh after updates.
 // ============================================================
 
-const CACHE_NAME = 'hsk-flashcards-v3';
+const CACHE_NAME = 'hsk-flashcards-v6';
 
 // Core app shell — cached immediately on install
 const PRECACHE_URLS = [
@@ -58,10 +58,12 @@ self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   if (!event.request.url.startsWith('http')) return;
 
-  // Google Fonts / CDN assets: network-first, cache as fallback
+  // Google Fonts / CDN assets / Supabase: network-first, cache as fallback
   if (url.hostname.includes('googleapis.com') ||
       url.hostname.includes('gstatic.com') ||
-      url.hostname.includes('cdnjs.cloudflare.com')) {
+      url.hostname.includes('cdnjs.cloudflare.com') ||
+      url.hostname.includes('jsdelivr.net') ||
+      url.hostname.includes('supabase.co')) {
     event.respondWith(
       fetch(event.request)
         .then(response => {

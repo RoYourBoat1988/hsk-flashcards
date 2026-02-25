@@ -16,6 +16,8 @@
 <!-- ─────────────────────────────────────────────────────── -->
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<!-- ── Supabase JS (Auth + Database) ───────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <style>
   :root {
     --ink: #1a1208;
@@ -1486,6 +1488,214 @@
   }
   .voice-btn:hover { border-color: var(--ink); color: var(--ink); }
   .voice-btn-name { font-size: 0.75rem; max-width: 80px; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── AUTH BUTTON in header ──────────────────────────────── */
+  .auth-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .auth-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .auth-btn.signed-in {
+    border-color: var(--green);
+    color: var(--green);
+    max-width: 140px;
+    overflow: hidden;
+  }
+  .auth-btn.signed-in:hover { background: rgba(45,106,79,0.08); }
+  .auth-btn-email {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+    font-size: 0.75rem;
+  }
+
+  /* ── AUTH MODAL ─────────────────────────────────────────── */
+  .auth-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,18,8,0.55);
+    z-index: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .auth-overlay.open { opacity: 1; pointer-events: all; }
+
+  .auth-modal {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 92%;
+    max-width: 380px;
+    padding: 2rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .auth-modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: none; border: none;
+    font-size: 1.1rem; cursor: pointer;
+    color: var(--muted); line-height: 1;
+    padding: 0.25rem;
+  }
+  .auth-modal-close:hover { color: var(--ink); }
+
+  .auth-modal-logo {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2rem;
+    color: var(--red);
+    text-align: center;
+    line-height: 1;
+  }
+
+  .auth-modal-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .auth-modal-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.5;
+    margin-top: -0.6rem;
+  }
+
+  .auth-form { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .auth-input-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+
+  .auth-input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--paper2);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    transition: border-color 0.15s;
+    outline: none;
+  }
+  .auth-input:focus { border-color: var(--red); }
+  .auth-input::placeholder { color: var(--muted); opacity: 0.7; }
+
+  .auth-submit-btn {
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+    background: var(--red);
+    color: var(--paper);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 0.25rem;
+  }
+  .auth-submit-btn:hover { opacity: 0.88; }
+  .auth-submit-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .auth-toggle {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .auth-toggle-link {
+    color: var(--red);
+    cursor: pointer;
+    text-decoration: underline;
+    background: none; border: none;
+    font-family: inherit; font-size: inherit;
+    padding: 0;
+  }
+  .auth-toggle-link:hover { opacity: 0.8; }
+
+  .auth-error {
+    font-size: 0.8rem;
+    color: var(--red);
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 2px;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    display: none;
+  }
+  .auth-error.visible { display: block; }
+
+  .auth-success {
+    font-size: 0.82rem;
+    color: var(--green);
+    background: rgba(45,106,79,0.08);
+    border: 1px solid rgba(45,106,79,0.2);
+    border-radius: 2px;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    display: none;
+  }
+  .auth-success.visible { display: block; }
+
+  .auth-separator {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em;
+  }
+  .auth-separator::before, .auth-separator::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  /* Sync status indicator */
+  .sync-indicator {
+    font-size: 0.68rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .sync-indicator.visible { opacity: 1; }
+  .sync-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+  .sync-dot.syncing {
+    background: var(--gold);
+    animation: pulse-sync 0.8s infinite alternate;
+  }
+  @keyframes pulse-sync { from { opacity: 1; } to { opacity: 0.3; } }
 </style>
 </head>
 <body>
@@ -1559,6 +1769,11 @@
   </div>
 
   <button class="start-btn" onclick="startApp()">开始学习 · Begin</button>
+
+  <div id="intro-auth-row" style="display:none; align-items:center; gap:0.5rem; font-size:0.8rem; color:var(--muted);">
+    <span id="intro-auth-label">Sign in to sync your progress across devices.</span>
+    <button class="auth-toggle-link" id="intro-auth-btn" onclick="onIntroAuthClick()">Sign In</button>
+  </div>
 </div>
 
 <!-- DECK CHANGE MODAL (mid-session) -->
@@ -1700,6 +1915,35 @@
   </div>
 </div>
 
+<!-- AUTH MODAL -->
+<div class="auth-overlay" id="auth-overlay" onclick="closeAuthModal(event)">
+  <div class="auth-modal" onclick="event.stopPropagation()">
+    <button class="auth-modal-close" onclick="closeAuthModal()">✕</button>
+    <div class="auth-modal-logo">漢</div>
+    <div class="auth-modal-title" id="auth-modal-title">Sign In</div>
+    <div class="auth-modal-sub" id="auth-modal-sub">Save your progress across devices and browsers.</div>
+
+    <div class="auth-error" id="auth-error"></div>
+    <div class="auth-success" id="auth-success"></div>
+
+    <div class="auth-form" id="auth-form">
+      <div>
+        <label class="auth-input-label" for="auth-email">Email</label>
+        <input class="auth-input" type="email" id="auth-email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div>
+        <label class="auth-input-label" for="auth-password">Password</label>
+        <input class="auth-input" type="password" id="auth-password" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')submitAuth()">
+      </div>
+      <button class="auth-submit-btn" id="auth-submit-btn" onclick="submitAuth()">Sign In</button>
+    </div>
+
+    <div class="auth-toggle" id="auth-toggle">
+      No account? <button class="auth-toggle-link" onclick="toggleAuthMode()">Create one</button>
+    </div>
+  </div>
+</div>
+
 <!-- HEADER -->
 <header>
   <div class="logo" onclick="goHome()" title="Back to home">
@@ -1707,6 +1951,8 @@
     <span class="logo-text">HSK Flashcards</span>
   </div>
   <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="auth-btn" id="auth-header-btn" onclick="onAuthBtnClick()" title="Sign in to sync progress">👤 Sign In</button>
+    <span class="sync-indicator" id="sync-indicator"><span class="sync-dot" id="sync-dot"></span><span id="sync-label">Synced</span></span>
     <button class="change-deck-btn" onclick="openDeckOverlay()">⇄ Deck</button>
     <button class="analytics-btn" onclick="openAnalytics()">📈 Analytics</button>
     <div class="size-picker" title="Text size">
@@ -1847,6 +2093,366 @@
 
 <script>
 // ============================================================
+// SUPABASE CONFIG
+// ============================================================
+// ── SETUP: replace these two values with your own project ──
+// 1. Go to https://supabase.com → New Project
+// 2. Settings → API → copy "Project URL" and "anon public" key
+// 3. Run the SQL in supabase-migration.sql in the SQL editor
+// ──────────────────────────────────────────────────────────
+const SUPABASE_URL  = 'https://bcbiejyxizopaagmzhtt.supabase.co'; // e.g. 'https://xyzabcdef.supabase.co'
+const SUPABASE_ANON_KEY = 'sb_publishable_m60fBOvHu2bvaot54xUufA_-D6v7sOJ'; // your anon/public key
+
+// Internal: true once both values are filled in
+const SUPABASE_CONFIGURED = SUPABASE_URL.length > 0 && SUPABASE_ANON_KEY.length > 0;
+
+let sbClient = null;          // Supabase client instance (null if not configured)
+let supabaseUser = null;       // currently signed-in user (null = guest)
+let authMode = 'signin';       // 'signin' | 'signup'
+let syncTimeout = null;        // debounce handle for cloud saves
+
+// ============================================================
+// SUPABASE INIT
+// ============================================================
+function initSupabase() {
+  if (!SUPABASE_CONFIGURED) return; // silently skip if unconfigured
+
+  // Guard: Supabase CDN may not have loaded yet
+  if (!window.supabase || !window.supabase.createClient) {
+    console.warn('Supabase CDN not loaded — auth disabled');
+    return;
+  }
+
+  // Show the Sign In button immediately — don't wait for getSession()
+  updateAuthHeaderButton();
+
+  // createClient is on window.supabase from the CDN bundle
+  const { createClient } = window.supabase;
+  sbClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // Listen for auth changes (login, logout, token refresh)
+  sbClient.auth.onAuthStateChange((event, session) => {
+    const prevUser = supabaseUser;
+    supabaseUser = session ? session.user : null;
+
+    if (supabaseUser && !prevUser) {
+      // Just signed in
+      onUserSignedIn(event === 'SIGNED_IN');
+    } else if (!supabaseUser && prevUser) {
+      // Just signed out
+      onUserSignedOut();
+    }
+
+    updateAuthHeaderButton();
+  });
+
+  // Restore session from existing cookie/localStorage token
+  sbClient.auth.getSession().then(({ data: { session } }) => {
+    supabaseUser = session ? session.user : null;
+    updateAuthHeaderButton();
+  });
+}
+
+// ============================================================
+// AUTH HEADER BUTTON
+// ============================================================
+function updateAuthHeaderButton() {
+  const btn = document.getElementById('auth-header-btn');
+  const introRow = document.getElementById('intro-auth-row');
+  const introLabel = document.getElementById('intro-auth-label');
+  const introBtn = document.getElementById('intro-auth-btn');
+
+  if (!SUPABASE_CONFIGURED) {
+    if (btn) btn.style.display = 'none';
+    if (introRow) introRow.style.display = 'none';
+    return;
+  }
+
+  if (supabaseUser) {
+    const email = supabaseUser.email || '';
+    // Header button
+    if (btn) {
+      btn.classList.add('signed-in');
+      btn.innerHTML = `✓ <span class="auth-btn-email" title="${email}">${email}</span>`;
+      btn.title = `Signed in as ${email} — click to sign out`;
+    }
+    // Intro row
+    if (introRow) {
+      introRow.style.display = 'flex';
+      if (introLabel) introLabel.textContent = `Signed in as ${email}.`;
+      if (introBtn) introBtn.textContent = 'Sign Out';
+    }
+  } else {
+    // Header button
+    if (btn) {
+      btn.classList.remove('signed-in');
+      btn.innerHTML = '👤 Sign In';
+      btn.title = 'Sign in to sync progress across devices';
+    }
+    // Intro row
+    if (introRow) {
+      introRow.style.display = 'flex';
+      if (introLabel) introLabel.textContent = 'Sign in to sync your progress across devices.';
+      if (introBtn) introBtn.textContent = 'Sign In';
+    }
+  }
+}
+
+function onIntroAuthClick() {
+  if (supabaseUser) {
+    if (confirm('Sign out of ' + supabaseUser.email + '?')) handleSignOut();
+  } else {
+    openAuthModal('signin');
+  }
+}
+
+function onAuthBtnClick() {
+  if (supabaseUser) {
+    // Signed in → sign out
+    if (confirm('Sign out of ' + supabaseUser.email + '?')) handleSignOut();
+  } else {
+    openAuthModal();
+  }
+}
+
+// ============================================================
+// AUTH MODAL
+// ============================================================
+function openAuthModal(mode) {
+  authMode = mode || 'signin';
+  renderAuthModal();
+  document.getElementById('auth-overlay').classList.add('open');
+  setTimeout(() => {
+    const emailInput = document.getElementById('auth-email');
+    if (emailInput) emailInput.focus();
+  }, 100);
+}
+
+function closeAuthModal(e) {
+  if (e && e.target !== document.getElementById('auth-overlay')) return;
+  document.getElementById('auth-overlay').classList.remove('open');
+}
+
+function renderAuthModal() {
+  const isSignUp = authMode === 'signup';
+  document.getElementById('auth-modal-title').textContent  = isSignUp ? 'Create Account' : 'Sign In';
+  document.getElementById('auth-modal-sub').textContent    = isSignUp
+    ? 'Your progress will be saved to the cloud automatically.'
+    : 'Save your progress across devices and browsers.';
+  document.getElementById('auth-submit-btn').textContent   = isSignUp ? 'Create Account' : 'Sign In';
+  document.getElementById('auth-toggle').innerHTML = isSignUp
+    ? 'Already have an account? <button class="auth-toggle-link" onclick="toggleAuthMode()">Sign in</button>'
+    : 'No account? <button class="auth-toggle-link" onclick="toggleAuthMode()">Create one</button>';
+  clearAuthMessages();
+
+  // Update autocomplete hint for password field
+  const pwdInput = document.getElementById('auth-password');
+  if (pwdInput) pwdInput.autocomplete = isSignUp ? 'new-password' : 'current-password';
+}
+
+function toggleAuthMode() {
+  authMode = authMode === 'signin' ? 'signup' : 'signin';
+  renderAuthModal();
+}
+
+function showAuthError(msg) {
+  const el = document.getElementById('auth-error');
+  el.textContent = msg;
+  el.classList.add('visible');
+  document.getElementById('auth-success').classList.remove('visible');
+}
+
+function showAuthSuccess(msg) {
+  const el = document.getElementById('auth-success');
+  el.textContent = msg;
+  el.classList.add('visible');
+  document.getElementById('auth-error').classList.remove('visible');
+}
+
+function clearAuthMessages() {
+  document.getElementById('auth-error').classList.remove('visible');
+  document.getElementById('auth-success').classList.remove('visible');
+}
+
+async function submitAuth() {
+  if (!sbClient) return;
+  const email    = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
+  const btn      = document.getElementById('auth-submit-btn');
+
+  if (!email || !password) { showAuthError('Please enter your email and password.'); return; }
+  if (password.length < 6) { showAuthError('Password must be at least 6 characters.'); return; }
+
+  btn.disabled = true;
+  clearAuthMessages();
+
+  try {
+    let result;
+    if (authMode === 'signup') {
+      result = await sbClient.auth.signUp({ email, password });
+    } else {
+      result = await sbClient.auth.signInWithPassword({ email, password });
+    }
+
+    if (result.error) {
+      showAuthError(result.error.message);
+      btn.disabled = false;
+      return;
+    }
+
+    if (authMode === 'signup' && !result.data.session) {
+      // Email confirmation required
+      showAuthSuccess('Check your email to confirm your account, then sign in.');
+      btn.disabled = false;
+      return;
+    }
+
+    // Success — onAuthStateChange will fire and handle the rest
+    document.getElementById('auth-overlay').classList.remove('open');
+  } catch (err) {
+    showAuthError('Something went wrong. Please try again.');
+    btn.disabled = false;
+  }
+}
+
+async function handleSignOut() {
+  if (!sbClient) return;
+  await sbClient.auth.signOut();
+  // onAuthStateChange handles the UI update
+  showToast('Signed out — progress saved locally');
+}
+
+// ============================================================
+// STATE SYNC (Supabase ↔ localStorage)
+// ============================================================
+const SRS_TABLE = 'user_srs_state';
+
+async function onUserSignedIn(isFreshLogin) {
+  if (!sbClient || !supabaseUser) return;
+
+  try {
+    // Check if the user has existing state on the server
+    const { data, error } = await sbClient
+      .from(SRS_TABLE)
+      .select('state, updated_at')
+      .eq('user_id', supabaseUser.id)
+      .maybeSingle();
+
+    if (error) { console.warn('Supabase fetch error:', error); return; }
+
+    if (data && data.state) {
+      // Server has saved state — decide whether to use it
+      const serverState = data.state;
+      const serverCards = Object.keys(serverState.cards || {}).length;
+      const localCards  = Object.keys(state.cards || {}).length;
+
+      if (serverCards === 0 && localCards > 0) {
+        // Server is empty, local has data → push local to server
+        await pushStateToServer();
+        showToast('Progress saved to cloud ☁');
+      } else if (serverCards > 0 && localCards === 0) {
+        // Local is empty, server has data → load server
+        mergeServerState(serverState);
+        showToast('Progress loaded from cloud ☁');
+      } else if (serverCards > 0 && localCards > 0) {
+        // Both have data — use whichever was updated more recently
+        const serverUpdated = new Date(data.updated_at).getTime();
+        const localStudyDate = state.session.lastStudyDate
+          ? new Date(state.session.lastStudyDate).getTime()
+          : 0;
+
+        if (serverUpdated > localStudyDate) {
+          mergeServerState(serverState);
+          showToast('Progress synced from cloud ☁');
+        } else {
+          await pushStateToServer();
+          showToast('Local progress saved to cloud ☁');
+        }
+      } else {
+        // Both empty — nothing to do
+        showToast('Signed in · Progress will be saved to cloud ☁');
+      }
+    } else {
+      // No server record — push current local state
+      await pushStateToServer();
+      showToast('Progress saved to cloud ☁');
+    }
+
+    updateSyncIndicator('synced');
+  } catch (err) {
+    console.warn('Auth sync error:', err);
+  }
+}
+
+function onUserSignedOut() {
+  updateSyncIndicator('hidden');
+  showToast('Signed out');
+}
+
+function mergeServerState(serverState) {
+  // Replace local state with server state and persist locally too
+  state.cards   = serverState.cards   ?? state.cards;
+  state.session = { ...state.session, ...(serverState.session ?? {}) };
+  state.settings= { ...state.settings, ...(serverState.settings ?? {}) };
+  if (serverState.history) {
+    state.history.ratingCounts = { ...state.history.ratingCounts, ...(serverState.history.ratingCounts ?? {}) };
+    state.history.dailyLog     = { ...(serverState.history.dailyLog ?? {}) };
+  }
+  try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e) {}
+  // Rebuild queue with new data
+  if (typeof buildQueue === 'function') { buildQueue(); updateStats(); }
+}
+
+async function pushStateToServer() {
+  if (!sbClient || !supabaseUser) return;
+  try {
+    const { error } = await sbClient
+      .from(SRS_TABLE)
+      .upsert({
+        user_id: supabaseUser.id,
+        state: state,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'user_id' });
+
+    if (error) console.warn('Supabase save error:', error);
+  } catch (err) {
+    console.warn('Supabase save exception:', err);
+  }
+}
+
+// Debounced cloud save — called from saveState()
+function scheduleSyncToServer() {
+  if (!sbClient || !supabaseUser) return;
+  clearTimeout(syncTimeout);
+  updateSyncIndicator('syncing');
+  syncTimeout = setTimeout(async () => {
+    await pushStateToServer();
+    updateSyncIndicator('synced');
+  }, 1500); // batch rapid saves into one request
+}
+
+// Sync status indicator (small dot near header)
+function updateSyncIndicator(status) {
+  const indicator = document.getElementById('sync-indicator');
+  const dot       = document.getElementById('sync-dot');
+  const label     = document.getElementById('sync-label');
+  if (!indicator) return;
+
+  if (status === 'hidden' || !supabaseUser) {
+    indicator.classList.remove('visible');
+  } else {
+    indicator.classList.add('visible');
+    if (status === 'syncing') {
+      dot.classList.add('syncing');
+      label.textContent = 'Syncing…';
+    } else {
+      dot.classList.remove('syncing');
+      label.textContent = 'Synced';
+    }
+  }
+}
+
+// ============================================================
 // HSK VOCABULARY DATABASE
 // ============================================================
 // ============================================================
@@ -1875,7 +2481,7 @@ async function loadAllDecks() {
 function sm2(card, quality) {
   // quality: 0=forgot, 2=hard, 3=good, 5=easy
   let { interval, repetitions, easiness } = card.srs;
-  
+
   if (quality === 0) {
     // Forgot: full reset
     repetitions = 0;
@@ -1892,14 +2498,14 @@ function sm2(card, quality) {
     else interval = Math.round(interval * easiness);
     repetitions += 1;
   }
-  
+
   // Update easiness factor (applies to all ratings)
   easiness = Math.max(1.3, easiness + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
-  
+
   const now = new Date();
   const nextDate = new Date(now);
   nextDate.setDate(now.getDate() + interval);
-  
+
   return {
     interval,
     repetitions,
@@ -1933,6 +2539,7 @@ let state = {
 
 function saveState() {
   try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e) {}
+  scheduleSyncToServer(); // no-op if not signed in
 }
 
 function loadState() {
@@ -2117,7 +2724,7 @@ function updateStats() {
   const maxReview = state.settings.reviewCardsPerDay ?? 0;
   const cappedNew    = Math.min(totalNew, maxNew);
   const cappedReview = maxReview === 0 ? dueCount : Math.min(dueCount, maxReview);
-  
+
   document.getElementById('stat-due').textContent = queue.length;
   document.getElementById('stat-learned').textContent = sessionReviewed;
   document.getElementById('q-new').textContent = `${cappedNew} New`;
@@ -2162,7 +2769,7 @@ function showCard() {
             <div class="tap-hint">tap to reveal</div>
           </div>
         </div>
-        
+
         <!-- BACK -->
         <div class="card-face card-back" id="card-back-face">
           <div class="card-back-inner">
@@ -2176,7 +2783,7 @@ function showCard() {
                 <div class="meaning-display">${word.meaning}</div>
               </div>
             </div>
-            
+
             <!-- AUDIO ROW -->
             <div class="audio-row">
               <button class="audio-btn" id="word-audio-btn" onclick="event.stopPropagation(); speakWord()">
@@ -2186,7 +2793,7 @@ function showCard() {
                 <span class="speaker-icon">🔊</span> Speak sentence
               </button>
             </div>
-            
+
             <!-- EXAMPLE -->
             <div class="section-divider"><span class="section-label">Example sentence</span></div>
             <div class="example-block">
@@ -2194,7 +2801,7 @@ function showCard() {
               <div class="example-pinyin">${word.example_py}</div>
               <div class="example-en">${word.example_en}</div>
             </div>
-            
+
             <!-- CHARACTER BREAKDOWN -->
             ${word.chars && word.chars.length > 1 ? `
             <div class="section-divider"><span class="section-label">Character breakdown</span></div>
@@ -2208,7 +2815,7 @@ function showCard() {
               `).join('')}
             </div>
             ` : ''}
-            
+
             <!-- RATING BUTTONS — embedded in card back -->
             <div class="rating-section" id="rating-section">
               <div class="rating-label">How well did you recall?</div>
@@ -2351,7 +2958,7 @@ function flipCard() {
   isFlipped = true;
   const card = document.getElementById('main-card');
   card.classList.add('flipped');
-  
+
   // Auto-play audio sequence: word first, then sentence
   setTimeout(() => {
     autoPlaySequence();
@@ -2649,10 +3256,10 @@ function setAudioBtnState(id, playing) {
 function rateCard(quality) {
   if (currentCardIdx >= queue.length) return;
   synth.cancel();
-  
+
   const item = queue[currentCardIdx];
   const key = getCardKey(item.level, item.idx);
-  
+
   const isNewCard = !item.srs.nextReview; // true if this is the card's very first review
   const newSRS = sm2({ srs: item.srs }, quality);
   state.cards[key] = { ...(state.cards[key] || {}), srs: newSRS, lastRating: quality };
@@ -2666,7 +3273,7 @@ function rateCard(quality) {
   if (isNewCard) state.history.dailyLog[todayKey].newCards++;
   const rKey = quality === 0 ? 'forgot' : quality === 2 ? 'hard' : quality === 3 ? 'good' : 'easy';
   state.history.ratingCounts[rKey] = (state.history.ratingCounts[rKey] || 0) + 1;
-  
+
   // Update streak
   const today = new Date().toDateString();
   if (state.session.lastStudyDate !== today) {
@@ -2684,7 +3291,7 @@ function rateCard(quality) {
   }
 
   saveState();
-  
+
   if (quality === 0) {
     // Forgot: reinsert at end of queue for retry this session
     queue.push({ ...item, srs: newSRS });
@@ -2693,16 +3300,16 @@ function rateCard(quality) {
     const insertAt = Math.min(currentCardIdx + 4, queue.length);
     queue.splice(insertAt, 0, { ...item, srs: newSRS });
   }
-  
+
   currentCardIdx++;
   updateStats();
-  
+
   // Animate transition
   const container = document.getElementById('card-container');
   container.style.opacity = '0';
   container.style.transform = 'translateX(-20px)';
   container.style.transition = 'all 0.2s ease';
-  
+
   setTimeout(() => {
     container.style.opacity = '1';
     container.style.transform = 'translateX(0)';
@@ -2718,7 +3325,7 @@ function setLevel(level) {
   currentLevel = level;
   document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
-  
+
   currentCardIdx = 0;
   sessionReviewed = 0;
   buildQueue();
@@ -2736,7 +3343,7 @@ function showEmptyState() {
       <div class="empty-char">好</div>
       <div class="empty-title">All done for today!</div>
       <div class="empty-sub">
-        You've reviewed all ${sessionReviewed} cards. Come back tomorrow for your next review session. 
+        You've reviewed all ${sessionReviewed} cards. Come back tomorrow for your next review session.
         Your spaced repetition schedule has been updated.
       </div>
       <br>
@@ -3235,6 +3842,7 @@ function startApp() {
 // Init — load deck JSON files then start
 loadTextSize();
 loadState();
+initSupabase(); // sets up auth listener; no-op if SUPABASE_URL is blank
 loadAllDecks().then(() => {
   buildQueue();
 }).catch(err => {
