@@ -15,16 +15,16 @@
   "screenshots": [
     {
       "src": "screenshot-1.png",
-      "sizes": "3358x1374",
+      "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "wide",
+      "form_factor": "narrow",
       "label": "Flashcard study screen"
     },
     {
       "src": "screenshot-2.png",
-      "sizes": "3360x1744",
+      "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "wide",
+      "form_factor": "narrow",
       "label": "Deck selection screen"
     }
   ],
