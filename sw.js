@@ -5,7 +5,7 @@
 // Version bump CACHE_NAME to force a refresh after updates.
 // ============================================================
 
-const CACHE_NAME = 'hsk-flashcards-v11';
+const CACHE_NAME = 'hsk-flashcards-v12';
 
 // Core app shell — cached immediately on install
 const PRECACHE_URLS = [
