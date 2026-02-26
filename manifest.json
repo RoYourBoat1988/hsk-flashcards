@@ -1,7 +1,7 @@
 {
   "id": "./index.html",
-  "name": "漢字 · HSK Flashcards",
-  "short_name": "HSK 漢字",
+  "name": "HanZen",
+  "short_name": "HanZen",
   "description": "Master Mandarin Chinese with spaced repetition — HSK 1 through HSK 6 with authentic pronunciation.",
   "start_url": "./index.html",
   "scope": "./",
