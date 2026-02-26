@@ -1254,8 +1254,37 @@
   }
   .deck-modal-close:hover { border-color: var(--ink); color: var(--ink); }
 
-  @media (max-width: 420px) {
-    .deck-cards { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 600px) {
+    /* Intro screen */
+    #intro-screen {
+      gap: 0.9rem;
+      padding: 1.5rem 1rem 2rem;
+    }
+    .intro-logo { font-size: 3.5rem; }
+    .intro-title { font-size: 1.6rem; }
+    .intro-sub { font-size: 0.85rem; }
+
+    /* Deck grid — 2 columns on mobile */
+    .deck-cards { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+    /* Full-width cards on mobile */
+    #deck-card-hsk,
+    #deck-card-sentences,
+    #modal-deck-hsk,
+    #modal-deck-sentences { grid-column: span 2 !important; }
+
+    /* Deck card sizing */
+    .deck-card { padding: 0.7rem 0.6rem; }
+    .deck-card-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .deck-card-name { font-size: 0.85rem; }
+    .deck-card-desc { font-size: 0.65rem; }
+    .deck-card-count { font-size: 0.6rem; }
+
+    /* Header */
+    .logo-text { font-size: 0.9rem; }
+
+    /* Flashcard buttons */
+    .btn-again, .btn-hard, .btn-ok, .btn-easy { font-size: 0.75rem; padding: 0.5rem 0.6rem; }
   }
 
   /* ========================
