@@ -1259,13 +1259,16 @@
     #intro-screen {
       gap: 0.9rem;
       padding: 1.5rem 1rem 2rem;
+      overflow-x: hidden;
+      align-items: stretch;
     }
     .intro-logo { font-size: 3.5rem; }
     .intro-title { font-size: 1.6rem; }
     .intro-sub { font-size: 0.85rem; }
 
     /* Deck grid — 2 columns on mobile */
-    .deck-cards { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+    .deck-select-section { width: 100%; max-width: 100%; box-sizing: border-box; }
+    .deck-cards { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; width: 100%; box-sizing: border-box; }
 
     /* Full-width cards on mobile */
     #deck-card-hsk,
