@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.royourboat.hskflashcards",
+    "sha256_cert_fingerprints": ["0F:33:C4:F5:E2:47:DD:8E:C4:CB:53:80:50:85:9A:95:9F:91:6B:BF:2A:60:7E:B1:7A:E6:66:BD:73:B9:BB:5B"]
+  }
+}]
